@@ -2,6 +2,24 @@
 Proyecto integrador Digital House: Turisteando
 Somos Walter Leskovar, Facundo Minuto, Ignacio Parisi y Silvana Acotto, estudiantes del curso de Programacion Full Stack dictado por Digital House.
 
+Walter Leskovar:
+Tengo una experiencia de 35 años en el área de negocios y de tecnología.
+Desarrollo en Python para aplicaciones de Ciencia de Datos y Business
+Intelligence.
+Especializandome como desarrollador Full Stack.
+Actualmente estoy preparando la certificación como Producto Owner y
+Scrum Máster.
+LinkedIn: www.linkedin.com/in/walter-adrian-leskovar-66b615a
+GtiHub: https://github.com/wleskovar
+
+Silvana Acotto:
+
+Trabajo en la administración pública.
+Actualmente estoy estudiando programación Full Stack.
+Soy mamá de 3 niños.
+Me gusta escuchar música, jugar al fútbol y pasar tiempo en familia.
+
+
 Si te gusta viajar, estas en el sitio correcto. Turisteando agencia Viajes y Turismo ofrece paquetes turísticos Nacionales e Internacionales al mejor precio. 
 Nuestro sitio, te da la posibilidad de elegir  tu próximo destino de manera sencilla, segura, al mejor precio y sin moverte de tu casa. 
 Armá tus valijas... ¡nosotros nos ocupamos del resto.!
