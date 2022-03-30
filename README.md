@@ -19,10 +19,14 @@ Soy mamá de 3 niños.
 Me gusta escuchar música, jugar al fútbol y pasar tiempo en familia.
 
 Facundo Minuto:
-Soy Licenciado en Administracion Franco-Argentino y Master en Relaciones Internacionales.
+Licenciado en Administracion Franco-Argentino y Master en Relaciones Internacionales.
 Estoy especializándome como desarrollador Full Stack por interés personal/laboral.
 Soy de naturaleza curiosa y me gusta aprender/entender sobre todo.
 Deportista amateur, amante de la música y una buena copa de vino.
+
+Ignacio Parisi:
+Estudié música varios años, actualmente trabajo como comerciante y estoy aprendiendo desarrollo web porque me interesa cambiar de área laboral. Además en mi tiempo libre estudio alemán y hago deporte.
+
 
 Si te gusta viajar, estas en el sitio correcto. Turisteando agencia Viajes y Turismo ofrece paquetes turísticos Nacionales e Internacionales al mejor precio.
 Nuestro sitio, te da la posibilidad de elegir  tu próximo destino de manera sencilla, segura, al mejor precio y sin moverte de tu casa.
