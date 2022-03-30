@@ -19,7 +19,7 @@ Soy mamá de 3 niños.
 Me gusta escuchar música, jugar al fútbol y pasar tiempo en familia.
 
 Facundo Minuto:
-Soy Licenciado en Administracion Franco-Argentino y Master en Relaciones Internacionales.
+Licenciado en Administracion Franco-Argentino y Master en Relaciones Internacionales.
 Estoy especializándome como desarrollador Full Stack por interés personal/laboral.
 Soy de naturaleza curiosa y me gusta aprender/entender sobre todo.
 Deportista amateur, amante de la música y una buena copa de vino.
