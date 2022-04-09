@@ -1,3 +1,161 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    margin: 0 auto;
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
+}
+
+footer {
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 250px;
+    position: relative;
+}
+
+.logo {
+    width: 150px; 
+}
+
+.header {
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.menu_header {
+    display: none;
+}
+
+.menu_header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_header a {
+    text-decoration: none;
+    color: #222222;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 17px;
+}
+
+.menu_header img {
+    height: 20px;
+    width: 25px;
+}
+
+.hamburguer-button {
+    background-color: #222222;
+    color: #ffffff;
+    display: block;
+    max-width: 50px;
+    padding: 15px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+}
+
+.title {
+    margin-left: 20px;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buy_button {
+    background-color: #646464;
+    border: none;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 450ms;
+}
+
+.buy_button:hover {
+    background-color: rgb(6, 141, 62);
+}
+
+.detailPic {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail {
+    margin-left: 50px;
+}
+
+.footer {
+    padding: 20px;
+}
+
+.menu_footer a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.iconos_sociales {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+    .hamburguer-button {
+        display: none;
+    }
+    .menu_header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .menu_header ul {
+        display: flex;
+    }
+    .menu_header li {
+        margin: 0 5px;
+    }
+    .menu_footer {
+        display: flex;
+    }
+    #form_footer {
+        display: flex;
+        justify-content: right;
+        padding: 10px;
+    }
+    .iconos_sociales {
+        display: flex;
+        justify-items: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .logo {
+        width: 250px;
+    }
+    .menu_header {
+        max-width: 1200px;
+        margin: auto;
+    }
+    .menu_header {
+        margin-top: 40px;
+    }
+        .menu_header li {
+        margin: 0 10px;
+    }
+    .menu_header a {
+        font-size: 19px;
+    }
+}
