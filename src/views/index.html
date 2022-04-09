@@ -4,7 +4,7 @@
         <meta chartset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home Turisteando</title>
-        <link rel="stylesheet" href="/css/styles.css">
+        <!--<link rel="stylesheet" href="/css/styles.css">-->
         <link rel="stylesheet" href="/css/styles_index.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,24 +15,30 @@
     </head>
 
     <body>
-        <header>
-            <img src="/images/logo_turisteando.png" alt="Logo Turisteando">
+        <header class="index_header">
+            <a href="#" class="hamburguer-button">
+                <img src="/images/bars-solid.svg" alt="hamburguer" >
+            </a>
+            <img class= "logo" src="/images/logo_turisteando.png" alt="Logo Turisteando">
             
-            <nav class="menu_header">
-                <ul class="left_header_menu"> 
-                     <li>Home</li>
-                     <li>Paquetes</li>
-                     <li>Ofertas</li>
-                     <li>Contaco</li>
+            <nav class="nav_menu1">
+                <ul class="ul_1"> 
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">Paquetes</a></li>
+                     <li><a href="#">Ofertas</a></li>
+                     <li><a href="#">Contacto</a></li>
                  </ul>
-                 <ul class="right_header_menu">
-                     <li><img src="/images/user-solid.svg" width="20px" height="25px"alt="Login" ></li>
-                     <li><img src="/images/user-plus-solid.svg" width="20px" height="25px"alt="Login" ></li>
-                     <li><img src="/images/cart-shopping-solid.svg" width="20px" height="25px"alt="Login" ></li>
+            </nav>
+                        
+            <nav class="nav_menu2">
+                 <ul class="ul_2">
+                     <li><a href="#"><img src="/images/user-solid.svg" alt="Login" ></a></li>
+                     <li><a href="#"><img src="/images/user-plus-solid.svg" alt="registro" ></a></li>
+                     <li><a href="#"><img src="/images/cart-shopping-solid.svg" alt="carrito" ></a></li>
                  </ul>
             </nav>
         </header>
-        <main class="mail">
+        <main class="main">
             <form action="/busqueda_paquetes" method="post" id="form_home">
                 <label for="origen">Origen del viaje: </label>
                 <select name="origen">
