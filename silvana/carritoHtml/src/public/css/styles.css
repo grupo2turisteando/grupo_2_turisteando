@@ -77,7 +77,7 @@ justify-content: space-between;
    color: white;
    padding: 0px 0px 0px 5px;
    align-items: center;
-   font-size: 22px;
+   font-size: 20px;
    height: 44px;
    font-weight: bolder;
 } 
@@ -91,4 +91,22 @@ justify-content: space-between;
     justify-content: space-between;
 }
 
+.datosPasajeros{
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+   
+}
+.datosPasajeros div{
+    display: inline-flex;
+    margin: 5px;
+    align-items: center;
+}
 
+.pagoTarjeta{
+   
+    font-size: 8px;
+
+}
+.
