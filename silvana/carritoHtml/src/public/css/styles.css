@@ -15,8 +15,7 @@ body{
    
     background-color: #d6c2bc;
     display:flexbox;
-    min-width: 280px;
-    max-width: 576px;
+   
     margin:auto;
     
     
@@ -78,11 +77,36 @@ justify-content: space-between;
    color: white;
    padding: 0px 0px 0px 5px;
    align-items: center;
-   font-size: 22px;
+   font-size: 20px;
    height: 44px;
    font-weight: bolder;
-   
 } 
 
+.listaCompra{
+    display: flexbox;
+}
 
+.porComprar{
+    display: flex;
+    justify-content: space-between;
+}
 
+.datosPasajeros{
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+   
+}
+.datosPasajeros div{
+    display: inline-flex;
+    margin: 5px;
+    align-items: center;
+}
+
+.pagoTarjeta{
+   
+    font-size: 8px;
+
+}
+.
