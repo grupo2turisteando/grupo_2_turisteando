@@ -1,3 +1,121 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    font-family: 'Roboto';
+    background-color: #8b90c7;
+}
+
+/*        Login.html         */
+main {
+    width: 100%;
+}
+
+.titulo {
+    text-align: center;
+    padding: 10px;
+}
+
+div h3 {
+    text-align: center;
+}
+
+.login-form {
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 20px;
+    padding: 20px;
+}
+
+.input {
+    margin-bottom: 15px;
+    padding: 14px 9px 14px;
+    font-size: 16px;
+
+}
+
+.input-box {
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 25px;
+
+}
+
+.forgot-password-button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+}
+
+.button-login {
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    padding: 5px 10px;
+    transition: 200ms;
+}
+
+.button-login span {
+    font-size: 16px;
+}
+
+.button-login:hover {
+    background-color: #464d99;
+    color: #fff;
+
+}
+
+
+/*-------     register.html        -----*/
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.register-form {
+    background-color: #fff;
+    border-radius: 5px;
+    justify-content: center;
+    margin: 20px 0 20px;
+    padding: 20px;
+}
+
+form {
+    justify-content: center;
+}
+
+.button-signup {
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    padding: 5px 10px;
+    font-size: 15px;
+    transition: 200ms;
+}
+
+.button-signup:hover {
+    background-color: #464d99;
+    color: #fff;
+
+}
+
+.button-signup span {
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+}
