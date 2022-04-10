@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+    <title>Cart</title>
+</head>
+<body>
+    <header class="mainHeader">
+        <div class="headerSup">
+            <h2 class="logo">
+                <img src="logo_turistenado.png">
+            </h2>
+        <div class="headerRegistro">
+                <a href="#registrate">Registrate</a> 
+                <img src="carrito.png" >               
+        </div>    
+        </div>
+        
+            <nav  class="headerInf">
+                <p>Carrito</p>
+            </nav>
+    </header>
+    <main class="listaCompra">
+        <section>
+            <article class="porComprar">
+                <img src="Bariloche300x200.webp" alt="Foto Bariloche">
+                <p class="descripcionCompra">   Lorem ipsum dolor sit 
+                                                 amet consectetur adipisicing elit.
+                                                Fugit suscipit et consequatur eius enim odit 
+                </p>
+                <h2 class="monto">
+                    $44125
+                </h2>
+            
+            <ul class="accionCar"> 
+                <li>Seguir Comprando</li>
+                <li>Eliminar</li>
+                <li>Agregar a Favoritos</li>
+            </ul>
+            
+            <form class="pagoTotal" action="/pagar"  method="post" id="form_pago">   
+            <p class="textTotal">Total</p>
+            <p class="montoTotal">$50.550</p>
+            
+                <button type="submit" value="sumbit" form="form_pago">Pagar</button>
+            </form>
+            
+            </article>
+        </section>
+    </main>
+        <footer>
+
+        </footer>
+
+
+</body>
+</html>
