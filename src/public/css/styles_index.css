@@ -59,10 +59,100 @@ body {
     width: 15px;
     height: 15px;
 }
+.ul_2 li:hover img {
+    width: 20px;
+    height: 20px;
+}
 
 /* Cuerpo principal de los Productos */
 .main {
     margin: 10px 0;
+    /*border: dotted 2px red;*/
+    display: flex;
+    align-items: flex-start;
+}
+.origen {
+    /*border: dotted 2px blue;*/
+    padding: 2px;
+}
+.paquete {
+    /*border: dotted 2px blue;*/
+    padding: 2px;
+}
+.fecha {
+    /*border: dotted 2px blue;*/padding: 2px;
+    padding: 2px;
+}
+.boton_main {
+    /*border: dotted 2px blue;*/
+    align-self: flex-end;
+}
+
+/* Seccion de Paquetes y Ofertas */
+
+/* Paquetes */
+.paquetes h3 {
+    /*border: dotted 2px red;*/
+    margin: 10px;
+    padding: 3px;
+    
+}
+.productos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.productos article {
+    margin: 3px;
+    padding: 3px;
+    border: solid 8px beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(240,249,232);
+    max-width: 338px;
+    max-height: 327.6px;
+}
+.productos article figure {
+    align-self: center;
+    padding: 0 5px 0 5px;
+}
+.productos article p {
+    align-self: flex-start;
+    margin: 0 0 4px 0;
+    padding: 0 6px 0 6px;
+}
+
+/* Ofertas */
+.ofertas h3 {
+    margin: 10px;
+    padding: 3px;    
+}
+.prod_ofertas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.prod_ofertas article {
+    padding: 3px;
+    border: solid 8px beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(240,249,232);
+    max-width: 338px;
+    max-height: 327.6px;
+}
+.prod_ofertas article figure {
+    align-self: center;
+    padding: 0 5px 0 5px;
+}
+.prod_ofertas article p {
+    align-self: flex-start;
+    margin: 0 0 4px 0;
+    padding: 0 6px 0 6px;
 }
 
 /* Media cueri para adaptar el diseño a los diferentes dispositivos */
@@ -85,10 +175,44 @@ body {
         flex-wrap: nowrap;
         
     }
+    .ul_1 li:hover {
+        background-color:rgb(195, 236, 158);      
+    }
     .nav_menu1 li {
         /*border: dotted 2px green;*/
         list-style-type: none;
         margin: 10px ;
         padding: 8px;
+    }
+    .main {
+        /*border: dotted 2px red;*/
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .form_main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .origen {
+        /*border: dotted 2px blue;*/
+        align-self: flex-start;
+    }
+    .paquete {
+        /*border: dotted 2px rgb(0, 255, 8);*/
+        align-self: flex-start;
+    }
+    .fecha {
+        /*border: dotted 2px rgb(255, 0, 0);*/
+        align-self: flex-start;
+    }
+    .main {
+        max-width: 778.4px;
+    }
+    .boton_main {
+        /*border: dotted 2px blue;*/
+        align-self: flex-start;
     }
 }
