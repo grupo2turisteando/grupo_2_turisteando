@@ -4,7 +4,8 @@
 
 body {
     font-family: 'Roboto';
-    background-color: #8b90c7;
+    background-color: #197a8d;
+    margin: 0;
 }
 
 /*        Login.html         */
@@ -12,9 +13,28 @@ main {
     width: 100%;
 }
 
+.login-header-top-bar {
+    background-color: beige;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.logo {
+    width: 120px;
+    padding: 5px;
+}
+
 .titulo {
     text-align: center;
     padding: 10px;
+    margin-top: 50px;
+    color: #fff;
+}
+
+.container-login {
+    display: flex;
+    justify-content: center;
 }
 
 div h3 {
@@ -80,9 +100,10 @@ div h3 {
 
 
 /*-------     register.html        -----*/
-.container {
+.container-register {
     display: flex;
     justify-content: center;
+    margin-top: 100px;
 }
 
 .register-form {
@@ -91,10 +112,17 @@ div h3 {
     justify-content: center;
     margin: 20px 0 20px;
     padding: 20px;
+    width: 300px;
 }
 
 form {
     justify-content: center;
+}
+
+.input-register {
+    margin-bottom: 8px;
+    padding: 14px 9px 14px;
+    font-size: 16px;
 }
 
 .button-signup {
@@ -110,7 +138,6 @@ form {
 .button-signup:hover {
     background-color: #464d99;
     color: #fff;
-
 }
 
 .button-signup span {
