@@ -146,22 +146,28 @@
                 </article>
             </div>
         </section>
-        <footer>
-            <img src="/images/logo_turisteando.png" alt="Logo Turisteando">
-            
-            <nav class="menu_footer">
-                <ul class="left_header_menu"> 
-                    <li><a href="/index">Home</a></li>
-                    <li><a href="/productDetail">Paquetes</a></li>
-                    <li><a href="/productDetail">Ofertas</a></li>
-                    <li><a href="/">Contacto</a></li>
-                 </ul>
-            </nav>
-            <form action="/subscripcion" method="post" id="form_footer">
-                <label for="email">Recibí nuestras ofertas:</label>
-                <input type="email" name="email" id="email" required placeholder="correo electrónico">
-            </form>
-            <button type="submit" form="form_footer" value="Submit">Quiero las ofertas!</button>
+        <footer class="index_footer">
+            <div class="header_footer">
+                <a href="#" class="hamburguer-button">
+                    <img src="/images/bars-solid.svg" alt="hamburguer" >
+                </a>
+                <img class= "logo" src="/images/logo_turisteando.png" alt="Logo Turisteando">         
+                <nav class="menu_footer">
+                    <ul class="left_header_menu"> 
+                        <li><a href="/index">Home</a></li>
+                        <li><a href="/productDetail">Paquetes</a></li>
+                        <li><a href="/productDetail">Ofertas</a></li>
+                        <li><a href="/">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="body_footer">
+                <form class= "form_footer" action="/subscripcion" method="post" id="form_footer">
+                    <label for="email">Recibí nuestras ofertas:</label>
+                    <input type="email" name="email" id="email" required placeholder="correo electrónico">
+                </form>
+                <button class= "button_footer" type="submit" form="form_footer" value="Submit">Quiero las ofertas!</button>
+            </div>
             <div class="iconos_sociales">
                 <a href="URL DE LA RED SOCIAL" target="_blank"><img src="/images/facebook-square-brands.svg" width="106px" height="122px"alt="Seguinos en Facebook"></a>
                 <a href="URL DE LA RED SOCIAL" target="_blank"><img src="/images/instagram-brands.svg" width="106px" height="122px"alt="Seguinos en Instagram"></a>
