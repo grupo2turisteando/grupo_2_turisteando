@@ -3,7 +3,7 @@
     <head>
         <meta chartset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Turisteando</title>
+        <title>Detalle del Producto</title>
         <link rel="stylesheet" href="/css/styles.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,20 +15,23 @@
 
     <body>
         <header class="header">
-            <img src="/images/logo_turisteando.png" class="logo" alt="Logo Turisteando">
-            
-            <a href="#" class="hamburguer-button">
-                <i class="fa-solid fa-bars"></i>
-            </a>
 
-            <nav class="menu_header">
-                <ul class="left_header_menu"> 
+            <a href="#" class="hamburguer-button">
+                <img src="/images/bars-solid.svg" alt="hamburguer" >
+            </a>
+            
+            <img src="/images/logo_turisteando.png" class="logo" alt="Logo Turisteando">
+                     
+            <nav class="nav_menu1">
+                <ul class="ul_1"> 
                      <li><a href="/index">Home</a></li>
                      <li><a href="/productDetail">Paquetes</a></li>
                      <li><a href="/productDetail">Ofertas</a></li>
                      <li><a href="/">Contacto</a></li>
                  </ul>
-                 <ul class="right_header_menu">
+            </nav>
+            <nav class="nav_menu2">
+                 <ul class="ul_2">
                      <li><a href="/login"><img src="/images/user-solid.svg" alt="Login"></a></li>
                      <li><a href="/register"><img src="/images/user-plus-solid.svg" alt="Sign Up"></a></li>
                      <li><a href="/productCart"><img src="/images/cart-shopping-solid.svg" alt="Shopping Cart"></a></li>
@@ -41,19 +44,23 @@
                 <h2 class="title">Ushuaia</h2>
                 <article>
                     <figure class="detailPic">
-                        <img src="/images/ushuaiaMain.jpeg" alt="Ushuaia" height="200px" width="400px">
-                        <img src="/images/ushuaia-fin-del-mundo.jpeg" alt="Faro" height="200px" width="400px">
-                        <img src="/images/Ushuaia-1000-0649.jpeg" alt="Muelle" height="200px" width="400px">
-                        <img src="/images/tren-ot-men-ushuaia.jpeg" alt="Tren del Fin del Mundo" height="200px" width="400px">
-                        <img src="/images/ushuaia_Diseño-sin-título-2019-12-19T120100.657.png" alt="Atardecer" height="200px" width="400px">
-                        <img src="/images/011317-Arakur - Reserva Olivia - Winter.jpeg" alt="Arakur" height="200px" width="400px">
+                        <img src="/images/ushuaiaMain.jpeg" alt="Ushuaia" height="200px" width="300px">
+                        <img src="/images/ushuaia-fin-del-mundo.jpeg" alt="Faro" height="200px" width="300px">
+                        <img src="/images/Ushuaia-1000-0649.jpeg" alt="Muelle" height="200px" width="300px">
+                        <img src="/images/tren-ot-men-ushuaia.jpeg" alt="Tren del Fin del Mundo" height="200px" width="300px">
+                        <img src="/images/ushuaia_Diseño-sin-título-2019-12-19T120100.657.png" alt="Atardecer" height="200px" width="300px">
+                        <img src="/images/011317-Arakur - Reserva Olivia - Winter.jpeg" alt="Arakur" height="200px" width="300px">
                     </figure>
                     </article>
                     <article class="detail">
-                        <div class="subtitle">
-                            <h2>Ushuaia 3 noches</h2>
-                            <h2>$ 40.000</h2>
-                            <button type="submit" class="buy_button" value="Submit">Agregar al carrito</button>
+                        <div class="subtitle_and_button">
+                            <div class="subtitle">
+                                <p>Ushuaia 3 noches</p>
+                                <p>$ 40.000</p>
+                            </div>
+                            <div class="subtitle_button">
+                                <button type="submit" class="buy_button" value="Submit">Agregar al carrito</button>
+                            </div>
                         </div>
                     <p><strong>El alojamiento ofrece</strong><ul>
                         <li><i class="fa-solid fa-dumbbell"></i>Gimnasio</li>
@@ -106,13 +113,15 @@
                     <li><a href="/">Contacto</a></li>
                  </ul>
             </nav>
-            <form action="/subscripcion" method="post" id="form_footer">
-                <div class="subscribe">
-                    <label for="email">Recibí nuestras ofertas:</label>
-                    <input type="email" name="email" id="email" required placeholder="correo electrónico">
-                </div>
-                <button type="submit" class="form_button" value="Submit">Quiero las ofertas!</button>
-            </form>
+            <div class="body_footer">
+                <form class="form_footer" action="/subscripcion" method="post" id="form_footer">
+                    <div class="subscribe">
+                        <label for="email">Recibí nuestras ofertas:</label>
+                        <input type="email" name="email" id="email" required placeholder="correo electrónico">
+                    </div>
+                    <button class="button_footer" type="submit" form="form_button" value="Submit">Quiero las ofertas!</button>
+                </form>
+            </div>
             <div class="iconos_sociales">
                 <a href="URL DE LA RED SOCIAL" target="_blank"><img src="/images/facebook-square-brands.svg" width="20px" height="20px"alt="Seguinos en Facebook"></a>
                 <a href="URL DE LA RED SOCIAL" target="_blank"><img src="/images/instagram-brands.svg" width="20px" height="20px"alt="Seguinos en Instagram"></a>
