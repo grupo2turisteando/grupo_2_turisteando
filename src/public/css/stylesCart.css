@@ -1,0 +1,340 @@
+*{
+    box-sizing: border-box
+}
+
+
+
+header {
+    font-family: 'Roboto', sans-serif;
+}
+
+footer {
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+   
+    font-family: 'Roboto', sans-serif;
+    
+ 
+   
+}
+body{   
+    
+    font-size: medium;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  
+}   
+.headerCart{
+    
+     background-color: beige;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 0;
+    position:static;
+    
+}
+.headerCart img{
+    display:flex;
+    margin: 10px 5px 5px 10px;
+    width: 180px;   
+}
+
+.navCart{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    /* border: 2px solid salmon;*/
+    margin: 5px;
+   
+}
+.navCart img{
+    width: 15px;    
+    display: flex;
+    
+}
+.navCenter{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-right: 20px;
+    display: none;
+    /*border: solid blue  2px;*/
+   
+    
+}   
+
+.navCenter li{
+    padding: 20px;
+}
+
+.navRigth{
+    display: flex;
+    align-items: flex-end;
+    list-style: none;
+   
+    align-self:flex-end;
+}
+
+.hamburguer{
+    display: flex;
+     width: 30px;
+    margin: 0;
+ align-self: flex-start;
+}
+
+.listaCompra  {
+display: flexbox;
+/*border: solid red 2px;*/
+margin-top: 0;
+justify-content:center;
+flex-direction: row;    
+}
+
+section h2{
+
+    margin: 5px;
+    margin-bottom: 15px;
+    /*border: solid blue 4px;*/
+    font-size: 14px;
+    margin: 0;
+}
+
+.porComprar{
+    display: flex;
+   /* border: solid black 2px;*/
+    flex-direction: column;
+    background-color: rgb(240,249,232) ;
+border: solid 8px beige;
+}
+
+.porComprar img{
+    display: flex;
+    margin-left: 10px; 
+    width: 200px;
+    /*border: solid yellow 5px;*/
+    align-self: center;
+    align-items: center;
+    margin-top: 5px;
+    margin: 3px;
+    padding: 3px;
+    
+   
+}
+
+.descripcion{
+    display: flex;
+   /* border: yellow solid 8px;*/
+    align-items: center;
+    align-self: center;
+    font-size: 14px;
+    padding: 0 6px 0 6px;
+    
+}
+.radioButton{
+    display: flex;
+    flex-direction: column;
+   /* border: yellow solid 3px;*/
+    align-items: center;
+    align-self: center;
+    font-size: 12px;
+    
+}
+
+.monto{
+    display: flex;
+    /*border: yellow solid 8px;*/
+    align-items: center;
+  
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+.monto p{
+    
+    font-size: 10px;
+    color: rgb(132 7 7);
+    font-style: italic;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 1px;
+    text-decoration:double;
+}
+
+.pagoTotal{
+    display: flex;
+    /*border: solid violet 5px;*/
+    justify-content: flex-end;
+    background-color: rgb(240,249,232) ;
+    border: solid 8px beige;
+   
+    
+
+}
+.botonPago{
+    display: flex;
+    /*border: solid violet 5px;*/
+    align-items: center;
+    background-color: bisque;
+    
+    font-size: 18px;
+    font-weight: bold;
+    
+    
+
+}
+
+/****************/
+
+.datosPasajeros{
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+   
+}
+.datosPasajeros div{
+    display: inline-flex;
+    margin: 5px;
+    align-items: center;
+}
+
+.pagoTarjeta{
+   
+    font-size: 8px;
+
+}
+
+ /* Footer Walter */
+.index_footer {
+    /*border: dotted 2px red;*/
+    margin: 10px 0;
+    /*max-height: 300px;*/
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;
+    align-items: flex-start;*/
+}
+.header_footer {
+    /*border: dotted 2px green;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.index_footer .header_footer .hamburguer-button {
+    /*border: dotted 2px black;*/
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    align-self: flex-start;  
+}
+.menu_footer {
+    display: none;
+}
+.index_footer .logo {
+    /*border: dotted 2px rgb(119, 0, 255);*/
+    max-width: 90px;
+    max-height: 36px;
+
+}
+.body_footer {
+    /*border: dotted 2px blue;*/
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.body_footer form {
+    padding: 2px;
+    font-size: small;
+    font-style: italic;
+}
+.body_footer button {
+    padding: 2px;
+    flex-grow: 0.25;
+    align-self: flex-start;
+}
+.iconos_sociales {
+    /*border: dotted 2px rgb(255, 0, 179);*/
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.iconos_sociales img {
+    width: 20px;
+    height: 20px;
+}
+.iconos_sociales img:hover {
+    width: 25px;
+    height: 25px;
+}
+
+
+@media (min-width: 768px) {
+    /* Header */
+    .hamburguer {
+        display: none;
+    }
+    .headerCart {
+        justify-content: space-between;
+        
+    }
+    .navCart {
+        /*border: dotted 2px rgb(0, 255, 47); */
+        display: flex;
+    }
+    .navCenter {
+        /*border: dotted 2px red;*/
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+       
+        
+    }
+    .navCenter li:hover {
+        background-color:rgb(195, 236, 158);      
+    }
+   
+   
+    /* Footer */
+    
+    .header_footer .left_header_menu {
+        /*border: dotted 2px black;*/
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .header_footer .left_header_menu li {
+        margin: 5px 8px;
+        list-style-type: none;
+    }
+    .header_footer .left_header_menu li:hover {
+        background-color:rgb(195, 236, 158);      
+    }
+    
+    .index_footer .header_footer .hamburguer-button {
+        display: none;
+    }
+    .menu_footer {
+        display: block;
+    }
+    .index_footer .logo {
+        /*border: dotted 2px rgb(119, 0, 255);*/
+        max-width: 126px;
+        max-height: 50.4px;
+    
+    }
+
+}
+

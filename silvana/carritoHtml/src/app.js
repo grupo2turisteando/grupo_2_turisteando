@@ -31,6 +31,6 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, './views/login.html'));
 });
 
-app.listen(5020, () => {
+app.listen(5010, () => {
     console.log('Servidor corriendo en el puerto 5020');
 });
