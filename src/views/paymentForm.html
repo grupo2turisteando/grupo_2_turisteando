@@ -113,15 +113,15 @@
                 <h4>¿Cómo querés pagar?</h4>
             </div>
 
-            <div>
-            <article class="medioPago">
-              
+            <div class="medioPago">
+            <article  >
+                <div>
                 <form action="medioPago" method="get"></form>
                 <label for="medioPago">Tarjeta débito</label>
                 <input type="radio" name="medioPago" value="debito">
-                <label for="medioPago">Tarejeta crédito</label>     
+                <label for="medioPago">Tarjeta crédito</label>     
                 <input type="radio" name="medioPago" value="tarjeta">
-                
+            </div>
             </article>
             
 
@@ -140,10 +140,11 @@
                 </div>
                 <div>
                     <label for="codigoSeg">Código seguridad</label>
-                    <input type="number" name="codigoSeg" id="txcodigoSeg" placeholder="124">
+                    <input type="number" name="codigoSeg" id="txcodigoSeg" placeholder="124" maxlength="5">
                 </div>
+            
             </article>
-            </div>
+        </div>
         </section>
         
     </main>
