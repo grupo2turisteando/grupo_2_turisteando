@@ -17,10 +17,13 @@ app.get('/productDetail', (req, res) => {
 app.get('/productCart', (req, res) => {
     res.sendFile(path.join(__dirname, './views/productCart.html'));
 });
-app.get('/paymentForm', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/paymentForm.html'));
+app.get('/CartForm', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/CartForm.html'));
 });
 
+app.get('/CartFinal', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/CartFinal.html'));
+});
 
 app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, './views/register.html'));

@@ -177,7 +177,7 @@ section h2{
 /****** paymentForm**********/
 
 .pasajeros{
-    border: solid yellow 3px;
+    /*border: solid yellow 3px;*/
     display: flex;
     justify-content:flex-start;
     justify-items: flex-start;
@@ -191,11 +191,11 @@ h4{
     align-items: flex-start;
     text-align:start;
     margin: 5px;
-    border: solid rgb(238, 186, 130) 3px;
+   /* border: solid rgb(238, 186, 130) 3px;*/
     
 }
 .cantidadPasajeros{
-    border: solid violet 3px;
+    /*border: solid violet 3px;*/
     display: flex;
     max-width: max-content;
     flex-direction: row;    
@@ -218,7 +218,7 @@ h4{
     display: flex;
     flex-direction: column;
     max-width: max-content;
-    border: solid red 3px;
+   /* border: solid red 3px;*/
     padding-left: 30px; 
      
 }
@@ -227,7 +227,7 @@ h4{
     margin: 5px;
     align-items:flex-start;
     flex-direction: row;
-    border: solid blue 3px;
+    /*border: solid blue 3px;*/
     font-size: 12px;
 }
 
@@ -238,11 +238,11 @@ input{
     font-style: italic;
 }
 .pago{
-    border: solid yellow 3px;
+    /*border: solid yellow 3px;*/
 
 }
 .medioPago{
-    border: solid orange 3px;
+   /* border: solid orange 3px;*/
     display: flex;
     flex-direction: column;
     padding-left: 30px; 
@@ -254,13 +254,13 @@ input{
 .medioPago div{
     display: flex;
     max-width: max-content;
-    border: solid violet 3px;
+   /* border: solid violet 3px;*/
     margin: 5px;
 }
 .pagoTarjeta{
    
     font-size: 8px;
-    border: solid green 3px;
+   /* border: solid green 3px;*/
     max-width: max-content;
     margin: 0;
 }
@@ -271,7 +271,7 @@ input{
     align-items:flex-start;
     flex-direction: row;
     max-width: max-content;
-    border: solid blue 3px;
+   /* border: solid blue 3px;*/
     
     
 }
@@ -443,19 +443,21 @@ input{
         margin: 5px;
     }
     .pago{
-        border: solid yellow 3px;
+        /*border: solid yellow 3px;*/
         padding: 10px;
         background-color: rgb(240,249,232) ;
         border: solid 8px beige;
         margin-left: 20px;
+        
       }
       .medioPago{
-        border: solid orange 3px;
+       /* border: solid orange 3px;*/
         display: flex;
         flex-direction: column;
         font-size: 12px;
         margin: 5px;
         max-width: max-content;
+        
     }
     .pagoTarjeta{
        
@@ -467,8 +469,9 @@ input{
 @media (min-width: 1200px) {
     .navCart{
         max-width: 1200px;
+    }
         
-   }
+
   
 
 }   
