@@ -201,6 +201,11 @@ main {
 }
 
 @media (min-width: 768px) {
+    section .title {
+        /*border: 10px dotted red;*/
+        padding-top: 10px;
+    }
+
     .hamburguer-button {
         display: none;
     }
@@ -224,15 +229,16 @@ main {
         padding: 8px;
     }
     .subtitle_and_button {
-        border: 2px double red;
+        /*border: 2px double red;*/
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
     }
     .subtitle {
-        border: 2px double violet;
+        /*border: 2px double violet;*/
+        width: 500px;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
     }
     .subtitle_button {
         display: flex;
