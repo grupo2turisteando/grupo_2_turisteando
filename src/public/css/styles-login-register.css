@@ -57,6 +57,8 @@ div h3 {
     justify-content: center;
     margin: 20px 0 20px;
     padding: 20px;
+    width: 80%;
+    max-width: 300px;
 }
 
 .input {
@@ -120,7 +122,8 @@ div h3 {
     justify-content: center;
     margin: 20px 0 20px;
     padding: 20px;
-    width: 300px;
+    width: 80%;
+    max-width: 300px;
 }
 
 form {
@@ -155,12 +158,12 @@ form {
 /* Footer */
 .login_footer {
     /*border: dotted 2px red;*/
-    width: 100%;                     /*lo agregue para probar*/
+    width: 100%;
     /*margin: 10px 0;*/
     /*max-height: 300px;*/
     background-color: beige;
     display: flex;
-    position: fixed;
+    position: relative;
     bottom: 0;
     flex-direction: column;
     /*justify-content: space-between;
@@ -221,7 +224,6 @@ form {
     width: 25px;
     height: 25px;
 }
-
 
 @media (min-width: 768px) {
     /* Footer */
