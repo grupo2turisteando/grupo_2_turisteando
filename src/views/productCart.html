@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    
     <meta chartset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Turisteando</title>
-   
+    <title>Carrito</title>
     <link rel="stylesheet" href="/css/stylesCart.css">
+    <link rel="stylesheet" href="/css/normalize.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="/css/normalize.css">
+    <script src="https://kit.fontawesome.com/a2385b59a3.js" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <title>Cart</title>
 </head>
@@ -53,22 +52,23 @@
                        
                 </div>
                 
-                <div class="radioButton">
-                    <form action="reset_keepbuying" method="get" >
-                        <div>
-                        <input type="radio" name="reset_keepbuying" value="Seguir Comprando">
-                        <label for="reset_keepbuying">Seguir comprando</label>
-                        </div>
-                        <div>
-                        <input type="radio" name="reset_keepbuying" value="Eliminar">
-                        <label for="reset_keepbuying">Elminar</label>
-                    </div>
-                     </form> 
+                <div class="actionCart">
+                    <ul >
+                        <li><a href="./index"> 
+                            <i class="fa-solid fa-cart-shopping"></i></a>
+                            <p>Seguir comprando</p>
+                        </li>
+                        <li> <a href="#eliminar">
+                            <i class="fa-solid fa-trash-can"></i></a>
+                             <p>Eliminar</p>
+                        </li>
+                    </ul>
+            
                 </div>
             </article>
                 
                 <form class="pagoTotal" action="/pagar"  method="get" id="form_pago">   
-                    <p class="textTotal">Total</p>
+                    <p class="textTotal">Total:</p>
                     <p class="montoTotal"><strong>$40.000</p></strong>
                     
                 <button class="botonPago" type="submit" value="sumbit" form="form_pago">Pagar</button>
