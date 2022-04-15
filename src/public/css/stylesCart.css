@@ -2,23 +2,18 @@
     box-sizing: border-box
 }
 
-
-
 header {
     font-family: 'Roboto', sans-serif;
-}
+    }
 
 footer {
     font-family: 'Roboto', sans-serif;
-}
+    }
 
 main {
    
     font-family: 'Roboto', sans-serif;
-    
- 
-   
-}
+    }
 body{   
     
     font-size: medium;
@@ -28,8 +23,7 @@ body{
     border: 0;
     padding: 0;
     margin: 0;
-    
-}  
+    }  
  
 .headerCart{
     
@@ -39,8 +33,7 @@ body{
     justify-content:space-between;
     margin: 0;
     position:static;
-    
-}
+    }
 .headerCart img{
     display:flex;
     margin: 10px 5px 5px 10px;
@@ -218,10 +211,10 @@ section h2{
         font-size: 20px;
         color: rgb(6, 141, 62);
     } 
-/****** paymentForm**********/
+/****** cartForm**********/
 
 .pasajeros{
-    /*border: solid yellow 3px;*/
+     /* border: solid yellow 3px;*/
     display: flex;
     justify-content:flex-start;
     justify-items: flex-start;
@@ -235,87 +228,109 @@ h4{
     align-items: flex-start;
     text-align:start;
     margin: 5px;
-   /* border: solid rgb(238, 186, 130) 3px;*/
+     /* border: solid rgb(238, 186, 130) 3px;*/
     
 }
 .cantidadPasajeros{
-    /*border: solid violet 3px;*/
+     /* border: solid violet 3px;*/
     display: flex;
     max-width: max-content;
     flex-direction: row;    
     margin: 5px;
 }
 .cantidadPasajeros label  {
+     /* border: solid black 3px;*/
     font-size: 12px;
     margin: 5px;
-    
-
-}
+    }
 .cantidadPasajeros select{
+   
     font-size: 10px;
     width: 30px;
     height: 20px;
-    
 }
 .datosPasajeros{
     font-size: 8;
     display: flex;
     flex-direction: column;
-    max-width: max-content;
-   /* border: solid red 3px;*/
-    padding-left: 30px; 
-     
-}
+    max-width:100%;
+     /* border: solid red 3px;*/
+    }
 .datosPasajeros div{
-    display: flex;
+     display: flex;
     margin: 5px;
-    align-items:flex-start;
-    flex-direction: row;
-    /*border: solid blue 3px;*/
+    flex-direction: column;
+     /* border: solid blue 3px;*/
     font-size: 12px;
-}
+    margin: 5px;
+     width: 100%;
+    }
 
-input{
+.pasajeros input{
+    /* border: solid brown 3px;*/
     display: flex;
-    margin-left: 5px;
+   margin-right: 20px;
     font-size: 10px;
     font-style: italic;
+    
+    
 }
 
-.medioPago{
-   /* border: solid orange 3px;*/
+.pago{
+    font-size: 8;
     display: flex;
     flex-direction: column;
-    padding-left: 30px; 
-    font-size: 12px;
-    margin: 0px;
-    max-width: max-content;  
+    max-width:100%;
+     /* border: solid red 3px;*/
+}
+.medioPago{
+    font-size: 8;
+    display: flex;
+   
 }
 
 .medioPago div{
+     /* border: solid violet 3px;*/
     display: flex;
     max-width: max-content;
-   /* border: solid violet 3px;*/
+    flex-direction: row;    
     margin: 5px;
 }
+.medioPago label{
+    font-size: 12px;
+}
+
 .pagoTarjeta{
-   
     font-size: 8px;
-   /* border: solid green 3px;*/
-    max-width: max-content;
-    margin: 0;
+     /* border: solid green 3px;  */
+   
+ 
 }
 .pagoTarjeta div{
     display: flex;
+    margin: 5px;
+    flex-direction: column;
+     /* border: solid blue 3px;*/
     font-size: 12px;
-    margin: 0px;
-    align-items:flex-start;
-    flex-direction: row;
-    max-width: max-content;
-   /* border: solid blue 3px;*/
+    margin: 5px;
+     width: 100%;
+    }
+.pago input{
+     /* border: solid brown 3px;*/
+    display: flex;
+   margin-right: 20px;
+    font-size: 10px;
+    font-style: italic;
     
-    
-}
+     }
+
+    .bottonForm{
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+        justify-content: center;
+        margin: 5px;
+        }
 
  /* Footer  */
 
@@ -552,9 +567,12 @@ input{
        }
 
    .pasajeros{
+       min-width: 340px;
+       max-width: 769px;
     /*border: solid yellow 3px;*/
     display: flex;
     padding: 10px;
+    margin-top: 10px;
     background-color: rgb(240,249,232) ;
     border: solid 8px beige;
     margin-right: 20px;
@@ -564,15 +582,18 @@ input{
         margin: 5px;
     }
     .pago{
-        /*border: solid yellow 3px;*/
+        min-width: 340px;
+        max-width: 769px;
+          /*border: solid yellow 3px;*/
         padding: 10px;
+        margin-top: 10px;
         background-color: rgb(240,249,232) ;
         border: solid 8px beige;
         margin-left: 20px;
         
       }
     .medioPago{
-       /* border: solid orange 3px;*/
+          /*border: solid rgb(0, 166, 255) 10px;*/
         display: flex;
         flex-direction: column;
         font-size: 12px;
@@ -580,12 +601,29 @@ input{
         max-width: max-content;
         
     }
-    .pagoTarjeta{
-       
-        font-size: 8px;
-        max-width: max-content;
-    
-    }
+    .cantidadPasajeros{
+          /*border: solid violet 3px;*/
+        display: flex;
+       min-width: max-content;
+        justify-content: space-between;
+        flex-direction: row; 
+          }
+          .medioPago div{
+            /*border: solid violet 3px;*/
+            display: flex;
+           min-width: max-content;
+            justify-content: space-between;
+            flex-direction: row; 
+        }
+        .bottonForm{
+            display: flex;
+            flex-direction: row;
+            font-size: 12px;
+            margin-bottom: 10px;
+           
+            justify-content: center;
+            
+            }
 }
  
 @media (min-width: 1200px) {
@@ -594,14 +632,22 @@ input{
     }
     .listaCompra{
         display: flex;
-     
-        
-        
-    }    
+     }    
     .porComprar{
         width: 100%;
         justify-content:space-between;
+       }
+       main{
+        display: flex;
+         flex-direction: column;
+         justify-content:center;
        
+        }
+    .pasajeros{
+        margin: 10px;
     }
-
+       
+  .pago{
+      margin: 10px;
+  }
 }

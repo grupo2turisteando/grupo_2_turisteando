@@ -40,7 +40,7 @@
 
     <main>
         <section class="pasajeros">
-            <div  class="captionForm">
+            <div >
                 <h4>¿Quiénes viajan?</h4>
             </div>
                 <div class="datosPasajeros">
@@ -76,33 +76,33 @@
             </article>
             
             <article >
-                <div>
-                    <label for="nombre">Apellido y Nombre</label>
-                    <input type="text" name="pasajero1" id="txtnombre" placeholder="Juan Pablo Perez">
+                <div >
+                    <label for="nombre">Apellido y Nombre:</label>
+                    <input type="text" name="pasajero1" id="txtnombre" placeholder="Juan Pablo Perez" required>
                 </div>
                 <div>
-                    <label for="fechaNacimiento">Fecha Nacimiento</label>
-                    <input type="date" name="fechaNacimiento" id="txFechaNac">
+                    <label for="fechaNacimiento">Fecha Nacimiento:</label>
+                    <input type="date" name="fechaNacimiento" id="txFechaNac" required>
                 </div>
                 <div>
-                    <label for="nroDocumente">Nro. Documento</label>
-                    <input type="number" name="nroDocumente" id="txNroDoc" placeholder="23485265" maxlength="8">
+                    <label for="nroDocumente">Nro. Documento:</label>
+                    <input type="number" name="nroDocumente" id="txNroDoc" placeholder="23485265" maxlength="8" required>
                 </div>
                 <div>
-                    <label for="domicilio">Domicilio</label>
-                    <input type="text" name="domicilio" id="txdomicilio" placeholder="Florida 2365">
+                    <label for="domicilio">Domicilio:</label>
+                    <input type="text" name="domicilio" id="txdomicilio" placeholder="Florida 2365" required>
                 </div>
                 <div>
-                    <label for="provincia">Provincia</label>
-                    <input type="text" name="provincia" id="txprovincia" placeholder="Tucumán">
+                    <label for="provincia">Provincia:</label>
+                    <input type="text" name="provincia" id="txprovincia" placeholder="Tucumán" required>
                 </div>
                 <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="txemail" placeholder="soledad@gmail.com">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="txemail" placeholder="soledad@gmail.com" required maxlength="20">
                 </div>
                 <div>
-                    <label for="telefono">Nro. Contacto</label>
-                    <input type="tel" name="telefono" id="txtel" placeholder="381456987">
+                    <label for="telefono">Nro. Contacto:</label>
+                    <input type="tel" name="telefono" id="txtel" placeholder="381456987" required minlength="9">
                 </div>
             </div>
             </article>
@@ -113,10 +113,10 @@
                 <h4>¿Cómo querés pagar?</h4>
             </div>
 
-            <div class="medioPago">
-            <article  >
-                <div>
-                <form action="medioPago" method="get"></form>
+            <div >
+            <article class="medioPago">
+                <div class="datosPago">
+                <form action="medioPago" method="get"></form required>
                 <label for="medioPago">Tarjeta débito</label>
                 <input type="radio" name="medioPago" value="debito">
                 <label for="medioPago">Tarjeta crédito</label>     
@@ -128,23 +128,28 @@
             <article class="pagoTarjeta"> 
                <div>
                     <label for="numeroTarjeta">Nro de tarjeta</label>
-                    <input type="number" name="numeroTarjeta" id="txNroTarjeta" placeholder="ingrese nro">
+                    <input type="number" name="numeroTarjeta" id="txNroTarjeta" placeholder="ingrese nro" required>
                 </div>
                 <div>
                     <label for="titular">Titular tarjeta</label>
-                    <input type="text" name="titular" id="txtitular" placeholder="como figura en su tarjeta">
+                    <input type="text" name="titular" id="txtitular" placeholder="como figura en su tarjeta" required>
                 </div>
                 <div>
                     <label for="vencimiento">Vencimiento</label>
-                    <input type="number" name="vencimiento" id="txVto" placeholder="10/24">
+                    <input type="number" name="vencimiento" id="txVto" placeholder="10/24" required minlength="4">
                 </div>
                 <div>
                     <label for="codigoSeg">Código seguridad</label>
-                    <input type="number" name="codigoSeg" id="txcodigoSeg" placeholder="124" maxlength="5">
+                    <input type="number" name="codigoSeg" id="txcodigoSeg" placeholder="124" minlength="3" maxlength="5" required>
                 </div>
             
             </article>
         </div>
+        
+        <form class="bottonForm" action="formCompra">
+        <button class="botonPago" type="submit" value="sumbit" form="cartFinal">Enviar</button>
+        <button class="botonPago" type="reset" value="sumbit" >Borarr</button>
+        </form>
         </section>
         
     </main>
