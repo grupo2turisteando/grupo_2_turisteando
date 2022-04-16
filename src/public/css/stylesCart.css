@@ -495,7 +495,9 @@ h4{
        position: relative;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
+        margin-left: 20px;
+
        /* border: solid black 5px;*/
     }
     .porComprar{
@@ -541,7 +543,7 @@ h4{
         width: 20%;
        /* border: solid green 5px;*/
         top: 15px;
-        right: 0;
+        right: 30px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -734,7 +736,15 @@ h4{
     }
     .listaCompra{
         display: flex;
-     }    
+        justify-content: flex-start;
+        margin-left: 50px;
+        margin-top: 10px;
+     }   
+     
+    .pagoTotal{
+    right: 100px;
+
+    }
     .porComprar{
         width: 100%;
         justify-content:space-between;
