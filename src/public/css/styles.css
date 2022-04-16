@@ -17,6 +17,7 @@ header {
 
 footer {
     font-family: 'Roboto', sans-serif;
+    width: 100%;
 }
 
 main {
@@ -66,6 +67,7 @@ main {
 
 /* Menu de Home - Paquetes - Ofertas - Contacto */
 .nav_menu1 a {
+    display: none;
     text-decoration: none;
     color: #222222;
 }
@@ -135,18 +137,19 @@ main {
 
 .products {
     /*border: dotted 2px rgb(47, 148, 195);*/
-    margin-left: 40px;
-    margin-right: 40px;
+    /*margin-left: 40px;
+    margin-right: 40px;*/
     display: flex;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .products article figure {
     align-self: center;
-    padding: 0 5px 0 5px;
+    padding: 0;
+    margin: 10px;
 }
 
 .products article p {
@@ -377,7 +380,7 @@ main {
         display: none;
     }
 
-    .nav_menu1 {
+    .nav_menu1 a {
         /*border: dotted 2px rgb(0, 255, 47); */
         display: block;
     }
