@@ -8,12 +8,12 @@ header {
 
 footer {
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
     }
 
-main {
-   
-    font-family: 'Roboto', sans-serif;
-    }
+main{
+    min-height: 450px;
+}
 body{   
     
     font-size: medium;
@@ -23,6 +23,7 @@ body{
     border: 0;
     padding: 0;
     margin: 0;
+   
     }  
  
 .headerCart{
@@ -397,6 +398,68 @@ h4{
     height: 25px;
 }
 
+/* .... CART FINAL..*/
+
+    h1{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 30px;
+        color: white;
+        text-decoration:double;
+        background-color:   rgb(132 7 7);
+
+        -webkit-box-shadow: 15px -9px 19px -10px rgba(0,0,0,0.75);
+        -moz-box-shadow: 15px -9px 19px -10px rgba(0,0,0,0.75);
+        box-shadow: 15px -9px 19px -10px rgba(0,0,0,0.75);
+
+        box-sizing: content-box;
+        width: 100%;
+        border: solid  10p rgb(132 7 7);
+        padding: 10px;
+
+        text-shadow: 2px 2px 3px rgb(161, 155, 155);
+        }
+    .textFinalCart{
+        
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 20px;
+        border: solid 8px beige;
+        padding: 40px;
+
+    }
+    .logoFinal{
+        display: flex;
+        justify-content: center;
+       
+    }
+    .logoFinal img{
+       
+        display: flex;
+        width: 100px;
+        justify-items: center;
+        align-items: center;
+        align-self: center;
+        margin-top: 10px;
+       ;
+    }
+
+    .logoFinal img {
+        animation-duration: 4s;
+        animation-name: logo;
+        animation-timing-function:linear;
+        animation-iteration-count: infinite;
+        }
+      
+        @keyframes logo {
+        0% {width: 75px;}  50% {width: 100px;}  100% {width: 200px;} 
+        0% {width: 200px;}  50% {width: 10px;}  100% {width: 50px;} 100% {width: 200px;} 
+            }
+            
+
 /* .... MEDIA QUERIS..*/
 
 @media (min-width: 768px) {
@@ -608,14 +671,14 @@ h4{
         justify-content: space-between;
         flex-direction: row; 
           }
-          .medioPago div{
+    .medioPago div{
             /*border: solid violet 3px;*/
             display: flex;
            min-width: max-content;
             justify-content: space-between;
             flex-direction: row; 
         }
-        .bottonForm{
+    .bottonForm{
             display: flex;
             flex-direction: row;
             font-size: 12px;
@@ -624,6 +687,45 @@ h4{
             justify-content: center;
             
             }
+ /* CART FINAL */
+
+    .final{
+       
+        display: block;
+        flex-direction: column;
+     
+    }
+    h1{
+        
+        padding: 20px;
+    }
+    .textFinalCart{
+        margin: 10px;
+        border: solid 8px beige;
+        padding: 20px;
+        }
+    .logoFinal img{
+       
+            display: flex;
+            width: 100px;
+            justify-items: center;
+            align-items: center;
+            align-self: center;
+            margin-top: 10px;
+          
+        }
+    
+    .logoFinal img {
+            animation-duration: 5s;
+            animation-name: logo;
+            animation-timing-function:linear;
+            animation-iteration-count: infinite;
+            }
+          
+            @keyframes logo {
+            0% {width: 75px;}  50% {width: 100px;}  100% {width: 200px;} 
+            0% {width: 200px;}  50% {width: 10px;}  100% {width: 50px;} 100% {width: 250px;} 
+                }
 }
  
 @media (min-width: 1200px) {

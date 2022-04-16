@@ -25,12 +25,12 @@ app.get('/productDetail', (req, res) => {
 app.get('/productCart', (req, res) => {
     res.sendFile(path.join(__dirname, './views/productCart.html'));
 });
-app.get('/CartForm', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/CartForm.html'));
+app.get('/cartForm', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/cartForm.html'));
 });
 
-app.get('/CartFinal', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/CartFinal.html'));
+app.get('/cartFinal', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/cartFinal.html'));
 });
 
 app.get('/register', (req, res) => {
