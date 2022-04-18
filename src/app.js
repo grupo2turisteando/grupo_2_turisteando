@@ -46,6 +46,6 @@ app.get('/contacto', (req, res) => {
     res.sendFile(path.join(__dirname, './views/contacto.html'));
 });
 
-app.listen(5020, () => {
+app.listen(process.env.PORT || 5020, () => {
     console.log('Servidor corriendo en el puerto 5020');
 });
