@@ -4,7 +4,8 @@
   "description": "Proyecto integrador Digital House: Turisteando Somos Walter Leskovar, Facundo Minuto, Ignacio Parisi y Silvana Acotto, estudiantes del curso de Programación Full Stack dictado por Digital House.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/app.js"
   },
   "repository": {
     "type": "git",
