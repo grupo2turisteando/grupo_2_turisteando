@@ -161,22 +161,23 @@ body {
 }
 
 /* Footer */
+/* Momentáneamente pongo mi CSS (Facundo) para probar si funciona...
 .index_footer {
     /*border: dotted 2px red;*/
-    margin: 10px 0;
+/*    margin: 10px 0;
     background-color: beige;
     display: flex;
     flex-direction: column;
 }
 .header_footer {
     /*border: dotted 2px green;*/
-    display: flex;
+/*    display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .index_footer .header_footer .hamburguer-button {
     /*border: dotted 2px black;*/
-    width: 15px;
+/*    width: 15px;
     height: 15px;
     margin: 0;
     align-self: flex-start;  
@@ -186,13 +187,13 @@ body {
 }
 .index_footer .logo {
     /*border: dotted 2px rgb(119, 0, 255);*/
-    max-width: 90px;
+/*    max-width: 90px;
     max-height: 36px;
 
 }
 .body_footer {
     /*border: dotted 2px blue;*/
-    margin-top: 4px;
+/*    margin-top: 4px;
     margin-bottom: 4px;
     display:  flex;
     flex-direction: column;
@@ -211,7 +212,7 @@ body {
 }
 .iconos_sociales {
     /*border: dotted 2px rgb(255, 0, 179);*/
-    display: flex;
+/*    display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
@@ -219,6 +220,50 @@ body {
     width: 20px;
     height: 20px;
 }
+.iconos_sociales img:hover {
+    width: 25px;
+    height: 25px;
+}
+*/
+.footer {
+    background-color: beige;
+    padding: 5px;
+    /*border: dotted 2px red;*/
+    margin: 10px 0 0 0;
+    /*max-height: 300px;*/
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;
+    align-items: flex-start;*/
+}
+
+.menu_footer {
+    display: none;
+}
+
+.left_header_menu {
+    /*border: dotted 2px green;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu_footer a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.iconos_sociales {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.iconos_sociales img {
+    width: 20px;
+    height: 20px;
+}
+
 .iconos_sociales img:hover {
     width: 25px;
     height: 25px;
