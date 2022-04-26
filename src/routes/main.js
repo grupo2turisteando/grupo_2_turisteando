@@ -10,8 +10,6 @@ const paquetes_controllers = require('../controllers/paquetes_controller.js');
 /* rutas con controladores */
 router.get('/', paquetes_controllers.index_home);
 router.get('/index', paquetes_controllers.index_home);
-//router.get('/packages', paquetes_controllers.packages);
-
 
 /* rutas - estas rutas deben estar en otros archivos dentro de "routes" ya que son de otroas
    secciones de la aplicacion */

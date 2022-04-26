@@ -8,10 +8,7 @@ const data_paquetes = require('../model/data_paquetes.js');
 const paquetes_controllers = {
     index_home: (req, res) => {
         res.render('../views/index', {data_paquetes: data_paquetes});
-    },
-//    packages: (req, res) => {
-//        res.send('../views/packages');
-//    }
+    }
 };
 
 module.exports = paquetes_controllers;
