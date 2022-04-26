@@ -14,14 +14,6 @@ router.get('/index', paquetes_controllers.index_home);
 /* rutas - estas rutas deben estar en otros archivos dentro de "routes" ya que son de otroas
    secciones de la aplicacion */
 
-router.get('/deals', (req, res) => {
-    res.sendFile(path.join(__dirname, '../views/deals.html'));
-});
-
-router.get('/productDetail', (req, res) => {
-    res.sendFile(path.join(__dirname, '../views/productDetail.html'));
-});
-
 router.get('/productCart', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/productCart.html'));
 });
