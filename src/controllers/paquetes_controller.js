@@ -10,7 +10,7 @@ const paquetes_controllers = {
         res.render('../views/index', {data_paquetes: data_paquetes});
     },
     packages: (req, res) => {
-        res.render('../views/packages');
+        res.send('../views/packages');
     }
 };
 

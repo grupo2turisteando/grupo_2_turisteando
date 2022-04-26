@@ -1,8 +1,8 @@
 /* Sistema de Ruteo */
 
 const path = require('path');
-const express= require('express');
-const router= express.Router(); /* Router permiete crear rutas montables y desmontables */
+const express = require('express');
+const router = express.Router(); /* Router permiete crear rutas montables y desmontables */
 /* el metodo HTTP es llamado desde Router */
 
 const paquetes_controllers = require('../controllers/paquetes_controller.js');
@@ -15,9 +15,6 @@ router.get('/packages', paquetes_controllers.packages);
 
 /* rutas - estas rutas deben estar en otros archivos dentro de "routes" ya que son de otroas
    secciones de la aplicacion */
-router.get('/packages', (req, res) => {
-    res.sendFile(path.join(__dirname, '../views/packages.html'));
-});
 
 router.get('/deals', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/deals.html'));
@@ -51,4 +48,4 @@ router.get('/contacto', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/contacto.html'));
 });
 
-module.exports= router;
+module.exports = router;
