@@ -15,7 +15,7 @@ app.use(express.static(publicPath));
 /* puntos de entrada */
 app.use('/', rutasMain);
 app.use('/index', rutasMain);
-app.use('/packages', rutasMain);
+//app.use('/packages', rutasMain);
 
 /* se monta el servidor */
 app.listen(process.env.PORT || 5020, () => {
