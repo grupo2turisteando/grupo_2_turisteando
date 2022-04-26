@@ -1,7 +1,7 @@
 /* Este controlador "product_controller" implementa todos los metodos para
 manejar los productos */
 
-const product_controller = {
+const products_controller = {
     packages: (req, res) => {
         res.status(200).render('../views/packages');
     },
@@ -13,4 +13,4 @@ const product_controller = {
     }
 };
 
-module.exports = product_controller;
+module.exports = products_controller;
