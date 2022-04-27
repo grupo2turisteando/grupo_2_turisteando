@@ -6,6 +6,7 @@ const publicPath = path.join(__dirname, '../public');
 /* rutas */
 const rutasMain = require('./routes/main.js')
 const rutasProducts = require('./routes/products.js')
+const rutasCart = require('./routes/cart.js')
 
 app.set('view engine', 'ejs');
 /* seteo donde esta el directorio "views" */
@@ -19,6 +20,7 @@ app.use('/index', rutasMain);
 app.use('/packages', rutasProducts);
 app.use('/deals', rutasProducts);
 app.use('/productDetail', rutasProducts);
+app.use('/cart', rutasCart);
 
 /* se monta el servidor */
 app.listen(process.env.PORT || 5020, () => {
