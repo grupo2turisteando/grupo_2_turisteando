@@ -14,16 +14,16 @@ router.get('/index', paquetes_controllers.index_home);
 /* rutas - estas rutas deben estar en otros archivos dentro de "routes" ya que son de otroas
    secciones de la aplicacion */
 
-router.get('/productCart', (req, res) => {
-    res.sendFile(path.join(__dirname, '../views/productCart.html'));
-});
 
+router.get('/productCart', (req, res) => {
+res.render(path.join(__dirname, '../views/productCart.ejs'));
+});
 router.get('/cartForm', (req, res) => {
-    res.sendFile(path.join(__dirname, '../views/cartForm.html'));
+    res.render(path.join(__dirname, '../views/cartForm.ejs'));
 });
 
 router.get('/cartFinal', (req, res) => {
-    res.sendFile(path.join(__dirname, '../views/cartFinal.html'));
+    res.render(path.join(__dirname, '../views/cartFinal.ejs'));
 });
 
 router.get('/register', (req, res) => {

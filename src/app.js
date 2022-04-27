@@ -8,6 +8,7 @@ const rutasMain = require('./routes/main.js');
 const rutasPackages = require('./routes/packages.js');
 const rutasDeals = require('./routes/deals.js');
 const rutasProducts = require('./routes/products.js');
+const rutasCart = require('./routes/cart.js');
 
 app.set('view engine', 'ejs');
 /* seteo donde esta el directorio "views" */
@@ -21,6 +22,7 @@ app.use('/index', rutasMain);
 app.use('/packages', rutasPackages);
 app.use('/deals', rutasDeals);
 app.use('/productDetail', rutasProducts);
+app.use('/cart', rutasCart);
 
 /* se monta el servidor */
 app.listen(process.env.PORT || 5020, () => {
