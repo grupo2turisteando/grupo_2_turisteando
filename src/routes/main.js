@@ -12,8 +12,7 @@ router.get('/', paquetes_controllers.index_home);
 router.get('/index', paquetes_controllers.index_home);
 
 
-
-/* rutas - estas rutas deben estar en otros archivos dentro de "routes" ya que son de otroas
+/* rutas - estas rutas deben estar en otros archivos dentro de "routes" ya que son de otras
    secciones de la aplicacion */
 router.get('/packages', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/packages.html'));
@@ -43,9 +42,9 @@ router.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/register.html'));
 });
 
-router.get('/login', (req, res) => {
+/*router.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/login.html'));
-});
+});*/
 
 router.get('/contacto', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/contacto.html'));

@@ -4,7 +4,8 @@ const app = express();
 const publicPath = path.join(__dirname, '../public');
 
 /* rutas */
-const rutasMain= require('./routes/main.js')
+const rutasMain = require('./routes/main.js')
+const rutasLogin = require('./routes/login.js')
 
 app.set('view engine', 'ejs');
 /* seteo donde esta el directorio "views" */
@@ -15,6 +16,7 @@ app.use(express.static(publicPath));
 /* puntos de entrada */
 app.use('/', rutasMain);
 app.use('/index', rutasMain);
+app.use('/login', rutasLogin);
 
 /* se monta el servidor */
 app.listen(process.env.PORT || 5020, () => {

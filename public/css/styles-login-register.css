@@ -58,7 +58,7 @@ div h3 {
     margin: 20px 0 20px;
     padding: 20px;
     width: 80%;
-    max-width: 300px;
+    max-width: 350px;
 }
 
 .input {
@@ -73,6 +73,10 @@ div h3 {
     padding: 10px 10px;
     border-radius: 25px;
 
+}
+
+div p {
+    text-align: center;
 }
 
 .forgot_password_button {
@@ -123,7 +127,7 @@ div h3 {
     margin: 20px 0 20px;
     padding: 20px;
     width: 80%;
-    max-width: 300px;
+    max-width: 350px;
 }
 
 form {
