@@ -1,0 +1,57 @@
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <!-- Formulario -->
+    <form action="/" method="get" class="create_form">
+        <div class="control_formulario">
+            <label>Nombre y apellido: </label>
+            <input type="text" name="nombre_completo" class="control" placeholder="Ingresar el nombre completo"
+                    required minlength="8" maxlength="32" size="10">
+        </div>
+        <div class="control_formulario">
+            <label>Nombre de usuario: </label>
+            <input type="text" name="usuario" class="control" placeholder="Ingresar el nombre de usuario"
+            required minlength="6" maxlength="12" size="10">
+        </div>
+        <div class="control_formulario">
+            <label>Fecha de nacimiento: </label>
+            <input type="date" name="fecha_nacimiento" class="control">
+        </div>
+        <div class="control_formulario">
+            <label>Domicilio: </label>
+            <textarea name="domicilio" class="control" placeholder="Domicilio completo, no olvidar código postal" minlength="10" size="10">
+            </textarea>
+        </div>
+        <div class="control_formulario_perfil">
+            <label for="perfil">Perfil del usuario: </label>
+            <label>comprar <input type="checkbox" name="perfil" value="comprar" checked></label>
+            <label>vender <input type="checkbox" name="perfil" value="vender"></label>
+        </div>
+        <div class="control_formulario_categorias">
+            <label for="perfil">Categorías de interés: </label>
+            <label>Electro - <input type="checkbox" name="perfil" value="electro"></label>
+            <label>Moda - <input type="checkbox" name="perfil" value="Moda"></label>
+            <label>Hogar - <input type="checkbox" name="perfil" value="hogar"></label>
+            <label>Juguetería - <input type="checkbox" name="perfil" value="jugueteria"></label>
+            <label>Vida sana - <input type="checkbox" name="perfil" value="vida_sana"></label>
+        </div>
+        <div class="control_formulario">
+            <label>Foto de usuario: </label>
+            <input type="file" name="foto_usuario" accept= ".jpeg,.png" class="control">
+        </div>
+        <div class="control_formulario">
+            <label>Contraseña: </label>
+            <input type="password" name="pass" class="control" placeholder="Contraseña no menor a 8 caracteres alfanuméricos"
+                required minlength="6" size="10">
+        </div>
+        <div class="control_formulario">
+            <label>Confirmar contraseña: </label>
+            <input type="password" name="pass" class="control" placeholder="Repita su contraseña para verificar"
+            required minlength="8" size="10">
+        </div>           
+        <button type= "submit" class="boton_formulario">Guardar</button>
+        <button type="reset" class="boton_formulario">Borrar</button>
+    </form>
+    <%- include('../partials/footer') %>
+</body>
+</html>

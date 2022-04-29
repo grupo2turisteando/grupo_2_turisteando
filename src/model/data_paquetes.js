@@ -1,4 +1,4 @@
-const data_paquetes= [
+const data_paquetes = [
     {
         id: 1,
         index: true,
@@ -74,4 +74,4 @@ const data_paquetes= [
     
 ];
 
-module.exports= data_paquetes;
+module.exports = data_paquetes;

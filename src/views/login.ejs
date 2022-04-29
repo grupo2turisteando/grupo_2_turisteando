@@ -1,22 +1,26 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
     <head>
         <meta chartset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LogIn</title>
-        <!--<link rel="stylesheet" href="/css/styles.css">-->
+        <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="/css/styles-login-register.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto&display=swap" rel="stylesheet">
-    </head>
+    </head> -->
+
+    <%- -include('./partials/head') %>
+
     <body>
-        <header>
-            <nav class="login_header_top_bar">
-                <a href="./index"><img class= "logo" src="/images/logo_turisteando.png" alt="Logo Turisteando"></a>
-            </nav>
-            <!--<-% -include('./partials/header') %> -->
-        </header>
+        <!--<header>
+           <nav class="login_header_top_bar">
+               <a href="./index"><img class= "logo" src="/images/logo_turisteando.png" alt="Logo Turisteando"></a>
+           </nav>
+        /header> -->
+
+        <%- include('./partials/header') %>
 
         <main>
             <div class="titulo">
@@ -28,12 +32,12 @@
                         <h3>Iniciar Sesión</h3>
                         <div>
                             <div class="input">
-                                <input type="text" name="email" class="input_box" placeholder="Email" required maxlength="10">
+                                <input type="text" name="email" class="input_box" placeholder="Email" required maxlength="40">
                             </div>
                         </div>
                         <div>
                             <div class="input">
-                                <input type="password" name="password" class="input_box" placeholder="Contraseña" required maxlength="10">
+                                <input type="password" name="password" class="input_box" placeholder="Contraseña" required maxlength="40">
                             </div>
                         </div>
                         <div class="forgot_password">
@@ -54,7 +58,7 @@
             </section>
         </main>
 
-        <footer class="login_footer">
+        <!--<footer class="login_footer">
             <div class="header_footer">
                 <a href="#" class="hamburguer-button">
                     <img src="/images/bars-solid.svg" alt="hamburguer" >
@@ -83,6 +87,9 @@
                 <a href="URL DE LA RED SOCIAL" target="_blank"><img src="/images/twitter-brands.svg" width="106px" height="122px"alt="Seguinos en Twitter"></a>
                 <a href="URL DE LA RED SOCIAL" target="_blank"><img src="/images/youtube-brands.svg" width="106px" height="122px"alt="Seguinos en YouTube"></a>
             </div>           
-    </footer>
+        </footer> -->
+
+        <%- include('./partials/footer') %>
+
     </body>
 </html>
