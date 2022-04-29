@@ -421,3 +421,46 @@ body {
         margin-right: 15px;   
     }   
 }
+
+/* ============================================================================== */
+/* Formato para el formulario de alta de paquetes */
+.create_form {
+    padding: 20px 15px;
+    background-color: #ebebeb;
+    margin-bottom: 10px;
+}
+.control_formulario {
+    margin-bottom: 15px;
+    padding: 15px;
+}
+.control_formulario_perfil {
+    margin-bottom: 15px;
+    padding: 15px;
+    font-style: italic;
+    font-weight: bolder;
+}
+.control_formulario label {
+    margin-bottom: 5px;
+    font-style: italic;
+    font-weight: bolder;
+    display: block;
+}
+.control {
+    width: 90%;
+    padding: 8px;
+}
+.boton_formulario {
+    background-color: #39b54a;
+    border: none;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    
+}
+.boton_formulario:hover {
+    background-color: #03540e;
+}
+
+/* ================================================================================================================ */
+
