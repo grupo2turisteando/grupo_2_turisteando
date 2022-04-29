@@ -1,6 +1,6 @@
 const registerController = {
     register: (req, res) => {
-        res.render('..views/register')
+        res.render('../views/register')
     }
 };
 
