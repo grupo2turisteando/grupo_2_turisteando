@@ -21,85 +21,83 @@
 <%- include('../partials/head') %>
 <body>
     <%- include('../partials/header') %>
+    <!-- Search paquete -->
+    <form action="/admin/view/search" method="GET">
+        <label for="paquetes">Paquetes turísticos: </label>
+            <select name="paquetes">
+                <option value="bariloche">Bariloche</option>
+                <option value="buenos_aires">Buenos Aires</option>
+                <option value="mendoza">Mendoza</option>
+                <option value="iguazu">Iguazú</option>
+                <option value="fin_mundo">Fin del Mundo</option>
+            </select>
+        <button type="submit">Buscar</button>
+    </form>
     <!-- Formulario -->
-    <form action="/admin/crear" method="POST" class="create_form">
+    <form action="/index" method="GET" class="create_form">
         <h3>Formulario para crear un paquete turistico</h3>
         <div class="control_formulario">
             <label>package_id: </label>
-            <input type="number" name="package_id" class="control" placeholder="codigo paquete"
-                    required minlength="1" maxlength="4" size="13">
+            <p><%= package.package_id %> </p>
         </div>
         <div class="control_formulario">
             <label>package_name: </label>
-            <input type="text" name="package_name" class="control" placeholder="nombre del paquete"
-                    required minlength="8" maxlength="32" size="32">
+            <p><%= package.package_name %> </p>
         </div>
         <div class="control_formulario">
             <label>package_image: </label>
-            <input type="file" name="package_image" accept= ".jpeg,.png, .webp" class="control">
+            <p><%= package.package_image %> </p>
         </div>
         <div class="control_formulario">
             <label>package_alt_image: </label>
-            <input type="text" name="package_alt_image" class="control" placeholder="descrpción alternativa de la imagen"
-                    required minlength="8" maxlength="32" size="32">
+            <p><%= package.package_alt_image %> </p>
         </div>
         <div class="control_formulario">
             <label>package_price: </label>
-            <input type="number" name="package_price" class="control" placeholder="precio"
-                    required minlength="4" maxlength="10" size="10">
+            <p><%= package.package_price %> </p>
         </div>
         <div class="control_formulario">
             <label>package_title: </label>
-            <input type="text" name="package_title" class="control" placeholder="titulo para la agencia"
-                    required minlength="8" maxlength="32" size="32">
+            <p><%= package.package_title %> </p>
         </div>
         <div class="control_formulario">
             <label>package_q_days: </label>
-            <input type="number" name="package_q_days" class="control" placeholder="cantidad de días"
-                    required minlength="1" maxlength="2" size="17">
+            <p><%= package.package_q_days %> </p>
         </div>
         <div class="control_formulario">
             <label>package_hotel: </label>
-            <input type="text" name="package_hotel" class="control" placeholder="nombre del hotel"
-                    required minlength="8" maxlength="32" size="32">
+            <p><%= package.package_hotel %> </p>
         </div>
         <div class="control_formulario">
             <label>package_stars_hotel: </label>
-            <input type="number" name="package_stars_hotel" class="control" placeholder="categoría hotel"
-                    required minlength="1" maxlength="1" size="15">
+            <p><%= package.package_stars_hotel %> </p>
         </div>
         <div class="control_formulario">
             <label>package_description: </label>
-            <textarea name="package_description" class="control" >
-            </textarea>
+            <p><%= package.package_description %> </p>
         </div>
         <div class="control_formulario">
             <label>package_date_admission: </label>
-            <input type="date" name="package_date_admission" class="control">
+            <p><%= package.package_date_admission %> </p>
         </div>
         <div class="control_formulario_perfil">
             <label for="package_index">package_index: </label>
-            <label>SI <input type="radio" name="package_index" value="true" ></label>
-            <label>NO <input type="radio" name="package_index" value="false" checked></label>
+            <p><%= package.package_index %> </p>
         </div>
         <div class="control_formulario_perfil">
             <label for="package_category">package_category: </label>
-            <label>paquete regular <input type="radio" name="package_category" value="1" checked ></label>
-            <label>paquete en oferta <input type="radio" name="package_category" value="2" ></label>
+            <p><%= package.package_category %> </p>
         </div>
         <div class="control_formulario_perfil">
             <label for="package_transportation">package_transportation: </label>
-            <label>aéreo <input type="radio" name="package_transportation" value="1" checked ></label>
-            <label>omnibus <input type="radio" name="package_transportation" value="2" ></label>
-            <label>sin transporte incluido <input type="radio" name="package_transportation" value="3" ></label>
+            <p><%= package.package_transportation %> </p>
         </div>
         <div class="control_formulario">
             <label>package_excursions_id: </label>
-            <input type="number" name="package_excursions_id" class="control" placeholder="codigo excursiones"
-                    required minlength="1" maxlength="2" size="18">
+            <p><%= package.package_excursions_id %> </p>
         </div>                                                                       
-        <button type= "submit" class="boton_formulario">Aceptar</button>
-        <button type="reset" class="boton_formulario">Borrar</button>
+        <button type= "submit" class="boton_formulario">Home</button>
+        
     </form>
     <%- include('../partials/footer') %>
 </body>
