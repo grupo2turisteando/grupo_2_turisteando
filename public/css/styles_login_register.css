@@ -4,15 +4,17 @@
 
 body {
     font-family: 'Roboto';
-    background-color: rgba(33, 182, 213, 0.5);  /* celeste */
     margin: 0;
+}
+
+.background {
     background-image: url("/images/ushuaia-fin-del-mundo.jpeg");
     background-size: cover;
     background-position: 0px 85px;
 }
 
 /*        Login.html         */
-main {
+.main_login {
     width: 100%;
 }
 
@@ -32,8 +34,8 @@ main {
 .titulo {
     text-align: center;
     padding: 10px;
-    margin-top: 70px;
-    color: #fff; /* #fff*/
+    margin-top: 30px;
+    color: #fff;
 }
 
 .titulo h2 {
@@ -227,35 +229,4 @@ form {
 .iconos_sociales img:hover {
     width: 25px;
     height: 25px;
-}
-
-@media (min-width: 768px) {
-    /* Footer */
-    
-    .header_footer .left_header_menu {
-        /*border: dotted 2px black;*/
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    .header_footer .left_header_menu li {
-        margin: 5px 8px;
-        list-style-type: none;
-    }
-    .header_footer .left_header_menu li:hover {
-        background-color:rgb(195, 236, 158);      
-    }
-    
-    .login_footer .header_footer .hamburguer-button {
-        display: none;
-    }
-    .menu_footer {
-        display: block;
-    }
-    /*.login_footer .logo {
-        /*border: dotted 2px rgb(119, 0, 255);*/
-        /*max-width: 126px;
-        max-height: 50.4px;
-    
-    }*/
 }
