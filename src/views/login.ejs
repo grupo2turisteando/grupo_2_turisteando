@@ -1,11 +1,11 @@
 
     <%- include('./partials/head') %>
 
-    <body class="background">
+    <body> <!--class="background"-->
 
         <%- include('./partials/header') %>
 
-        <main class="main_login">
+        <main class="background"> <!--class="main_login"-->
             <div class="titulo">
                 <h2>¡Comenzá a elegir tu viaje hoy!</h2>
             </div>
@@ -15,7 +15,7 @@
                         <h3>Iniciar Sesión</h3>
                         <div>
                             <div class="input">
-                                <input type="text" name="email" class="input_box" placeholder="Email" required maxlength="40">
+                                <input type="email" name="email" class="input_box" placeholder="Email" required maxlength="40">
                             </div>
                         </div>
                         <div>

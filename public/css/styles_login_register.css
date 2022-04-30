@@ -10,7 +10,9 @@ body {
 .background {
     background-image: url("/images/ushuaia-fin-del-mundo.jpeg");
     background-size: cover;
-    background-position: 0px 85px;
+    margin-top: 0;
+    margin-bottom: 0;
+    /*background-position: 0px 85px;*/
 }
 
 /*        Login.html         */
@@ -34,7 +36,6 @@ body {
 .titulo {
     text-align: center;
     padding: 10px;
-    margin-top: 30px;
     color: #fff;
 }
 
@@ -101,7 +102,7 @@ div p {
     width: 100%;
     border: none;
     border-radius: 25px;
-    padding: 5px 10px;
+    padding: 10px 0px;
     transition: 200ms;
 }
 
@@ -119,14 +120,13 @@ div p {
 .container_register {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
 }
 
 .register_form {
     background-color: beige; /*#fff*/
     border-radius: 5px;
     justify-content: center;
-    margin: 20px 0 20px;
+    margin: 30px 0 30px;
     padding: 20px;
     width: 80%;
     max-width: 350px;
@@ -147,7 +147,7 @@ form {
     width: 100%;
     border: none;
     border-radius: 25px;
-    padding: 5px 10px;
+    padding: 10px 0px;
     font-size: 15px;
     transition: 200ms;
 }
