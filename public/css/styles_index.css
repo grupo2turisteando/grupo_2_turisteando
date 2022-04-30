@@ -306,6 +306,7 @@ body {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: flex-start;
+        min-height: auto;     /*probando corregir error de espacio en el main index*/
     }
     .form_main {
         display: flex;

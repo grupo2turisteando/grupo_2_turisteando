@@ -12,26 +12,15 @@ body {
     background-size: cover;
     margin-top: 0;
     margin-bottom: 0;
-    /*background-position: 0px 85px;*/
 }
 
+/*============================================================*/
 /*        Login.html         */
-.main_login {
-    width: 100%;
-}
 
-.login_header_top_bar {
-    background-color: beige;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    padding: 8px;
-}
-
-.logo {
+/*.logo {
     width: 120px;
     padding: 5px;
-}
+}*/
 
 .titulo {
     text-align: center;
@@ -115,7 +104,7 @@ div p {
     color: #fff;
 }
 
-
+/*=====================================================*/
 /*-------     register.html        -----*/
 .container_register {
     display: flex;
@@ -159,74 +148,4 @@ form {
 
 .button_signup span {
     font-size: 16px;
-}
-
-/* Footer */
-.login_footer {
-    /*border: dotted 2px red;*/
-    width: 100%;
-    /*margin: 10px 0;*/
-    /*max-height: 300px;*/
-    background-color: beige;
-    display: flex;
-    position: relative;
-    bottom: 0;
-    flex-direction: column;
-    /*justify-content: space-between;
-    align-items: flex-start;*/
-}
-.header_footer {
-    /*border: dotted 2px green;*/
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.index_footer .header_footer .hamburguer-button {
-    /*border: dotted 2px black;*/
-    width: 15px;
-    height: 15px;
-    margin: 0;
-    align-self: flex-start;  
-}
-.menu_footer {
-    display: none;
-}
-.index_footer .logo {
-    /*border: dotted 2px rgb(119, 0, 255);*/
-    max-width: 90px;
-    max-height: 36px;
-
-}
-.body_footer {
-    /*border: dotted 2px blue;*/
-    margin-top: 4px;
-    margin-bottom: 4px;
-    display:  flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-.body_footer form {
-    padding: 2px;
-    font-size: small;
-    font-style: italic;
-}
-.body_footer button {
-    padding: 2px;
-    flex-grow: 0.25;
-    align-self: flex-start;
-}
-.iconos_sociales {
-    /*border: dotted 2px rgb(255, 0, 179);*/
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-.iconos_sociales img {
-    width: 20px;
-    height: 20px;
-}
-.iconos_sociales img:hover {
-    width: 25px;
-    height: 25px;
 }
