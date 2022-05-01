@@ -1,4 +1,4 @@
-/* Este controlador "product_controller" implementa todos los metodos para
+/* Este controlador "products_controller" implementa todos los metodos para
 manejar los productos */
 
 // const products_controller = {
