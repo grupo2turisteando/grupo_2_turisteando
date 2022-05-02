@@ -11,7 +11,7 @@ const admin_controllers = require('../controllers/admin_controllers.js');
 router.get('/crear', admin_controllers.get_package);
 router.post('/crear', admin_controllers.post_package);
 /* con la ruta /view muestro un paquete */
-router.get('/view', admin_controllers.get_package_view);
-router.get('/view/search', admin_controllers.get_package_search);
+router.get('/', admin_controllers.get_package_view);
+router.get('/search', admin_controllers.get_package_search);
 
 module.exports= router;
