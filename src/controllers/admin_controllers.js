@@ -1,8 +1,6 @@
 /* Este controlador "admin_controllers" implementa todos los metodos para
 administrar el sitio web */
-
 const access_database= require('../model/access_database.js');
-const package_path= 'C:/Users/wlesk/Documents/JavaScript/DH/proyecto_integrador_g2/grupo_2_turisteando/public/images/'
 
 const admin_controllers = {
         get_package: (req, res) => {
@@ -18,12 +16,12 @@ const admin_controllers = {
         get_package_view: (req, res) => {
             let package_search= req.query.search;
             let file= 'bariloche';
-            let package= access_database.package_db(package_path , file)
+            let package= access_database.package_db( )
             res.status(200).render('../views/products/package_view', {package: package});
 },
         get_package_search: (req, res) => {
             let package_search= req.query.paquetes;
-            let package= access_database.package_db(package_path , package_search)
+            let package= access_database.package_db(package_search)
             res.status(200).render('../views/products/package_view', {package: package});
 },
 
