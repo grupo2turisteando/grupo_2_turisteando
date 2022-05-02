@@ -10,21 +10,30 @@ const rutasDeals = require('./routes/deals.js');
 const rutasProducts = require('./routes/products.js');
 const rutasCart = require('./routes/cart.js');
 const rutasAdmin = require('./routes/admin.js');
+const rutasLogin = require('./routes/login.js');
+const rutasRegister = require('./routes/register.js');
+const rutasContact = require('./routes/contact.js');
 
 app.set('view engine', 'ejs');
 /* seteo donde esta el directorio "views" */
 app.set('views', __dirname + '/views');
 
 app.use(express.static(publicPath));
+/* configuracion para poder capturar la informacion de los formularios */
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 /* puntos de entrada */
 app.use('/', rutasMain);
 app.use('/index', rutasMain);
+app.use('/login', rutasLogin);
 app.use('/packages', rutasPackages);
 app.use('/deals', rutasDeals);
 app.use('/productDetail', rutasProducts);
 app.use('/cart', rutasCart);
 app.use('/admin', rutasAdmin);
+app.use('/register', rutasRegister);
+app.use('/contact', rutasContact);
 
 /* se monta el servidor */
 app.listen(process.env.PORT || 5020, () => {

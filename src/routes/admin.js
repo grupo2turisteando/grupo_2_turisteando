@@ -8,6 +8,10 @@ const router = express.Router(); /* Router permiete crear rutas montables y desm
 const admin_controllers = require('../controllers/admin_controllers.js');
 
 /* rutas con controladores */
-router.get('/', admin_controllers.post_package);
+router.get('/crear', admin_controllers.get_package);
+router.post('/crear', admin_controllers.post_package);
+/* con la ruta /view muestro un paquete */
+router.get('/view', admin_controllers.get_package_view);
+router.get('/view/search', admin_controllers.get_package_search);
 
 module.exports= router;

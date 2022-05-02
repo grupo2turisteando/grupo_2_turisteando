@@ -26,16 +26,4 @@ router.get('/cartFinal', (req, res) => {
     res.render(path.join(__dirname, '../views/cartFinal.ejs'));
 });
 
-router.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, '../views/register.html'));
-});
-
-router.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '../views/login.html'));
-});
-
-router.get('/contacto', (req, res) => {
-    res.sendFile(path.join(__dirname, '../views/contacto.html'));
-});
-
 module.exports = router;
