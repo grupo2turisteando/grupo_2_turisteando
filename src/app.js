@@ -35,6 +35,7 @@ app.use('/admin', rutasAdmin);
 app.use('/register', rutasRegister);
 app.use('/contact', rutasContact);
 
+
 /* se monta el servidor */
 app.listen(process.env.PORT || 5020, () => {
     console.log('Servidor corriendo en el puerto 5020');
