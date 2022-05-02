@@ -14,13 +14,13 @@ const cart_controller = require('../controllers/cart_controller.js');
 router.get("/", cart_controller.show_cart);
 
 //agregar un paquete
-router.post("/add", cart_controller.add_item);
+router.get("/add", cart_controller.add_item);
 
 //eliminar un paquete/
-router.delete("/delete", cart_controller.delete_item);
+router.get("/delete", cart_controller.delete_item);
 
 //comprar//
-router.post("/purchase", cart_controller.purchase);
+router.get("/purchase", cart_controller.purchase);
 
 //detalle de compra//
 router.get("/purchaseDetail", cart_controller.purchase_detail );

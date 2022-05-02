@@ -537,7 +537,7 @@ h4{
         padding: 8px;
         font-size: 14px;
     }
-    .porComprar i{
+    .porComprar a img{
          color:rgb(132 7 7);
         font-size: 14px;
         padding: 2px;
