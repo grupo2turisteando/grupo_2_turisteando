@@ -14,13 +14,13 @@ manejar los productos */
 // };
 
 // module.exports = products_controller;
-const access_database= require('../model/access_database.js');
+
+const access_database = require('../model/access_database.js');
 
 const products_controller = {
     productDetail: (req, res) => {
-        let file= 'bariloche';
-        let package= access_database.package_db(file)
-        res.status(200).render('../views/productDetail',{package: package});
+        let package = access_database.package_db(file);
+        res.status(200).render('../views/productDetail',{ package: package });
     }
 };
 
