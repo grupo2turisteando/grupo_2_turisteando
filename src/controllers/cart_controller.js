@@ -17,5 +17,12 @@ const controller = {
     purchase_detail: (req, res) => {
         res.send("Ver detalle de Compra");
             },
+            
+    cart_form :  (req, res) => {
+                res.render("../views/cartForm");
+                    },
+    cart_final :  (req, res) => {
+                    res.render("../views/cartFinal");
+                            },
 };
 module.exports= controller;

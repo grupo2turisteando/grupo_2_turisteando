@@ -25,6 +25,10 @@ router.get("/purchase", cart_controller.purchase);
 //detalle de compra//
 router.get("/purchaseDetail", cart_controller.purchase_detail );
 
+//detalle de compra//
+router.get("/cartForm", cart_controller.cart_form );
+//detalle de compra//
+router.get("/cartFinal", cart_controller.cart_final );
 
 
 
