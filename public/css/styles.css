@@ -333,12 +333,9 @@ main {
 }
 
 /* Error 404 */
-.error404 {
-    width: 50vw;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+.error404 img {
+    width: 100%;
+    height: 100%;
 }
 
 /* packages/deals: Media queries para el diseño responsive de 768px */
@@ -382,7 +379,7 @@ main {
         align-self: flex-end;
     }
 
-    .error404 {
+    .error404 img {
         display: flex;
         justify-content: center;
         align-content: center;
