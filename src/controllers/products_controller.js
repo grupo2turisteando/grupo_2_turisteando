@@ -19,6 +19,7 @@ const access_database = require('../model/access_database.js');
 
 const products_controller = {
     productDetail: (req, res) => {
+        let file = 'Bariloche';
         let package = access_database.package_db(file);
         res.status(200).render('../views/productDetail', { package: package });
     }

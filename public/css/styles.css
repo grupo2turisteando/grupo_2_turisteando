@@ -334,6 +334,8 @@ main {
 
 /* Error 404 */
 .error404 {
+    width: 50vw;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -378,6 +380,12 @@ main {
     .long_detail a {
         display: flex;
         align-self: flex-end;
+    }
+
+    .error404 {
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
 }
 
