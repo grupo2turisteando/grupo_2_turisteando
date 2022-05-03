@@ -35,13 +35,10 @@ app.use('/admin', rutasAdmin);
 app.use('/register', rutasRegister);
 app.use('/contact', rutasContact);
 
-<<<<<<< HEAD
 /* Error 404 */
 app.use((req, res, next) => {
     res.status(404).render('notFound');
 });
-=======
->>>>>>> 679550e2a456d809140e137c73f3d53e13321c82
 
 /* se monta el servidor */
 app.listen(process.env.PORT || 5020, () => {
