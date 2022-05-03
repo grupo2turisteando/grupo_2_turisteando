@@ -35,6 +35,11 @@ app.use('/admin', rutasAdmin);
 app.use('/register', rutasRegister);
 app.use('/contact', rutasContact);
 
+/* Error 404 */
+app.use((req, res, next) => {
+    res.status(404).render('notFound');
+});
+
 /* se monta el servidor */
 app.listen(process.env.PORT || 5020, () => {
     console.log('Servidor corriendo en el puerto 5020');
