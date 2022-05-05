@@ -14,7 +14,6 @@ const admin_controllers = {
         },
         /* metodo para mostrar un paquete */
         get_package_view: (req, res) => {
-            let package_search= req.query.search;
             let file= 'bariloche';
             let package= access_database.package_db( )
             res.status(200).render('../views/products/package_view', {package: package});
