@@ -1,0 +1,48 @@
+  <%- include('./partials/head') %> 
+  <body>
+    <!-- Navbar (sit on top) -->
+    <%- include('./partials/nav_admin') %>
+  
+  
+    <!-- Header -->
+    <%- include('./partials/header_admin') %>
+
+    
+
+    <!-- Page content -->
+    <div class="ps-content">
+
+      <!-- Menu Section -->
+      <div class="ps-row ps-padding-64" id="menu">
+        <div class="ps-col l6 ps-padding-large">
+          <h1 class="ps-center">texto    </h1>
+          
+          <br />
+          
+          <section class="paquetes">
+            <h3>Paquetes:</h3>
+            <div class="productos">
+                <% for (let paquete of package_table) {%>
+                    <%= paquete.name paquete.id %>  
+                       
+                <% } %>
+                
+            </div> 
+          </section>
+        
+        </div>
+
+        <div class="ps-col l6 ps-padding-large ps-img-menu">
+          <img
+            src="/images/logo_turisteando.png"
+            class="ps-round ps-image ps-opacity-min"
+            alt="logo"
+          />
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <%- include('./partials/footer_admin') %>
+    </div>
+  </body>
+</html>
