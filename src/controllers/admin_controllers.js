@@ -10,8 +10,9 @@ const admin_controllers = {
         post_package: (req, res) => {
             // para procesar el formulario
             let data_package= req.body;
-            /*res.redirect('/crear');*/
-            res.send(data_package);
+            /* grabo los datos */
+            engine_json.add_columm('package', data_package);
+            res.redirect('/admin');
         },
         /* metodo para mostrar un paquete */
         get_package_view: (req, res) => {
