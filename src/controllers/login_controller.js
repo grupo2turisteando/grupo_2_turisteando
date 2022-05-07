@@ -1,6 +1,6 @@
 const loginController = {
     login: (req, res) => {
-        res.render('../views/login')
+        res.render('../views/users/login')
     }
 };
 
