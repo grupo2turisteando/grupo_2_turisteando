@@ -146,23 +146,25 @@ main {
     align-items: center;
 }
 
-.products article figure {
+.products figure {
+    /*border: 2px dotted red;*/
     align-self: center;
     padding: 0;
     margin: 10px;
 }
 
-.products article p {
+.products p {
+    /*border: 2px dotted red;*/
     align-self: flex-start;
     margin: 0 0 4px 0;
     padding: 0 6px 0 6px;
 }
 
-.long_detail {
+.products article.long_detail {
     display: none;
 }
 
-.first_product {
+.products article {
     background-color: rgb(240,249,232);
     padding: 3px;
     margin: 5px 0 5px 0;
@@ -172,7 +174,7 @@ main {
     flex-direction: column;
 }
 
-.second_product {
+/* .second_product {
     background-color: rgb(240,249,232);
     padding: 3px;
     margin: 5px 0 5px 0;
@@ -200,15 +202,17 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
+} */
 
-.short_detail {
+.products .short_description {
+    /*border: 2px dotted red;*/
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.short_detail a {
+.products a {
+    /*border: 2px dotted red;*/
     display: flex;
     align-self: flex-end;
 }
@@ -340,13 +344,14 @@ main {
 
 /* packages/deals: Media queries para el diseño responsive de 768px */
 @media (min-width: 768px) {
-    .first_product {
+    .products {
+        /*border: 2px dotted red;*/
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
     }
 
-    .second_product {
+    /* .second_product {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -362,19 +367,36 @@ main {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-    }
+    } */
 
-    .short_detail {
+    .products article.short_detail {
         display: none;
     }
 
-    .long_detail {
+    .products div.products {
+        /*border: 2px dotted red;*/
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
     }
 
-    .long_detail a {
+    .products article.long_detail {
+        /*border: 2px dotted red;*/
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .products div.long_description {
+        /*border: 2px dotted red;*/
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .products div.long_description a {
+        /*border: 2px dotted red;*/
         display: flex;
         align-self: flex-end;
     }
