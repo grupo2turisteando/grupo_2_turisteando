@@ -16,6 +16,7 @@ manejar los productos */
 // module.exports = products_controller;
 
 const access_database = require('../model/access_database.js');
+const engine_json = require('../model/engine_json.js');
 
 const products_controller = {
     productDetail: (req, res) => {
