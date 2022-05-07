@@ -11,7 +11,7 @@ footer {
     margin-bottom: 0;
     }
 
-main{
+.cartMain{
     margin: 0;
     min-height: 450px;
 }
@@ -81,7 +81,7 @@ body{
 }
 
 
-main section h2{
+main section .h2Cart{
 
    display: flex;
     margin: 10px;
@@ -154,13 +154,13 @@ align-content: flex-end;
 
 
 }
-.descuento{
+.descuentoCart{
     
     font-style: oblique;
     font-size: 5px;
     align-self: flex-end;
 }
-.descripcion{
+.descripcionCart{
     display:flex;
      background-color: beige;
     justify-content: center;
@@ -450,11 +450,11 @@ h4{
 
 /* .... CART FINAL..*/
 
-    .final{
+    .cartMain{
         background-color: #ebebeb;
         margin: 0px;
     }
-    .final h1{
+    .cartMain h1{
         margin: 0;
     }
     h1{
@@ -540,7 +540,7 @@ h4{
         font-size: 18px;
         }
 
-    .descripcion{
+    .descripcionCart{
         padding: 8px;
         font-size: 20px;
     }
@@ -555,9 +555,17 @@ h4{
         margin: 2px 10px 
         
         }
-     main section h2{
+     main section .h2Cart{
          position: relative;
+
      }
+     .cartMain{
+       flex-direction: column  ;
+       min-height: 800px;
+     }
+    .sectionCart{
+        width: 100%;
+    }
     .texto{
         top: 100px;
         right: 40px;
@@ -634,10 +642,11 @@ h4{
     }
 
 /*-----CartForm----*/
-   main{
+   .cartMain{
        display: flex;
         flex-direction: row;
         justify-content:center;
+        
       
        }
 
@@ -658,7 +667,7 @@ h4{
             }
  /* CART FINAL */
 
-    .final{
+    .cartMain{
         display: block;
         flex-direction: column;
         }
@@ -693,7 +702,7 @@ h4{
         max-width: 1200px;
     }
   
-     .descripcion{
+     .descripcionCart{
          font-size: 24px;
          font-weight: 600;
      }
@@ -719,8 +728,8 @@ h4{
         font-size: 24px;
         font-weight: 500;
     }
-     main{
-        display: flex;
+     .cartMain{
+     
          flex-direction: column;
          justify-content:center;
          margin: 0;
@@ -802,7 +811,12 @@ font-size: 16px;
 .textFinalCart{
     font-size: 24px;
 }
-    
+    .cartMain{
+        min-height: 800px;
+    }
+.sectionCart{
+    margin-top: 0px;
+}
   }
   
 

@@ -13,6 +13,7 @@ router.post('/crear', admin_controllers.post_package);
 /* con la ruta /view muestro un paquete */
 router.get('/', admin_controllers.get_package_view);
 router.get('/productos', admin_controllers.get_package_list)
-router.get('/producto/:id', admin_controllers.get_package_search);
+router.get('/producto/:id', admin_controllers.get_package_update);
+router.put('/producto/update', admin_controllers.put_package_update);
 
 module.exports= router;

@@ -20,10 +20,16 @@ const admin_controllers = {
             //res.status(200).render('../views/products/package_view', {package: package});
             res.status(200).render('../views/admin');
         },
-        get_package_search: (req, res) => {
+        get_package_update: (req, res) => {
             let package_id= req.params.id;
             let package= engine_json.read_columm('productos', package_id); 
-            res.status(200).render('../views/products/package_view', {package: package});
+            res.status(200).render('../views/products/package_update', {package: package[0]});
+        },
+        put_package_update: (req, res) => {
+            let data_package= req.body;
+            /* update los datos */
+            engine_json.edit_columm('productos', data_package);
+            res.redirect('/admin');
         },
         
         get_package_list: (req, res) => {
