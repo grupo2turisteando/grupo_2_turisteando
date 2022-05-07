@@ -11,7 +11,7 @@
             </div>
                 <div class="datosPasajeros">
             <article class="cantidadPasajeros">
-                <form action="/quienesViajan" method="post">
+                <form action="/cart/pagar" method="post">
                     <label for="mayores">Mayores:</label>
                     <select name="mayores" id="">
                         <option value="1">1</option> 
@@ -25,7 +25,7 @@
                     </select>
                 </form>
             
-                <form action="/quienesViajan" method="post">
+                <form action="/cart/pagar" method="post">
                     <label for="menores">Menores:</label>
                     <select name="menores" id="">
                         <option value="1">1</option>
@@ -42,7 +42,7 @@
             </article>
             
             <article >
-                <form action="cart/pagar" method="post">
+                <form action="/cart/pagar" method="post">
                 <div >
                     <label for="first_name"> Nombre:</label>
                     <input type="text" name="first_name" id="txtfirst_name" placeholder="Juan Pablo" required>
@@ -92,13 +92,14 @@
             <div >
             <article class="medioPago">
                     <div class="datosPago">
-                        <form action="cart/pagar" method="post">
+                        <form action="cart/pagar" method="post" required>
                             <label for="payment_method">Tarjeta débito</label>
                             <input type="radio" name="payment_method" value="debito">
                             <label for="payment_method">Tarjeta crédito</label>     
                             <input type="radio" name="payment_method" value="tarjeta">
+                        </form>
                     </div>
-                        </form required>
+                        
             </article>
             
 
