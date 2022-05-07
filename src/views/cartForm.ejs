@@ -4,7 +4,7 @@
 
 <%- include('./partials/header') %>
 
-    <main>
+    <main class="cartMain">
         <section class="pasajeros">
             <div >
                 <h4>¿Quiénes viajan?</h4>
@@ -92,12 +92,12 @@
             <div >
             <article class="medioPago">
                     <div class="datosPago">
-                        <form action="cart/pagar" method="post" required>
+                        <form action="cart/pagar" method="post">
                             <label for="payment_method">Tarjeta débito</label>
                             <input type="radio" name="payment_method" value="debito">
                             <label for="payment_method">Tarjeta crédito</label>     
                             <input type="radio" name="payment_method" value="tarjeta">
-                        </form>
+                        </form >
                     </div>
                         
             </article>
