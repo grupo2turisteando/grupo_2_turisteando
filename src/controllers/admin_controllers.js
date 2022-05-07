@@ -11,7 +11,7 @@ const admin_controllers = {
             // para procesar el formulario
             let data_package= req.body;
             /* grabo los datos */
-            engine_json.add_columm('package', data_package);
+            engine_json.add_columm('productos', data_package);
             res.redirect('/admin');
         },
         /* metodo para mostrar un paquete */
@@ -19,16 +19,17 @@ const admin_controllers = {
             //let package= access_database.package_db( )
             //res.status(200).render('../views/products/package_view', {package: package});
             res.status(200).render('../views/admin');
-},
-        // get_package_search: (req, res) => {
-        //     let package_search= req.query.paquetes;
-        //     let package= access_database.package_db(package_search)
-        //     res.status(200).render('../views/products/package_view', {package: package});
+        },
+        get_package_search: (req, res) => {
+            let package_id= req.params.id;
+            let package= engine_json.read_columm('productos', package_id); 
+            res.status(200).render('../views/products/package_view', {package: package});
+        },
         
-            get_package_list: (req, res) => {
-            let package_table= engine_json.browse_table('package')
+        get_package_list: (req, res) => {
+            let package_table= engine_json.browse_table('productos');
             res.status(200).render('../views/productos_admin', {package_table: package_table});
-},
+        }
 
 };
 

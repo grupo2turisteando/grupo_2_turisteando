@@ -18,6 +18,7 @@ app.set('view engine', 'ejs');
 /* seteo donde esta el directorio "views" */
 app.set('views', __dirname + '/views');
 
+
 app.use(express.static(publicPath));
 /* configuracion para poder capturar la informacion de los formularios */
 app.use(express.urlencoded({extended: false}));

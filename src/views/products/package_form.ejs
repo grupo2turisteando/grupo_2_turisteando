@@ -15,6 +15,7 @@
 .package_category: numerico - 1-paquete regular, 2-paquete en oferta
 .package_transportation: numerico - 1-aereo, 2-bus, 3-sin transporte incluido
 .package_excursions_id: numerico - 0 - indica que no tiene excursiones incluidas en el paquete
+.package_discount: numerico - porcentaje de descuento en el precio del paquete.
 ==================================================================================================
 -->
 
@@ -32,7 +33,7 @@
         <div class="control_formulario">
             <label>package_name: </label>
             <input type="text" name="package_name" class="control" placeholder="nombre del paquete"
-                    required minlength="8" maxlength="32" size="32">
+                    required maxlength="32" size="32">
         </div>
         <div class="control_formulario">
             <label>package_image: </label>
@@ -41,7 +42,7 @@
         <div class="control_formulario">
             <label>package_alt_image: </label>
             <input type="text" name="package_alt_image" class="control" placeholder="descrpción alternativa de la imagen"
-                    required minlength="8" maxlength="32" size="32">
+                    required maxlength="32" size="32">
         </div>
         <div class="control_formulario">
             <label>package_price: </label>
@@ -51,7 +52,7 @@
         <div class="control_formulario">
             <label>package_title: </label>
             <input type="text" name="package_title" class="control" placeholder="titulo para la agencia"
-                    required minlength="8" maxlength="32" size="32">
+                    required maxlength="32" size="32">
         </div>
         <div class="control_formulario">
             <label>package_q_days: </label>
@@ -61,7 +62,7 @@
         <div class="control_formulario">
             <label>package_hotel: </label>
             <input type="text" name="package_hotel" class="control" placeholder="nombre del hotel"
-                    required minlength="8" maxlength="32" size="32">
+                    required maxlength="32" size="32">
         </div>
         <div class="control_formulario">
             <label>package_stars_hotel: </label>
@@ -70,7 +71,8 @@
         </div>
         <div class="control_formulario">
             <label>package_description: </label>
-            <textarea name="package_description" class="control" >
+            <textarea name="package_description" class="control" rows="10" cols="50" 
+                        placeholder="Escriba la descripción del paquete">
             </textarea>
         </div>
         <div class="control_formulario">
@@ -97,6 +99,11 @@
             <label>package_excursions_id: </label>
             <input type="number" name="package_excursions_id" class="control" placeholder="codigo excursiones"
                     required minlength="1" maxlength="2" size="18">
+        </div>
+        <div class="control_formulario">
+            <label>package_discount: </label>
+            <input type="number" name="package_discount" class="control" placeholder="descuento"
+                    required maxlength="10" size="10">
         </div>                                                                       
         <button type= "submit" class="boton_formulario">Aceptar</button>
         <button type="reset" class="boton_formulario">Borrar</button>
