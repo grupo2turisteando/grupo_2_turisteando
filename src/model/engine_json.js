@@ -14,17 +14,17 @@ const path_relative= path.join(__dirname, '../../data/')
 
 /* ================================================================================ */
 const engine_json= {
-    // se implementa un meto para trae todos los valores de un item de la tabla
+    // se implementa un meto para trae todos los valores de un item de la tabla, retorna un array de objetos
     browse_table: function(name_table) {
         return this.read_json(name_table);
     },
-    // este metodo trae una columm de la table 
+    // este metodo trae una columm de la table, retorna un array con un solo objeto 
     read_columm: function(name_table, columm_table_id) {
         return this.find_columm(name_table, columm_table_id);    
     }, 
     // este metodo permite modificar los items de una columm de la table
-    edit_columm: function(name_table, columm_table, objet_modified) {
-        let id= objet_modified.id;
+    edit_columm: function(name_table, objet_modified) {
+        let id= Object.values(objet_modified)[0];
         this.delete_columm(name_table, id);
         this.add_columm(name_table, objet_modified);
     }, 
