@@ -81,7 +81,7 @@ body{
 }
 
 
-main section h2{
+main section .h2Cart{
 
    display: flex;
     margin: 10px;
@@ -555,7 +555,7 @@ h4{
         margin: 2px 10px 
         
         }
-     main section h2{
+     main section .h2Cart{
          position: relative;
 
      }
@@ -729,7 +729,7 @@ h4{
         font-weight: 500;
     }
      .cartMain{
-        display: flex;
+     
          flex-direction: column;
          justify-content:center;
          margin: 0;
@@ -814,6 +814,9 @@ font-size: 16px;
     .cartMain{
         min-height: 800px;
     }
+.sectionCart{
+    margin-top: 0px;
+}
   }
   
 
