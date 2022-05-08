@@ -288,7 +288,12 @@ main {
 .detail {
     /*border: dotted 2px rgb(115, 0, 255);*/
     margin-left: 40px;
-    margin-right: 40px;
+    margin-right: 40px;    
+}
+
+.detail p {
+    /*border: 2px dotted red;*/
+    display: flex;
 }
 
 /* Formato del Footer y sus elementos */
@@ -399,6 +404,15 @@ main {
         /*border: 2px dotted red;*/
         display: flex;
         align-self: flex-end;
+    }
+
+    .detailPic {
+        /*border: dotted 2px rgb(115, 0, 255);*/
+        margin-left: 40px;
+        margin-right: 40px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .error404 img {

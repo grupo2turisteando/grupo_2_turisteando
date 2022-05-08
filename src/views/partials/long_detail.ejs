@@ -7,6 +7,6 @@
         <p class="price"><strong> <%= paquete.price %> </strong></p>
         <p class="discount"><strong>Oportunidad: <%= paquete.discount %> OFF</strong></p>
         <p class="package_detail"> <%= paquete.long_description %> </p>
-        <a class="link" href="/productDetail">Más detalles...</a>
+        <a class="link" href="/productDetail/<%= paquete.id %>" name="id">Más detalles...</a>
     </div>
 </article>

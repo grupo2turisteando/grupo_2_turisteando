@@ -11,20 +11,23 @@
                     <figure class="detailPic">
                         <img src='/images/<%= package.package_image %>' alt='<%= package.package_alt_image %>' height="300px" width="500px">
                     </figure>
-                    </article>
-                    <article class="detail">
-                        <div class="subtitle_and_button">
-                            <div class="subtitle">
-                                <div class="product_title">
+                </article>
+                <article class="detail">
+                    <div class="subtitle_and_button">
+                        <div class="subtitle">
+                            <div class="product_title">
                                 <p><strong> <%= package.package_title %> </strong></p>
-                                </div>
-                                <div class="product_price">
-                                    <p><strong> <%= package.package_price %> </strong></p>
-                                </div>
                             </div>
-                            <div class="subtitle_button">
-                                <button type="submit" class="buy_button" value="Submit"><a class="buy_button" href="/cart">Agregar al carrito</a></button>
+                            <div class="product_price">
+                                <p><strong> <%= package.package_price %> </strong></p>
                             </div>
+                        </div>
+                        <!--<div class="subtitle_button">
+                            <button type="submit" class="buy_button" value="Submit"><a class="buy_button" href="/cart">Agregar al carrito</a></button>
+                        </div>-->
+                        <form action="/productCart" method="POST" class="subtitle_button">
+                            <button type="submit" class="buy_button">Agregar al carrito</button>
+                        </form>
                         </div>
                     <p><strong>El alojamiento ofrece:</strong><ul>
                         <%= package.package_description %>
@@ -33,10 +36,14 @@
                     <h3> Conocé un poco más</h3>
                     <h4>El paquete inlcuye:</h4>
                     <div>
-                        <p><strong>Alojamiento en el <%= package.package_hotel %> <%= package.package_stars_hotel %></strong></p>
+                        <ul>
+                            <p><strong>Alojamiento en el <%= package.package_hotel %> <%= package.package_stars_hotel %></strong></p>
+                        </ul>
                     </div>
                     <div>
-                        <p><strong>La fecha de entrada al hotel es: <%= package.package_date_admission %></strong></p>
+                        <ul>
+                            <p><strong>La fecha de entrada al hotel es: <%= package.package_date_admission %></strong></p>
+                        </ul>
                     </div>
                     <div>
                         <p><strong>Condiciones del alojamiento</strong></p>

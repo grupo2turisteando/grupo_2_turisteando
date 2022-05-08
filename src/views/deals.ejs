@@ -11,7 +11,7 @@
                     <section class="paquetes">
                         <div class="products">
                             <% for (let paquete of data_paquetes) { %>
-                                <% if (paquete.index == true) { %>
+                                <% if (paquete.index != true) { %>
                                     <%- include('./partials/short_detail', {paquete}) %>
                                     <%- include('./partials/long_detail', {paquete}) %>
                                 <% } %>
