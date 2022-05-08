@@ -24,5 +24,7 @@ const products_controller = require('../controllers/products_controller.js');
 
 /* rutas con controladores */
 router.get('/', products_controller.productDetail);
+router.get('/productDetail/:id', products_controller.show_product);
+router.post('/', products_controller.post_product);
 
 module.exports = router;
