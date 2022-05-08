@@ -10,28 +10,29 @@ const fs= require('fs');
 const path= require('path');
 
 /* defino las variables del entorno */
-const path_relative= path.join(__dirname, '../../data/')
+const path_relative= path.join(__dirname, '../../public/data/')
 
 /* ================================================================================ */
 const engine_json= {
-    // se implementa un meto para trae todos los valores de un item de la tabla, retorna un array de objetos
+    // se implementa un meto para trae todos los valores de un item de la tabla
     browse_table: function(name_table) {
         return this.read_json(name_table);
     },
-    // este metodo trae una columm de la table, retorna un array con un solo objeto 
+    // este metodo trae una columm de la table 
     read_columm: function(name_table, columm_table_id) {
         return this.find_columm(name_table, columm_table_id);    
     }, 
     // este metodo permite modificar los items de una columm de la table
-    edit_columm: function(name_table, objet_modified) {
-        let id= Object.values(objet_modified)[0];
+    edit_columm: function(name_table, object_modified) {
+        let id= Object.values(object_modified)[0];
         this.delete_columm(name_table, id);
-        this.add_columm(name_table, objet_modified);
+        this.add_columm(name_table, object_modified);
     }, 
     // este metodo permite dar de alta una columm en la table
-    add_columm: function (name_table, objet_add) {
+    add_columm: function (name_table, object_add) {
         let file_string= this.browse_table(name_table);
-        file_string.push(objet_add);
+        //file_string.push(object_add);
+        file_string= this.string_order(object_add, file_string);
         this.write_json(name_table, file_string);
     },
     // este metodo permite borrar una columm de la table
@@ -61,6 +62,19 @@ const engine_json= {
     find_columm: function (name_table, columm_table_id){
         let file_string= this.read_json(name_table)
         return file_string.filter( element => Object.values(element)[0] == columm_table_id);
+    },
+
+    string_order: function(object_add, file) {
+        for (let i= 0; i < file.length; i++) {
+            if (parseInt(Object.values(object_add)[0]) < parseInt(Object.values(file[i])[0])) {
+                guardo_objeto = file[i];
+                file[i]= object_add;
+                object_add = guardo_objeto;
+            }
+        }
+        file.push(object_add);
+        return file;
     }
 };
+
 module.exports= engine_json
