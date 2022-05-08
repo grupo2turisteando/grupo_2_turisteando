@@ -9,6 +9,6 @@ const packages_controller = require('../controllers/packages_controller.js');
 
 /* rutas con controladores */
 router.get('/', packages_controller.package);
-router.post('/:id', packages_controller.post_package);
+router.post('/', packages_controller.post_package);
 
 module.exports = router;

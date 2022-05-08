@@ -13,9 +13,7 @@ const packages_controller = {
         res.status(200).render('../views/packages', {data_paquetes: data_paquetes });
     },
     post_package: (req, res) => {
-    // para procesar el formulario
     let data_package = req.body.id;
-    /* grabo los datos */
     engine_json.add_columm('productos', data_package);
     res.redirect('../views/productDetail');
     },
