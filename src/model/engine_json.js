@@ -10,7 +10,7 @@ const fs= require('fs');
 const path= require('path');
 
 /* defino las variables del entorno */
-const path_relative= path.join(__dirname, '../../public/data/')
+const path_relative= path.join(__dirname, '../../data/')
 
 /* ================================================================================ */
 const engine_json= {
