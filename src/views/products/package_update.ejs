@@ -36,6 +36,7 @@
                     maxlength="32" size="32">
         </div>
         <div class="control_formulario">
+            <input id='id' name="package_image" value="<%= package.package_image%>" hidden >
             <label>package_image: <%= package.package_image%></label>
             <input type="file" name="package_image" accept= ".jpeg,.png, .webp" class="control" 
                     value="<%= package.package_image%>">
