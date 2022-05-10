@@ -1,7 +1,7 @@
 /* Este controlador "admin_controllers" implementa todos los metodos para
 administrar el sitio web */
 const access_database= require('../model/access_database.js');
-const engine_json= require('../model/engine_json.js');
+const engine_json= require('../model/engine.js');
 
 const admin_controllers = {
         get_package: (req, res) => {
@@ -11,7 +11,7 @@ const admin_controllers = {
             // para procesar el formulario
             let data_package= req.body;
             /* grabo los datos */
-            engine_json.add_columm('productos', data_package);
+            engine.add_columm('productos', data_package);
             res.redirect('/admin');
         },
         /* metodo para mostrar un paquete */
@@ -22,18 +22,18 @@ const admin_controllers = {
         },
         get_package_update: (req, res) => {
             let package_id= req.params.id;
-            let package= engine_json.read_columm('productos', package_id); 
+            let package= engine.read_columm('productos', package_id); 
             res.status(200).render('../views/products/package_update', {package: package[0]});
         },
         put_package_update: (req, res) => {
             let data_package= req.body;
             /* update los datos */
-            engine_json.edit_columm('productos', data_package);
+            engine.edit_columm('productos', data_package);
             res.redirect('/admin');
         },
         
         get_package_list: (req, res) => {
-            let package_table= engine_json.browse_table('productos');
+            let package_table= engine.browse_table('productos');
             res.status(200).render('../views/productos_admin', {package_table: package_table});
         }
 
