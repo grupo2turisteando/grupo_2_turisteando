@@ -1,3 +1,29 @@
+/* ===============================================================================*/
+/* productos_admin.ejs */
+
+.boton_crear {
+  display: block;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: white;
+  background-color: gray;
+  text-align: center;
+  
+
+}
+.boton_crear:hover {
+  box-shadow: 10px 5px 5px black;
+}
+.boton_crear  a {
+  text-decoration:none;
+  font-size: 25px;
+}
+/* package_crear.ejs */
+.boton_formulario  a {
+  text-decoration:none;
+}
+/* ===============================================================================*/
+
 html {
   box-sizing: border-box;
   overflow-x: hidden;

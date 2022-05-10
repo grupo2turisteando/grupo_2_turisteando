@@ -1,33 +1,38 @@
 /* Este controlador "admin_controllers" implementa todos los metodos para
 administrar el sitio web */
 const access_database= require('../model/access_database.js');
-const engine= require('../model/engine.js');
+const engine= require('../model/engine.js'); // con este modulo operamos la base de datos
 
 const admin_controllers = {
-        get_package: (req, res) => {
-                        res.status(200).render('../views/products/package_form');
+        // entro en el Home del administrados
+        get_package_view: (req, res) => {
+        res.status(200).render('../views/admin');
         },
-        post_package: (req, res) => {
+        crear_package_get: (req, res) => {
+                        res.status(200).render('../views/products/package_crear');
+        },
+        crear_package_post: (req, res) => {
             // para procesar el formulario
             let data_package= req.body;
             data_package.package_price= parseFloat(data_package.package_price); // convierto el dato que vienen como string a un float para la DB
             data_package.package_discount= parseFloat(data_package.package_discount); // convierto el dato que vienen como string a un float para la DB
+            /* guardo el nombre de la imagen que subieron para el paquete, si no subieron queda como null */
+            if (req.file){
+                data_package.package_image= req.file.filename;
+            }else {
+                data_package.package_image= null;
+            }
+            
             /* grabo los datos */
             engine.add_columm('productos', data_package);
             res.redirect('/admin');
         },
-        /* metodo para mostrar un paquete */
-        get_package_view: (req, res) => {
-            //let package= access_database.package_db( )
-            //res.status(200).render('../views/products/package_view', {package: package});
-            res.status(200).render('../views/admin');
-        },
-        get_package_update: (req, res) => {
+        edit_package_get: (req, res) => {
             let package_id= req.params.id;
             let package= engine.read_columm('productos', package_id); 
-            res.status(200).render('../views/products/package_update', {package: package[0]});
+            res.status(200).render('../views/products/package_edit', {package: package[0]});
         },
-        put_package_update: (req, res) => {
+        edit_package_post: (req, res) => {
             let data_package= req.body;
             /* update los datos */
             data_package.package_price= parseFloat(data_package.package_price); // convierto el dato que vienen como string a un float para la DB
@@ -37,7 +42,8 @@ const admin_controllers = {
             res.redirect('/admin');
         },
         
-        get_package_list: (req, res) => {
+        /* metodo para mostrar un paquete */
+        lista_packages: (req, res) => {
             let package_table= engine.browse_table('productos');
             res.status(200).render('../views/productos_admin', {package_table: package_table});
         }

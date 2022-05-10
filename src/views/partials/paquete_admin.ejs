@@ -1,7 +1,7 @@
 <article>
     <figure class="product_image">
         <a href="/admin/producto/<%= paquete.package_id%>">
-            <img src='/images/<%= paquete.package_image %>' alt='<%= paquete.package_alt_image%>' >
+            <img src='/images/<%= paquete.package_image ? paquete.package_image: 'default.png' %>' alt='<%= paquete.package_alt_image%>' >
         </a>  
     </figure>
     <p class="descripcion"><strong><%= paquete.package_description%></strong></p>    
