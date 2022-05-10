@@ -14,7 +14,7 @@ const packages_controller = {
     },
     post_package: (req, res) => {
     let data_package = req.body.id;
-    engine_json.add_columm('productos', data_package);
+    engine.add_columm('productos', data_package);
     res.redirect('../views/productDetail');
     },
 };
