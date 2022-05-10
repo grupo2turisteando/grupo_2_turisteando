@@ -3,7 +3,7 @@ manejar los productos */
 
 /* cargo el manejador de los paquetes del modelo */
 const data_paquetes = require('../model/data_paquetes.js');
-const engine_json = require('../model/engine_json.js');
+const engine_json = require('../model/engine.js');
 
 const packages_controller = {
     /*packages: (req, res) => {

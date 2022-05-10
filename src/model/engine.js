@@ -13,7 +13,7 @@ const path= require('path');
 const path_relative= path.join(__dirname, '../../data/')
 
 /* ================================================================================ */
-const engine_json= {
+const engine= {
     // se implementa un meto para trae todos los valores de un item de la tabla
     browse_table: function(name_table) {
         return this.read_json(name_table);
