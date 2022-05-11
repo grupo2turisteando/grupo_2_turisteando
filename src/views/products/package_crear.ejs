@@ -23,7 +23,7 @@
 <body>
     <%- include('../partials/header_admin') %>
     <!-- Formulario -->
-    <form action="/admin/crear" method="POST" class="create_form">
+    <form action="/admin/crear" method="POST" class="create_form" enctype="multipart/form-data">
         <h3>Formulario para crear un paquete turistico</h3>
         <div class="control_formulario">
             <label>package_id: </label>
@@ -37,7 +37,7 @@
         </div>
         <div class="control_formulario">
             <label>package_image: </label>
-            <input type="file" name="package_image" accept= ".jpeg,.png, .webp" class="control">
+            <input type="file" name="turisteando_image" id="turisteando_image" accept= ".jpeg, .png, .webp" class="control">
         </div>
         <div class="control_formulario">
             <label>package_alt_image: </label>
@@ -107,6 +107,7 @@
         </div>                                                                       
         <button type= "submit" class="boton_formulario">Aceptar</button>
         <button type="reset" class="boton_formulario">Borrar</button>
+        <button type="reset" class="boton_formulario"><a href="/admin/productos">Cancelar</a></button>
     </form>
     <%- include('../partials/footer_admin') %>
 </body>

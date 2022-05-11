@@ -1,7 +1,12 @@
-const controller = {
+const access_database= require('../model/access_database.js');
+const engine= require('../model/engine.js'); // con este modulo operamos la base de datos
+
+const cart_controller = {
     show_cart :  (req, res) => {
-        res.render("../views/productCart");
-            },
+        let package = access_database.package_db();
+        res.status(200).render('../views/productCart', { package: package });
+    },
+      
     add_item :   (req, res) => {
         res.send("Agregar un paquete");         
             },
@@ -25,4 +30,4 @@ const controller = {
                     res.render("../views/cartFinal");
                             },
 };
-module.exports= controller;
+module.exports= cart_controller;
