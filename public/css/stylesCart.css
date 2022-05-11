@@ -108,8 +108,9 @@ main section .h2Cart{
     top: -25px;
     display: flex;
     justify-content: flex-end;
-    margin-right: 5px;
+    margin-right: 20px;
     font-size: 12px;
+    text-decoration: none;
 
 
 }
@@ -124,8 +125,7 @@ main section .h2Cart{
     margin:3px;
     padding: 2px;
     box-shadow: 5px 5px 5px black;
-    background-color: rgb(240,249,232) ;
-    border: solid 3px beige;
+   
  
     }
 
@@ -141,7 +141,7 @@ main section .h2Cart{
 }
 .texto{
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 50px;
     display: block;
     flex-direction: column;
@@ -183,14 +183,17 @@ align-content: flex-end;
    /*border: solid violet 5px;*/
     align-items: flex-end;
   margin: 0;
-    
-   
 }
+
 .textTotal{
     display: flex;
+   
     padding: 0;
     margin: 1px;
     font-weight:400;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 10px;
     }
 .montoTotal{
     font-weight: 400;
@@ -200,7 +203,16 @@ align-content: flex-end;
     font-weight:400;
     padding: 0;
     margin: 1px;
-   
+    justify-content: center;
+    font-size: 20px;
+}
+.iniciar_compra a{
+    text-decoration: none;
+    position: relative;
+    top: -40px;
+}
+.iniciar_compra{
+    margin-top: 20px;
 }
 
 .botonPago{
@@ -213,11 +225,10 @@ align-content: flex-end;
     transition: background-color 450ms;
     display: flex;
     justify-content: flex-end;
+    
     margin: 3px 0px 0px ;
     }
-.pagoTotal a{
-    text-decoration: none;
-}
+
 
 
 .actionCart {
@@ -229,8 +240,11 @@ align-content: flex-end;
     
 }
 .actionCart a{
+    position: relative;
     color:  rgb(14, 14, 14); 
-    margin-left: 5px;
+  top: 170px;
+  margin-right: 0px;
+  
     }
 
 
@@ -315,12 +329,13 @@ h4{
 .medioPago{
     font-size: 8;
     display: flex;
-
-    flex-direction: row;
+   
+   
+  
 }
 
 .medioPago div{
-     /* border: solid violet 3px;*/
+
     display: flex;
     max-width: max-content;
     flex-direction: row;    
@@ -328,6 +343,7 @@ h4{
 }
 .medioPago label{
     font-size: 16px;
+   
 }
 
 .pagoTarjeta{
@@ -365,6 +381,10 @@ h4{
         .bottonForm a{
            text-decoration: none;
             } 
+    .div_boton_form{
+        display: flex;
+        justify-content: center;
+    }
     .botonForm{
         background-color: #39b54a;
         border: none;
@@ -373,7 +393,7 @@ h4{
         padding: 10px 30px;
         border-radius: 10px;
         transition: background-color 450ms;
-        display: flex;
+        display: inline-block;
         justify-content: flex-end;
         margin: 3px;
         text-decoration: none;
@@ -555,6 +575,10 @@ h4{
         margin: 2px 10px 
         
         }
+    .iniciar_compra a{
+        top: -50px;
+    
+    }
      main section .h2Cart{
          position: relative;
 
@@ -596,8 +620,8 @@ h4{
     }
      .actionCart {
         
-         top: 10px;
-         right: 40px;
+         top: 300px;
+         right: 50px;
          font-size: 8px;
          font-size: 18px;
          
@@ -607,6 +631,7 @@ h4{
     }
     .actionCart a{
        text-decoration: none;
+     
     }
         /* Footer */
     
@@ -657,8 +682,7 @@ h4{
    
  
     .botonForm{
-            display: flex;
-            flex-direction: row;
+            display: inline-block;
             font-size: 18px;
             margin-bottom: 10px;
             padding: 20px;
@@ -710,7 +734,10 @@ h4{
     right: 100px;
 
     }
-   
+   .actionCart{
+       margin-top: 10px;
+       margin-right: -20px;
+   }
     .porComprar a{
         right: 20px;
         top:-40px;
@@ -733,6 +760,7 @@ h4{
          flex-direction: column;
          justify-content:center;
          margin: 0;
+       
        
         }
     .pasajeros{

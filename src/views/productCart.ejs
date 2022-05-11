@@ -6,58 +6,38 @@
     
     <main class="cartMain" >
         <section class="sectionCart">
-               <h2 class="h2Cart">Carrito</h2>
-            <article class="porComprar">
-                <p class="descripcionCart"><strong>Bariloche</strong></p> 
-                    <form action="reset">
-                        <a href="#eliminar">
-                         <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
-                        </a>
-                    </form>
-          
-                <img src="/images/Bariloche300x200.webp" alt="Foto Bariloche">
-            
-                <div class="texto">
-                    <p class="desc"> Bariloche en 7 días</p>
-                    <p class="precioCart"> $40.000</p>
-                    <p class="descuentoCart"> 20% off </p>  
-
-                    
-                </div>
-                <hr class="hr">
-            </article>
-            
-            <article class="porComprar">
-               
-                <p class="descripcionCart"><strong>Mendoza</strong></p> 
-                <div>
-                    <form action="reset">
-                        <a href="#eliminar">
-                         <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
-                        </a>
-                    </form>
-                <img src="/images/Mendoza.webp" alt="Foto Bariloche">
-                </div>
-            
-                <div class="texto">
-                    <p class=""> Mendoza en 4 días</p>
-                    <p class="precio"> $36.770</p>
-                    <p class="descuento">10% off </p>  
-                </div>
-                
-                <hr class="hr">
-                
-            </article>
-            <div>
-                <form class="pagoTotal" action="/cart/cartForm"  method="get" id="form_pago">   
-                    <label class="textTotal"><strong>Total:</strong></label>
-                    <label class="montoTotal"><strong>$76.770</strong></label>
-                   
-                        <a href="cart/cartForm"> <button class="botonPago" type="submit" value="sumbit" form="form_pago">Iniciar compra</button></a>
+               <h2 class="h2Cart"></h2>
+                <article class="porComprar">
+                    <p class="descripcionCart"><strong><%= package.package_name %> </strong></p> 
                         
-                    <label class="actionCart"><a href="./index">Seguir comprando<i class="fa-solid fa-cart-shopping"></i></a></label>
-               </form>
-            </div>
+                        <form action="cart/cartForm">
+                            <a href="#eliminar" >
+                                <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
+                            </a>
+                            <img src="/images/<%= package.package_image %>" alt="<%= package.package_alt_image %>">
+            
+                            <div class="texto">
+                                <p class="desc"> <%= package.package_title %> </p>
+                                <p class="precioCart"> <%= package.package_price %></p>
+                                <p class="descuentoCart"> 20% off </p>  
+                            </div>
+                        <br>
+                        <hr class="hr">
+                    
+                        </form>
+            
+                <div class="iniciar_compra" >
+                    <p class="textTotal"><strong>Total:</strong></p>
+                    <p class="montoTotal"><strong>$40.770</strong></p>
+                        <a href="cart/cartForm"> 
+                            <button class="botonPago" type="submit" value="sumbit" for="cartForm">Iniciar compra</button>
+                        </a>
+                        
+                    <label class="actionCart">
+                        <a href="./index">Seguir comprando<i class="fa-solid fa-cart-shopping"></i></a>
+                    </label>
+              
+                </div>
                
             </section>
     </main>
