@@ -10,6 +10,8 @@ const admin_controllers = {
         post_package: (req, res) => {
             // para procesar el formulario
             let data_package= req.body;
+            data_package.package_price= parseFloat(data_package.package_price); // convierto el dato que vienen como string a un float para la DB
+            data_package.package_discount= parseFloat(data_package.package_discount); // convierto el dato que vienen como string a un float para la DB
             /* grabo los datos */
             engine.add_columm('productos', data_package);
             res.redirect('/admin');
@@ -28,6 +30,9 @@ const admin_controllers = {
         put_package_update: (req, res) => {
             let data_package= req.body;
             /* update los datos */
+            data_package.package_price= parseFloat(data_package.package_price); // convierto el dato que vienen como string a un float para la DB
+            data_package.package_discount= parseFloat(data_package.package_discount); // convierto el dato que vienen como string a un float para la DB
+            /* actualizo la base de datos */
             engine.edit_columm('productos', data_package);
             res.redirect('/admin');
         },
