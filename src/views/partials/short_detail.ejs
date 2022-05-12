@@ -1,11 +1,11 @@
 <article class="short_detail">
     <figure>
-        <img src="<%= paquete.image %>" alt="<%= paquete.alt_image %>">
+        <img src="/images/<%= paquete.package_image ? paquete.package_image : "default.png" %>" alt="<%= paquete.package_alt_image %>">
     </figure>
     <div class="short_description">
-        <p class="description"><strong> <%= paquete.description %> </strong></p>
-        <p class="price"> <%= paquete.price %> </p>
-        <p class="discount">Oportunidad: <%= paquete.discoount %> OFF</p>
-        <a class="link" href="/productDetail/<%= paquete.id %>" name="id">Más detalles...</a>
+        <p class="description"><strong> <%= paquete.package_description %> </strong></p>
+        <p class="price">ARS <%= paquete.package_price %> </p>
+        <p class="discount">Oportunidad: <%= paquete.package_discount %>% OFF</p>
+        <a class="link" href="/productDetail/<%= paquete.package_id %>" name="id">Más detalles...</a>
     </div>
 </article>
