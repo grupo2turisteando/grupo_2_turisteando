@@ -9,14 +9,17 @@ const packages_controller = {
     /*packages: (req, res) => {
         res.status(200).render('../views/packages', {data_paquetes: data_paquetes });
     },*/
-    package: (req, res) => {
-        res.status(200).render('../views/packages', {data_paquetes: data_paquetes });
+    show_package: (req, res) => {
+        let packages = engine.browse_table('products');
+        let data_packages = packages.filter((elemento) => elemento.package_category == "1");
+
+        res.status(200).render('../views/packages', { data_packages: data_packages });
     },
     post_package: (req, res) => {
-    let data_package = req.body.id;
-    engine.add_columm('productos', data_package);
+    let data_packages = req.body.id;
+    engine.add_columm('productos', data_packages);
     res.redirect('../views/productDetail');
-    },
+    }
 };
 
 module.exports = packages_controller;
