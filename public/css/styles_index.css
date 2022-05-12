@@ -269,6 +269,92 @@ body {
     flex-direction: column;
 }
 
+/*=====================================================================================================*/
+/* paquete_admin.ejs y productos_admin.ejs                                                             */
+.productos_admin {
+    /*border: double 2px black;*/
+    display: flex;
+    flex-direction: column;
+}
+.productos_admin article {
+    margin: 3px;
+    padding: 3px;
+    border: solid 8px white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: white;
+    /* max-width: 338px;
+    max-height: 327.6px;*/
+}
+.productos_admin article figure {
+    align-self: flex-start;
+    padding: 0 5px 0 5px;
+}
+.productos_admin article p {
+    align-self: flex-start;
+    margin: 0 0 4px 0;
+    padding: 0 6px 0 6px;
+}
+.item_producto_admin {
+    /*border: dotted 2px red;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+.item_producto_admin .seccion_campos_admin .campos_admin{
+    text-align: left;
+}
+/* Menu con los Iconos de Loguin - Registro - Carrito de compra */
+.nav_menu_admin {
+    /*border: dotted 2px rgb(115, 0, 255); */
+    margin: 0;
+    align-self: flex-end;    
+}
+.ul_2_admin {
+    /*border: dotted 2px rgb(255, 0, 0);*/
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row; 
+}
+.ul_2_admin li {
+    /*border: dotted 2px rgb(0, 255, 47);*/
+    margin: 5px 8px;
+    list-style-type: none;
+}
+.ul_2_admin li img {
+    width: 25px;
+    height: 25px;
+}
+.ul_2_admin li:hover img {
+    width: 32.5px;
+    height: 32.5px;
+}
+.menu_crear_admin{
+    /*border: dotted 2px red;*/
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start;
+
+}
+.menu_crear_admin p {
+    font-size: larger;
+}
+.crear_admin {
+    padding: 0 6px 0 6px;
+    width: 50px;
+    height: 50px;
+}
+.crear_admin:hover {
+    width: 65px;
+    height: 65px;
+}
+
+
+/*======================================================================================================*/
+
 /* Media cueri para adaptar el diseño a los diferentes dispositivos */
 @media (min-width: 768px) {
     /* Header */
