@@ -10,11 +10,9 @@
                 <div class="products">
                     <section class="paquetes">
                         <div class="products">
-                            <% for (let paquete of data_paquetes) { %>
-                                <% if (paquete.index == true) { %>
-                                    <%- include('./partials/short_detail', {paquete}) %>
-                                    <%- include('./partials/long_detail', {paquete}) %>
-                                <% } %>
+                            <% for (let paquete of data_packages) { %>
+                                <%- include('./partials/short_detail', {paquete}) %>
+                                <%- include('./partials/long_detail', {paquete}) %>
                             <% } %>
                         </div> 
                     </section>
