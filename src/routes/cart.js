@@ -13,7 +13,7 @@ const cart_controller = require('../controllers/cart_controller.js');
 //mostrar Carrito//
 router.get("/", cart_controller.show_cart);
 
-//agregar un paquete
+//agregar un paquete desde el detalle
 router.get("/add/:id", cart_controller.add_item);
 
 
