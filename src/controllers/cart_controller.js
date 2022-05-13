@@ -3,13 +3,24 @@ const engine= require('../model/engine.js'); // con este modulo operamos la base
 
 const cart_controller = {
     show_cart :  (req, res) => {
-        let package = access_database.package_db();
-        res.status(200).render('../views/productCart', { package: package });
+      
+    res.status(200).render('../views/productCart');
     },
       
     add_item :   (req, res) => {
-        res.send("Agregar un paquete");         
-            },
+       
+        let list_package = engine.browse_table("productos");
+
+        let data_add_cart = req.params.id
+    
+        let data_show_cart = list_package.filter(elemento=>elemento.package_id == data_add_cart)
+        
+        console.log(data_show_cart)
+    
+        
+        res.status(200).render('../views/productCart', { data_show_cart: data_show_cart });
+    },
+
 
     delete_item : (req, res) => {
         res.send("Eliminar paquete");             

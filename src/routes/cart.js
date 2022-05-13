@@ -14,7 +14,8 @@ const cart_controller = require('../controllers/cart_controller.js');
 router.get("/", cart_controller.show_cart);
 
 //agregar un paquete
-router.get("/add", cart_controller.add_item);
+router.get("/add/:id", cart_controller.add_item);
+
 
 //eliminar un paquete/
 router.get("/delete", cart_controller.delete_item);

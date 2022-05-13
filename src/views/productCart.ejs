@@ -2,45 +2,53 @@
 
 <body>
 
-<%- include('./partials/header') %>
+    <%- include('./partials/header') %>
     
-    <main class="cartMain" >
-        <section class="sectionCart">
-               <h2 class="h2Cart"></h2>
-                <article class="porComprar">
-                    <p class="descripcionCart"><strong><%= package.package_name %> </strong></p> 
+        <main class="cartMain" >
+            <section class="sectionCart">
+                <h2 class="h2Cart">Carrito</h2>
+                    <article class="porComprar">
+                        <p class="descripcionCart"><%= data_show_cart.package_name %> </p> 
+                        <figure><img src="/images/<%= data_show_cart.package_image %>" alt="<%= data_show_cart.package_alt_image %>"></figure>
+                        <div class="texto">
+                            <p class="desc"> <%= data_show_cart.package_title %> </p>
+                            <p class="precioCart"> <%= data_show_cart.package_price %></p>
+                            <p class="descuentoCart"> <%= data_show_cart.package_price %> off </p>  
+                        </div>
                         
-                        <form action="cart/cartForm">
-                            <a href="#eliminar" >
-                                <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
-                            </a>
-                            <img src="/images/<%= package.package_image %>" alt="<%= package.package_alt_image %>">
-            
-                            <div class="texto">
-                                <p class="desc"> <%= package.package_title %> </p>
-                                <p class="precioCart"> <%= package.package_price %></p>
-                                <p class="descuentoCart"> 20% off </p>  
-                            </div>
                         <br>
-                        <hr class="hr">
-                    
-                        </form>
-            
-                <div class="iniciar_compra" >
-                    <p class="textTotal"><strong>Total:</strong></p>
-                    <p class="montoTotal"><strong>$40.770</strong></p>
-                        <a href="cart/cartForm"> 
-                            <button class="botonPago" type="submit" value="sumbit" for="cartForm">Iniciar compra</button>
-                        </a>
                         
-                    <label class="actionCart">
-                        <a href="./index">Seguir comprando<i class="fa-solid fa-cart-shopping"></i></a>
-                    </label>
-              
-                </div>
-               
+                    </article>
+                            
+                        <hr class="hr">
+            </section>   
+            
+            <section>
+
+                    <article>  
+                        <div class="start_buy" >
+                            <p class="textTotal"><strong>Total:</strong></p>
+                            <p class="montoTotal"><strong>$40.770</strong></p>
+                        
+                       
+                            <div class="action_cart">
+                            
+                                <form action="cart/cartForm" method="get">
+                                    <a href="#eliminar" for="button_reset">
+                                    <button class="remove" type="reset" name="button_reset" id="button_reset"><i class="fa-solid fa-trash-can"></i></button></a>
+                    
+                                    <a href="cart/cartForm" for="start_buy"> 
+                                    <button class="botonPago" type="submit" value="sumbit" name="start_buy" id="start_buy">Iniciar compra</button></a>
+                                </form>
+                            
+                                <label class="keep_buy">
+                                    <a href="./index">Seguir comprando<i class="fa-solid fa-cart-shopping"></i></a>
+                                </label>
+                            </div>
+                        </div>
+                    </article> 
             </section>
-    </main>
+        </main>
         
     <%- include('./partials/footer') %>
 
