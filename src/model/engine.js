@@ -13,6 +13,11 @@ const path= require('path');
 const path_relative= path.join(__dirname, '../../data/')
 
 /* ================================================================================ */
+
+/*Tabla es el archivo (paquetes)
+Columna es el registropaquete especifico, por ejemplo Bariloche.)
+Item es el campo//un campo del paquete, por ejemplo, id o categoria o el hotel*/
+
 const engine= {
     // se implementa un meto para trae todos los valores de un item de la tabla
     browse_table: function(name_table) {
