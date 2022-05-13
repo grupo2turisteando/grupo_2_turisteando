@@ -9,7 +9,8 @@
                 <h2 class="h2Cart">Carrito</h2>
                 <% for (let paquete of data_show_cart) {%>
                     
-                        <article <%= paquete.package_id %> class="porComprar">
+            
+                    <article <%= paquete.package_id %> class="porComprar">
                         <p class="descripcionCart"><%= paquete.package_name %> </p> 
                         <figure><img src="/images/<%= paquete.package_image %>" alt="<%= paquete.package_alt_image %>"></figure>
                         <div class="texto">
