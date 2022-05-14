@@ -28,13 +28,9 @@ const cart_controller = {
        
         const list_package = engine.browse_table("productos");
         let data_add_cart =req.params.id
-        //let paquete = engine.find_columm("productos",data_add_cart)
-        //let objeto_paquete= paquete[0]
         let data_show_cart = list_package.filter(elemento=>elemento.package_id == data_add_cart)
-
-       // let cart_history = engine.add_columm("cart",objeto_paquete);
         let cart_history = engine.add_columm("cart",data_show_cart[0]);
-        //res.status(200).render('../views/productCart', { data_show_cart: paquete });
+        data_show_cart= engine.browse_table("cart");
         res.status(200).render('../views/productCart', { data_show_cart: data_show_cart });
     },
 
