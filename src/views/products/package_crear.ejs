@@ -23,7 +23,7 @@
 <body>
     <%- include('../partials/header_admin') %>
     <!-- Formulario -->
-    <form action="/admin/crear" method="POST" class="create_form" enctype="multipart/form-data">
+    <form action="/admin/crear" method="POST" class="create_form" enctype="multipart/form-data" id="form_crear">
         <h3>Formulario para crear un paquete turistico</h3>
         <div class="control_formulario">
             <label>package_id: </label>
@@ -71,7 +71,7 @@
         </div>
         <div class="control_formulario">
             <label>package_description: </label>
-            <textarea name="package_description" class="control" rows="10" cols="50" 
+            <textarea name="package_description" class="control" form= 'form_crear' rows="2" 
                         placeholder="Escriba la descripción del paquete">
             </textarea>
         </div>

@@ -15,6 +15,7 @@
 .package_category: numerico - 1-paquete regular, 2-paquete en oferta
 .package_transportation: numerico - 1-aereo, 2-bus, 3-sin transporte incluido
 .package_excursions_id: numerico - 0 - indica que no tiene excursiones incluidas en el paquete
+.package_discount: numerico - porcentaje de descuento en el precio del paquete.
 ==================================================================================================
 -->
 
@@ -22,7 +23,7 @@
 <body>
     <%- include('../partials/header') %>
     <!-- Search paquete -->
-    <form action="/admin/search" method="GET">
+    <form action="/admin/producto/delete?_method=DELETE" method="POST" class="create_form" id= 'form_delte' enctype="multipart/form-data">
         <label for="paquetes">Paquetes turísticos: </label>
             <select name="paquetes">
                 <option value="bariloche">Bariloche</option>

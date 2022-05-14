@@ -8,21 +8,16 @@
         <section class="paquetes">
             <h3>Paquetes:</h3>
             <div class="productos">
-                <% for (let paquete of data_paquetes) {
-                    if (paquete.index) { %>
+                <% for (let paquete of index_paquetes) {%>
                         <%- include('./partials/paquete', {paquete}) %>
-                    <% } %>
-                <% } %>
-                
+                <% } %>  
             </div> 
         </section>
         <section class="ofertas">
             <h3>Ofertas:</h3>
             <div class="prod_ofertas"> 
-                <% for (let paquete of data_paquetes) {
-                    if (paquete.index == false) { %>
+                <% for (let paquete of index_ofertas) {%>
                         <%- include('./partials/paquete', {paquete}) %>
-                    <% } %>
                 <% } %>
             </div>
         </section>

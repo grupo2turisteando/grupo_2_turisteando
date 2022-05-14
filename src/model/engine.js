@@ -13,6 +13,11 @@ const path= require('path');
 const path_relative= path.join(__dirname, '../../data/')
 
 /* ================================================================================ */
+
+/*Tabla es el archivo (paquetes)
+Columna es el registropaquete especifico, por ejemplo Bariloche.)
+Item es el campo//un campo del paquete, por ejemplo, id o categoria o el hotel*/
+
 const engine= {
     // se implementa un meto para trae todos los valores de un item de la tabla
     browse_table: function(name_table) {
@@ -20,7 +25,8 @@ const engine= {
     },
     // este metodo trae una columm de la table 
     read_columm: function(name_table, columm_table_id) {
-        return this.find_columm(name_table, columm_table_id);    
+        let registro= this.find_columm(name_table, columm_table_id);    
+        return registro;
     }, 
     // este metodo permite modificar los items de una columm de la table
     edit_columm: function(name_table, object_modified) {

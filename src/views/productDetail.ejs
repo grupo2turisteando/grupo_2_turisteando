@@ -7,7 +7,7 @@
         <main>
             <section >
                 <h2 class="title"><%= package.package_name %></h2>
-                <article>
+                <article >
                     <figure class="detailPic">
                         <img src='/images/<%= package.package_image %>' alt='<%= package.package_alt_image %>' height="300px" width="500px">
                     </figure>
@@ -25,7 +25,7 @@
                         <!--<div class="subtitle_button">
                             <button type="submit" class="buy_button" value="Submit"><a class="buy_button" href="/cart">Agregar al carrito</a></button>
                         </div>-->
-                        <form action="/cart" method="GET" class="subtitle_button">
+                        <form action="/cart/add/<%= package.package_id%>" method="GET" class="subtitle_button">
                             <button type="submit" class="buy_button">Agregar al carrito</button>
                         </form>
                         </div>
