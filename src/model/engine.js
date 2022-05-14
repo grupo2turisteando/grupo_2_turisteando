@@ -20,7 +20,8 @@ const engine= {
     },
     // este metodo trae una columm de la table 
     read_columm: function(name_table, columm_table_id) {
-        return this.find_columm(name_table, columm_table_id);    
+        let registro= this.find_columm(name_table, columm_table_id);    
+        return registro;
     }, 
     // este metodo permite modificar los items de una columm de la table
     edit_columm: function(name_table, object_modified) {

@@ -32,6 +32,11 @@ router.post('/crear', upload.single('turisteando_image'), admin_controllers.crea
 router.get('/productos', admin_controllers.lista_packages);
 /* rutas para editar productos GET y POST */
 router.get('/producto/:id', admin_controllers.edit_package_get);
-router.put('/producto/edit', admin_controllers.edit_package_post);
+// En la ruta del put para crear un paquete va como middleware del Multar
+router.put('/producto/edit', upload.single('turisteando_image'), admin_controllers.edit_package_put);
+/* rutas para borrar productos GET y DELETE */
+router.get('/producto/:id/delete', admin_controllers.delete_package_get);
+// En la ruta del delete para crear un paquete va como middleware del Multar
+router.delete('/producto/delete', admin_controllers.delete_package_delete);
 
 module.exports= router;

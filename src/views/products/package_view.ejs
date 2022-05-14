@@ -23,7 +23,7 @@
 <body>
     <%- include('../partials/header') %>
     <!-- Search paquete -->
-    <form action="/admin/search" method="GET">
+    <form action="/admin/producto/delete?_method=DELETE" method="POST" class="create_form" id= 'form_delte' enctype="multipart/form-data">
         <label for="paquetes">Paquetes turísticos: </label>
             <select name="paquetes">
                 <option value="bariloche">Bariloche</option>

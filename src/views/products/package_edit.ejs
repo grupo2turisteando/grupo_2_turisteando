@@ -24,7 +24,7 @@
     <%- include('../partials/header_admin') %>
     <!-- Formulario -->
     <% if(package) { %>
-    <form action="/admin/producto/update?_method=PUT" method="POST" class="create_form">
+    <form action="/admin/producto/edit?_method=PUT" method="POST" class="create_form" id= 'form_edit' enctype="multipart/form-data">
         <input id='id' name="package_id" value="<%= package.package_id%>" hidden >
         <h3>Formulario para modificar un paquete turistico</h3>
         <div class="control_formulario">
@@ -36,10 +36,8 @@
                     maxlength="32" size="32">
         </div>
         <div class="control_formulario">
-            <input id='id' name="package_image" value="<%= package.package_image%>" hidden >
             <label>package_image: <%= package.package_image%></label>
-            <input type="file" name="package_image" accept= ".jpeg,.png, .webp" class="control" 
-                    value="<%= package.package_image%>">
+            <input type="file" name="turisteando_image" id="turisteando_image" accept= ".jpeg, .png, .webp" class="control">
         </div>
         <div class="control_formulario">
             <label>package_alt_image: </label>
@@ -73,7 +71,7 @@
         </div>
         <div class="control_formulario">
             <label>package_description: </label>
-            <textarea name="package_description" class="control" rows="10" cols="50" >
+            <textarea name="package_description" class="control" form= 'form_edit' rows="2">
                     <%= package.package_description%>
             </textarea>
         </div>
@@ -84,25 +82,25 @@
         <div class="control_formulario_perfil">
             <label for="package_index">package_index: </label>
             <label>SI <input type="radio" name="package_index" <%= package.package_index == 'true' ? 'checked' : ''%> 
-                                value="<%= package.package_index%>"></label>
+                                value='true' ></label>
             <label>NO <input type="radio" name="package_index" <%= package.package_index == 'false' ? 'checked' : ''%>
-                                 value="<%= package.package_index%>"></label>
+                                 value='false'></label>
         </div>
         <div class="control_formulario_perfil">
             <label for="package_category">package_category: </label>
             <label>paquete regular <input type="radio" name="package_category" <%= package.package_category == '1' ? 'checked' : ''%>
-                                        value="<%= package.package_category%>"></label>
+                                        value='1'></label>
             <label>paquete en oferta <input type="radio" name="package_category" <%= package.package_category == '2' ? 'checked' : ''%>
-                                        value="<%= package.package_category%>"></label>
+                                        value='2'></label>
         </div>
         <div class="control_formulario_perfil">
             <label for="package_transportation">package_transportation: </label>
             <label>aéreo <input type="radio" name="package_transportation" <%= package.package_transportation == '1' ? 'checked' : ''%>
-                value="<%= package.package_trasportation%>"></label>
+                value= '1'></label>
             <label>omnibus <input type="radio" name="package_transportation" <%= package.package_transportation == '2' ? 'checked' : ''%>
-                value="<%= package.package_trasportation%>"></label>
+                value='2'></label>
             <label>sin transporte incluido <input type="radio" name="package_transportation" <%= package.package_transportation == '3' ? 'checked' : ''%>
-                value="<%= package.package_trasportation%>"></label>
+                value='3'></label>
         </div>
         <div class="control_formulario">
             <label>package_excursions_id: </label>
@@ -115,7 +113,7 @@
                     required maxlength="10" size="10">
         </div>                                                                       
         <button type= "submit" class="boton_formulario">Guardar</button>
-        <button type="reset" class="boton_formulario">Cancelar</button>
+        <button type="reset" class="boton_formulario"><a href="/admin/productos">Cancelar</a></button>
     </form>
     <% } %>
     <%- include('../partials/footer_admin') %>
