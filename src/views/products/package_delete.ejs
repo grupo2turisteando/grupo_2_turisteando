@@ -1,79 +1,31 @@
-<!-- Datos a cargar en el formulario para el alta de un paquete
- DB_packages
-.package_id: numerico
-.package_name: string - nombre interno que le da al paquete
-.package_image: string - imagen jpg, pgn, web, que se utilizara para promocionar el paquete
-.package_alt_image: string - descripcion de la imagen para cuando no se cargue
-.package_price: numerico - precio de venta del paquete
-.package_title: string - es el titulo del paquete para los clientes
-.package_q_days: numerico - son la cantidad de noches del viaje
-.package_hotel: string - Nombre del hotel
-.package_stars_hotel: numerico - cantidad de estrellas del Hotel
-.package_description: string - descripcion del paquete
-.package_date_admission: date - fecha de ingreso al hotel
-.package_index: boolean - true o false si va en la vidriera del home
-.package_category: numerico - 1-paquete regular, 2-paquete en oferta
-.package_transportation: numerico - 1-aereo, 2-bus, 3-sin transporte incluido
-.package_excursions_id: numerico - 0 - indica que no tiene excursiones incluidas en el paquete
-.package_discount: numerico - porcentaje de descuento en el precio del paquete.
-==================================================================================================
--->
 
 <%- include('../partials/head') %>
 <body>
     <%- include('../partials/header_admin') %>
     <!-- Formulario -->
-    <form action="/admin/producto/delete?_method=DELETE" method="POST" class="create_form" id= 'form_delete'>
+    <form action="/admin/producto/delete/<%= package.package_id%>?_method=DELETE" method="POST" class="create_form" 
+                                            id= 'form_delete' enctype="multipart/form-data">
         <h3>Formulario para borrar un paquete turistico</h3>
         <div class="control_formulario">
-            <label>package_id: <%= package.package_id%></label>
+            <label><strong></strong> package_id: <%= package.package_id%></strong></label>
         </div>
         <div class="control_formulario">
             <label>package_name: <%= package.package_name%></label>
-        </div>
-        <div class="control_formulario">
             <label>package_image: <%= package.package_image%></label>
-        </div>
-        <div class="control_formulario">
             <label>package_alt_image: <%= package.package_alt_image%></label>
-        </div>
-        <div class="control_formulario">
             <label>package_price: <%= package.package_price%></label>
-        </div>
-        <div class="control_formulario">
             <label>package_title: <%= package.package_title%></label>
-        </div>
-        <div class="control_formulario">
             <label>package_q_days: <%= package.package_q_days%></label>
-        </div>
-        <div class="control_formulario">
             <label>package_hotel: <%= package.package_hotel%></label>
-        </div>
-        <div class="control_formulario">
             <label>package_stars_hotel: <%= package.package_stars_hotel%></label>
-        </div>
-        <div class="control_formulario">
             <label>package_description: <%= package.package_description%></label>
-        </div>
-        <div class="control_formulario">
             <label>package_date_admission: <%= package.package_date_admission%></label>
-        </div>
-        <div class="control_formulario_perfil">
             <label for="package_index">package_index: <%= package.package_index%></label>
-        </div>
-        <div class="control_formulario_perfil">
             <label for="package_category">package_category: <%= package.package_category%></label>
-        </div>
-        <div class="control_formulario_perfil">
             <label for="package_transportation">package_transportation: <%= package.package_transportation%></label>
-        </div>
-        <div class="control_formulario">
             <label>package_excursions_id: <%= package.package_excursions_id%></label>
-        </div>
-        <div class="control_formulario">
             <label>package_discount: <%= package.package_discount%></label>
-        </div>                                                                       
-        <button type= "submit" class="boton_formulario">Borrar</button>
+        <button type= "submit" class="boton_formulario">DELETE</button>
         <button type="reset" class="boton_formulario"><a href="/admin/productos">Cancelar</a></button>
     </form>
     <%- include('../partials/footer_admin') %>

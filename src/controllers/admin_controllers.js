@@ -55,8 +55,7 @@ const admin_controllers = {
             res.status(200).render('../views/products/package_delete', {package: package[0]}); //como envio un objeto literal uso el indice cero del array
         },
         delete_package_delete: (req, res) => {
-            let data_package= req.body;
-            let package_id= data_package.package_id
+            let package_id= req.params.id;
             engine.delete_columm('productos', package_id); 
             res.redirect('/admin');
         },

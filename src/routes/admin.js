@@ -37,6 +37,6 @@ router.put('/producto/edit', upload.single('turisteando_image'), admin_controlle
 /* rutas para borrar productos GET y DELETE */
 router.get('/producto/:id/delete', admin_controllers.delete_package_get);
 // En la ruta del delete para crear un paquete va como middleware del Multar
-router.delete('/producto/delete', admin_controllers.delete_package_delete);
+router.delete('/producto/delete/:id', admin_controllers.delete_package_delete);
 
 module.exports= router;
