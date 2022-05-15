@@ -30,15 +30,33 @@ const admin_controllers = {
         edit_package_get: (req, res) => {
             let package_id= req.params.id;
             let package= engine.read_columm('productos', package_id); 
-            res.status(200).render('../views/products/package_edit', {package: package[0]});
+            res.status(200).render('../views/products/package_edit', {package: package[0]}); //como envio un objeto literal uso el indice cero del array
         },
-        edit_package_post: (req, res) => {
+        edit_package_put: (req, res) => {
             let data_package= req.body;
             /* update los datos */
+            let old_package= engine.read_columm('productos', data_package.package_id)
             data_package.package_price= parseFloat(data_package.package_price); // convierto el dato que vienen como string a un float para la DB
             data_package.package_discount= parseFloat(data_package.package_discount); // convierto el dato que vienen como string a un float para la DB
+            /* guardo el nombre de la imagen que subieron para el paquete, si no subieron queda como null */
+            if (req.file){
+                data_package.package_image= req.file.filename;
+            }else {
+                data_package.package_image= old_package[0].package_image; //como uso un objeto literal uso el indice cero del array
+            }
+            
             /* actualizo la base de datos */
             engine.edit_columm('productos', data_package);
+            res.redirect('/admin');
+        },
+        delete_package_get: (req, res) => {
+            let package_id= req.params.id;
+            let package= engine.read_columm('productos', package_id); 
+            res.status(200).render('../views/products/package_delete', {package: package[0]}); //como envio un objeto literal uso el indice cero del array
+        },
+        delete_package_delete: (req, res) => {
+            let package_id= req.params.id;
+            engine.delete_columm('productos', package_id); 
             res.redirect('/admin');
         },
         
