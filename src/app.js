@@ -37,9 +37,9 @@ app.use('/contact', rutasContact);
 app.use('/users', rutasUsers);
 
 /* Error 404 */
-app.use((req, res, next) => {
-    res.status(404).render('notFound');
-});
+// app.use((req, res, next) => {
+//     res.status(404).render('notFound');
+// });
 
 /* se monta el servidor */
 app.listen(process.env.PORT || 5020, () => {

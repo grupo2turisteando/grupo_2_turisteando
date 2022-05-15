@@ -3,8 +3,6 @@ const path= require('path');
 
 const engine = require('../model/engine.js');
 
-/* defino las variables del entorno */
-const path_relative= path.join(__dirname, '../../data')
 
 
 
@@ -24,19 +22,19 @@ const users_controller = {
         };
 
         /* Guardar usuario*/
-        let users_file = fs.readFileSync('users-prueba.json', {encoding: 'utf-8'});
+        let users_file = fs.readFileSync('data/users-prueba.json', {encoding: 'utf-8'});
         let users;
         if(users_file == "") {
             users = [];
         } else {
             users = JSON.parse(users_file);
         };
-          
+
         users.push(user);
 
         usersJSON = JSON.stringify(users);
 
-        fs.writeFileSync('users-prueba.json', usersJSON);
+        fs.writeFileSync('data/users-prueba.json', usersJSON);
 
         res.status(200).redirect('/users/login'); //ruta de cierre del metodo POST
     },
@@ -44,6 +42,9 @@ const users_controller = {
         let users_list = fs.readFileSync('users-prueba.json', {encoding: 'utf-8'});
         let users = JSON.parse(users_list);
         res.status(200).render('users_list', {'users': users})
+    },
+    view_users: (req, res) => {
+        res.status(200).render('../views/users_admin')
     }
 };
 
