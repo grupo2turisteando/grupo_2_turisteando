@@ -1,0 +1,26 @@
+[
+    {
+        "nombre": "ignacio",
+        "email": "ignacio@gmail.com",
+        "password": "ignacio",
+        "password_valid": "ignacio"
+    },
+    {
+        "nombre": "walter",
+        "email": "walter@gmail.com",
+        "password": "walterlesk",
+        "password_valid": "walterlesk"
+    },
+    {
+        "nombre": "facundo",
+        "email": "facundo@gmail.com",
+        "password": "fminuto",
+        "password_valid": "fminuto"
+    },
+    {
+        "nombre": "silvana",
+        "email": "silvana@gmail.com",
+        "password": "silvana",
+        "password_valid": "silvana"
+    }
+]
