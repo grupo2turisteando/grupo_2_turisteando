@@ -36,6 +36,7 @@ const cart_controller = {
 
 
     delete_item : (req, res) => {
+        engine.delete_columm("cart",)        
         res.send("Eliminar paquete");             
             },
     
