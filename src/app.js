@@ -13,6 +13,7 @@ const rutasCart = require('./routes/cart.js');
 const rutasAdmin = require('./routes/admin.js');
 const rutasContact = require('./routes/contact.js');
 const rutasUsers = require('./routes/users.js');
+const rutasNewsletter = require('./routes/newsletter.js')
 
 app.set('view engine', 'ejs');
 /* seteo donde esta el directorio "views" */
@@ -35,6 +36,7 @@ app.use('/cart', rutasCart);
 app.use('/admin', rutasAdmin);
 app.use('/contact', rutasContact);
 app.use('/users', rutasUsers);
+app.use('/newsletter', rutasNewsletter);
 
 /* Error 404 */
 app.use((req, res, next) => {
