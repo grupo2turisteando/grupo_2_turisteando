@@ -36,8 +36,9 @@ const cart_controller = {
 
 
     delete_item : (req, res) => {
-        engine.delete_columm("cart",)        
-        res.send("Eliminar paquete");             
+        let data_delete_cart = req.params.id;
+        engine.delete_columm("cart", data_delete_cart)        
+        res.redirect("/cart")          
             },
     
     purchase : (req, res) => {
@@ -54,5 +55,6 @@ const cart_controller = {
     cart_final :  (req, res) => {
                     res.render("../views/cartFinal");
                             },
+    
 };
 module.exports= cart_controller;
