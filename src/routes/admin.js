@@ -6,6 +6,7 @@ const multer= require('multer');
 const router = express.Router(); /* Router permiete crear rutas montables y desmontables */
 
 const admin_controllers = require('../controllers/admin_controllers.js');
+const users_controller = require('../controllers/users_controller.js');
 
 // configuro Multer para poder subir al servidor los archivos de las imagenes de paisajes
 const storage= multer.diskStorage({
@@ -38,5 +39,8 @@ router.put('/producto/edit', upload.single('turisteando_image'), admin_controlle
 router.get('/producto/:id/delete', admin_controllers.delete_package_get);
 // En la ruta del delete para crear un paquete va como middleware del Multar
 router.delete('/producto/delete/:id', admin_controllers.delete_package_delete);
+
+/** ruta admin users */
+router.get('/users', users_controller.view_users);
 
 module.exports= router;

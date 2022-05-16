@@ -13,6 +13,8 @@ const rutasCart = require('./routes/cart.js');
 const rutasAdmin = require('./routes/admin.js');
 const rutasContact = require('./routes/contact.js');
 const rutasUsers = require('./routes/users.js');
+const rutasNewsletter = require('./routes/newsletter.js')
+const rutasSelect = require('./routes/select.js');
 
 app.set('view engine', 'ejs');
 /* seteo donde esta el directorio "views" */
@@ -35,11 +37,13 @@ app.use('/cart', rutasCart);
 app.use('/admin', rutasAdmin);
 app.use('/contact', rutasContact);
 app.use('/users', rutasUsers);
+app.use('/newsletter', rutasNewsletter);
+app.use('/productSelect', rutasSelect);
 
 /* Error 404 */
-app.use((req, res, next) => {
-    res.status(404).render('notFound');
-});
+// app.use((req, res, next) => {
+//     res.status(404).render('notFound');
+// });
 
 /* se monta el servidor */
 app.listen(process.env.PORT || 5020, () => {
