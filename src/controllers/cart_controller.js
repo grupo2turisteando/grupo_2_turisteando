@@ -17,10 +17,10 @@ const engine= require('../model/engine.js'); // con este modulo operamos la base
 
 const cart_controller = {
     show_cart :  (req, res) => {
-        data_show_cart= engine.browse_table("cart");
+        let data_show_cart= engine.browse_table("cart");
 
         
-        res.status(200).render('../views/productCart', {data_show_cart:data_show_cart});
+       res.status(200).render('../views/productCart', {data_show_cart:data_show_cart});
         
     },
       
