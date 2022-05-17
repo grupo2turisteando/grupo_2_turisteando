@@ -1,6 +1,8 @@
 /* Este controlador "admin_controllers" implementa todos los metodos para
 administrar el sitio web */
-const access_database= require('../model/access_database.js');
+const { validationResult } = require('express-validator');
+
+//const access_database= require('../model/access_database.js');
 const engine= require('../model/engine.js'); // con este modulo operamos la base de datos
 
 const admin_controllers = {
@@ -9,7 +11,7 @@ const admin_controllers = {
         res.status(200).render('../views/admin');
         },
         crear_package_get: (req, res) => {
-                        res.status(200).render('../views/products/package_crear');
+            res.status(200).render('../views/products/package_crear');
         },
         crear_package_post: (req, res) => {
             // para procesar el formulario
@@ -22,7 +24,8 @@ const admin_controllers = {
             }else {
                 data_package.package_image= null;
             }
-            
+            // Realizo la validacion de datos
+            const resalt_validation = validationResult(req);
             /* grabo los datos */
             engine.add_columm('productos', data_package);
             res.redirect('/admin');
