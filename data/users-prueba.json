@@ -1,6 +1,3 @@
-<<<<<<< HEAD:users-prueba.json
-[{"nombre":"ignacio","email":"ignacio@gmail.com","password":"ignacio","password_valid":"ignacio"},{"nombre":"walter","email":"walter@gmail.com","password":"walterlesk","password_valid":"walterlesk"},{"nombre":"facundo","email":"facundo@gmail.com","password":"fminuto","password_valid":"fminuto"},{"nombre":"silvana","email":"silvana@gmail.com","password":"silvana","password_valid":"silvana"},{"nombre":"silvana","email":"silacotto@gmail.com","password":"1234","password_valid":"1234"}]z
-=======
 [
     {
         "nombre": "ignacio",
@@ -25,6 +22,19 @@
         "email": "silvana@gmail.com",
         "password": "silvana",
         "password_valid": "silvana"
+    },
+    {
+        "id": 5,
+        "nombre": "user5",
+        "email": "user@gmail.com",
+        "password": "user",
+        "password_valid": "user"
+    },
+    {
+        "id": 6,
+        "nombre": "user6",
+        "email": "user@user.com",
+        "password": "user",
+        "password_valid": "user"
     }
 ]
->>>>>>> 45cf4955a253b48438572a0bda3954066f14725b:data/users-prueba.json
