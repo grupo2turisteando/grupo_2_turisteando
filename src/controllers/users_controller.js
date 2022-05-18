@@ -15,6 +15,7 @@ const users_controller = {
     },
     add_user: (req, res) => {
         let user = {
+            id: 0,
             nombre: req.body.usuario,
             email: req.body.email,
             password: req.body.password,
@@ -22,6 +23,7 @@ const users_controller = {
         };
 
         /* Guardar usuario*/
+        /** Leer JSON */
         let users_file = fs.readFileSync('data/users-prueba.json', {encoding: 'utf-8'});
         let users;
         if(users_file == "") {
@@ -30,10 +32,13 @@ const users_controller = {
             users = JSON.parse(users_file);
         };
 
+        /** Agregar id user */ 
+        id.users = users.length + 1;
+
         users.push(user);
 
         usersJSON = JSON.stringify(users);
-
+        /** Reescribir JSON */
         fs.writeFileSync('data/users-prueba.json', usersJSON);
 
         res.status(200).redirect('/users/login'); //ruta de cierre del metodo POST
