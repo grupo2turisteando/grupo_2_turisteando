@@ -3,6 +3,8 @@ const path = require('path');
 const methodOverride= require('method-override')
 const app = express();
 const publicPath = path.join(__dirname, '../public');
+/** Session */
+const session = require('express-session');
 
 /* rutas */
 const rutasMain = require('./routes/main.js');
@@ -26,6 +28,7 @@ app.use(express.static(publicPath));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(session({secret: 'Secreto'}));
 
 /* puntos de entrada */
 app.use('/', rutasMain);
