@@ -28,7 +28,11 @@ app.use(express.static(publicPath));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(session({secret: 'Secreto'}));
+app.use(session({
+    secret: 'Secreto',
+    resave: 'false',
+    saveUninitialized: 'false'
+}));
 
 /* puntos de entrada */
 app.use('/', rutasMain);
