@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path= require('path');
-
+const { check, validationResult, body } = require('express-validator');
 const engine = require('../model/engine.js');
 
 
@@ -9,6 +9,38 @@ const engine = require('../model/engine.js');
 const users_controller = {
     login: (req, res) => {
         res.status(200).render('../views/users/login')
+    },
+    process_login: (req, res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let users_file = fs.readFileSync('data/users-prueba.json', {encoding: 'utf-8'});
+            let users;
+            if(users_file == "") {
+                users = [];
+            } else {
+                users = JSON.parse(users_file);
+            };
+
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == req.body.email) {
+                    if ( bcrypt.compareSync(req.body.password, users[i].password)) {
+                        let login_user = users[i];
+                        break;
+                    }
+                }
+            }
+            
+            if (login_user == undefined) {
+                return res.status(200).render('../views/users/login', {errors: [
+                    {msg: 'Contraseña incorrecta'}
+                ]});
+            }
+
+            req.session.log_user = login_user;
+            res.render('Usuario logeado');
+        } else {
+            return res.render('../views/users/login', {errors: errors.errors});
+        }
     },
     register: (req, res) => {
         res.status(200).render('../views/users/register')
@@ -33,7 +65,7 @@ const users_controller = {
         };
 
         /** Agregar id user */ 
-        id.users = users.length + 1;
+        user.id = users.length + 1;
 
         users.push(user);
 

@@ -36,5 +36,12 @@
         "email": "user@user.com",
         "password": "user",
         "password_valid": "user"
+    },
+    {
+        "id": 7,
+        "nombre": "admin",
+        "email": "admin@turisteando.com",
+        "password": "turisteando1234",
+        "password_valid": "turisteando1234"
     }
 ]
