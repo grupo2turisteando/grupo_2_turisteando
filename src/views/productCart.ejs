@@ -6,7 +6,9 @@
     
         <main class="cartMain" >
             <section class="sectionCart">
+ 
                 <h2 class="h2Cart">Carrito</h2>
+                
                 <% for (let paquete of data_show_cart) {%>
                     
             
@@ -42,8 +44,8 @@
                             <div class="action_cart">
                             
                                 <form action="cart/cartForm" method="get">
-                                    <a href="cart/cartForm" for="start_buy"> 
-                                    <button class="botonPago" type="submit" value="sumbit" name="start_buy" id="start_buy">Iniciar compra</button></a>
+                                   
+                                    <button class="botonPago" type="submit" value="iniciar_compra" name="start_buy" id="start_buy">Iniciar compra</button></a>
                                 </form>
                             
                                 <label class="keep_buy">

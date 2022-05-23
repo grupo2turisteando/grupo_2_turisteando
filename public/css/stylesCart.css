@@ -238,7 +238,10 @@ a{
     }
 
 /****** cartForm**********/
-
+.errors_form{
+    color: red;
+    font-size: 12px;
+}
 .pasajeros{
      /* border: solid yellow 3px;*/
     display: flex;
