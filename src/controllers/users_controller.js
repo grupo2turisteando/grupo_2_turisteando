@@ -46,34 +46,74 @@ const users_controller = {
         res.status(200).render('../views/users/register')
     },
     add_user: (req, res) => {
-        let user = {
-            id: 0,
-            nombre: req.body.usuario,
-            email: req.body.email,
-            password: req.body.password,
-            password_valid: req.body.password_valid
-        };
+        const result_validation = validationResult(req);
+        if (result_validation.isEmpty()) {
+            let user = {
+                    id: 0,
+                    nombre: req.body.usuario,
+                    email: req.body.email,
+                    password: req.body.password,
+                    password_valid: req.body.password_valid,
+                    avatar: req.body.avatar
+                };
 
-        /* Guardar usuario*/
-        /** Leer JSON */
-        let users_file = fs.readFileSync('data/users-prueba.json', {encoding: 'utf-8'});
-        let users;
-        if(users_file == "") {
-            users = [];
+            /* Guardar usuario*/
+            /** Leer JSON */
+            let users_file = fs.readFileSync('data/users-prueba.json', {encoding: 'utf-8'});
+            let users;
+            if(users_file == "") {
+                users = [];
+            } else {
+                users = JSON.parse(users_file);
+            };
+
+            /** Agregar id user */ 
+            user.id = users.length + 1;
+
+            users.push(user);
+
+            usersJSON = JSON.stringify(users);
+            /** Reescribir JSON */
+            fs.writeFileSync('data/users-prueba.json', usersJSON);
+            res.status(200).redirect('/users/login');
         } else {
-            users = JSON.parse(users_file);
-        };
+            res.render('../views/users/register', { errors: result_validation.mapped(), oldData: req.body }); //result_validation.array()
+        }
+        // if (result_validation.errors.length > 0) {
+        //     return res.render('../views/users/register'), {
+        //         errors: result_validation.mapped(),
+        //         oldData: req.body
+        //     }
+        // }
+        
+        // let user = {
+        //     id: 0,
+        //     nombre: req.body.usuario,
+        //     email: req.body.email,
+        //     password: req.body.password,
+        //     password_valid: req.body.password_valid
+        // };
 
-        /** Agregar id user */ 
-        user.id = users.length + 1;
+        // /* Guardar usuario*/
+        // /** Leer JSON */
+        // let users_file = fs.readFileSync('data/users-prueba.json', {encoding: 'utf-8'});
+        // let users;
+        // if(users_file == "") {
+        //     users = [];
+        // } else {
+        //     users = JSON.parse(users_file);
+        // };
 
-        users.push(user);
+        // /** Agregar id user */ 
+        // user.id = users.length + 1;
 
-        usersJSON = JSON.stringify(users);
-        /** Reescribir JSON */
-        fs.writeFileSync('data/users-prueba.json', usersJSON);
+        // users.push(user);
 
-        res.status(200).redirect('/users/login'); //ruta de cierre del metodo POST
+        // usersJSON = JSON.stringify(users);
+        // /** Reescribir JSON */
+        // fs.writeFileSync('data/users-prueba.json', usersJSON);
+
+        // res.status(200).redirect('/users/login'); //ruta de cierre del metodo POST
     },
     users_list: (req, res) => {
         let users_list = fs.readFileSync('users-prueba.json', {encoding: 'utf-8'});
