@@ -37,11 +37,10 @@ const cart_controller = {
  
        
        if (result_validation_cart.errors.length > 0){
-           res.render("cartForm", {
-                errors : result_validation_cart.mapped()
-           })
+           res.render("cartForm", {  errors : result_validation_cart.mapped(), oldData: req.body}
+           )
        }
-
+       
     },
     
     purchase : (req, res) => {
