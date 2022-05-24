@@ -1,21 +1,18 @@
-<%- include('./partials/head') %> 
+<%- include('./partials/head') %>
+
 <body>
-  <!-- Navbar (sit on top) -->
-  <%- include('./partials/nav_admin') %>
-
-
-  <!-- Header -->
-  <%- include('./partials/header_admin') %>
-
-  
-  <h1>Users</h1>
-
-  <!-- Page content -->
-  <div class="ps-content">
-
-    
-    <!-- Footer -->
-    <%- include('./partials/footer_admin') %>
-  </div>
+  <header>
+  <h1>Administracion de Usuarios</h1>
+  <p>Listado de Usuarios</p>
+  <% for (let user of users_table) {%>
+    <div class="users_list">
+      <p>ID: <%= user.id %> </p>
+      <p>Nombre: <%= user.nombre %></p>
+      <p>Email: <%= user.email %></p>
+      <p>Avatar: <%= user.avatar %></p>
+      <br>
+      <% } %> 
+    </div>
+  </header>
 </body>
 </html>

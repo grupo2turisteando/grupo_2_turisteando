@@ -7,7 +7,7 @@ const router = express.Router(); /* Router permiete crear rutas montables y desm
 const { body } = require('express-validator'); // la funcion body es igual a la funcion check
 
 const admin_controllers = require('../controllers/admin_controllers.js');
-const users_controller = require('../controllers/users_controller.js');
+const users_admin_controllers = require('../controllers/users_admin_controllers.js');
 
 // configuro Multer para poder subir al servidor los archivos de las imagenes de paisajes
 const storage= multer.diskStorage({
@@ -80,6 +80,6 @@ router.get('/producto/:id/delete', admin_controllers.delete_package_get);
 router.delete('/producto/delete/:id', admin_controllers.delete_package_delete);
 
 /** ruta admin users */
-router.get('/users', users_controller.view_users);
+router.get('/users', users_admin_controllers.users_list);
 
 module.exports= router;

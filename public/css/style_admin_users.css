@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.users_adim{
+    min-height: 700px;
+}
+.title_users{
+    text-align: center;
+    font-size: 16px;
+}
+
+.users_list{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    text-align:start;
+   
+}
