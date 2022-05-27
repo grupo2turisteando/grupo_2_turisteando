@@ -86,11 +86,11 @@ router.get('/userDetail/:id', users_admin_controllers.show_user);
 /* Editar usurios GET y POST */
 router.get('/user/:id', users_admin_controllers.edit_user_get);
 // En la ruta del put para crear un paquete va como middleware del Multar
-router.put('/user/edit',upload.single("user_avatar"), admin_controllers.edit_package_put);
+//router.put('/user/edit',upload.single("user_avatar"), users_admin_controllers.edit_user_put);
 /* rutas para borrar usuarios GET y DELETE */
-router.get('/user/:id/delete', admin_controllers.delete_package_get);
+router.get('/user/:id/delete', users_admin_controllers.delete_user_get);
+router.delete("/user/delete/:id", users_admin_controllers.delete_user_delete);
 
-router.delete('/user/delete/:id', admin_controllers.delete_package_delete);
 
 
 module.exports= router;
