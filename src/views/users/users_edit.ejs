@@ -1,0 +1,35 @@
+
+
+<%- include('../partials/head') %>
+<body class="body_users">
+
+    <% if(user) { %>
+        <h3>Formulario para modificar un Usuario</h3>
+    <form action="/admin/user/edit?_method=PUT" method="POST" class="create_form" id= 'form_edit' enctype="multipart/form-data">
+        <div class="user_edit">
+            <label>Editar usuario  <%= user.id%></label>
+        <input id='id' name="user_id"  hidden >
+      
+        </div>
+        <div class="user_edit">
+            <label>Nombre:<%= user.nombre%> </label>
+            <input type="text" name="user_name" class="control" maxlength="50" size="32">
+        </div>
+        <div class="user_edit">
+            <label>Avatar: <%= user.avatar%></label>
+            <input type="file" name="user_avatar" id="user_avatar" accept= ".jpeg, .png, .webp" class="control">
+        </div>
+        
+    
+        <div class="user_edit">
+            <label>Mail: <%= user.email%> </label>
+            <input type="email" name="user_email" class="control"   size="10">
+        </div>
+                                         
+        <button type= "submit" class="boton_formulario">Guardar</button>
+        <button type="reset" class="boton_formulario"><a href="/admin/users">Cancelar</a></button>
+    </form>
+    <% } %>
+    
+</body>
+</html>
