@@ -9,13 +9,17 @@ const cart_controller = {
     show_cart :  (req, res) => {
             let data_show_cart= engine.browse_table("cart");
             
-               // para sumar los paquetes
+               // Funcion nativa Number para pasar a tipo number el "string" package.price
+       
+            let precio_number = Number(data_show_cart.package_price);
+            
+            
+               var total_cart = data_show_cart.reduce((sum, value) => (typeof precio_number == "number" ? sum + precio_number : sum), 0);
                
-               data_show_cart.package_price= parseFloat(data_show_cart.package_price); // convierto el dato que vienen como string a un float para la DB
-               data_show_cart.package_discount= parseFloat(data_show_cart.package_discount); // convierto el dato que vienen como string a un float para la DB
-               /* guardo el nombre de la imagen que subieron para el paquete, si no subieron queda como null */
-               
-            res.status(200).render('../views/productCart', {data_show_cart:data_show_cart});
+            console.log(total_cart);
+
+            res.status(200).render('../views/productCart', {data_show_cart:data_show_cart,
+                                                            total_cart : total_cart});
             },
       
     add_item :   (req, res) => {
@@ -25,7 +29,7 @@ const cart_controller = {
         let data_show_cart = list_package.filter(elemento=>elemento.package_id == data_add_cart)
         let cart_history = engine.add_columm("cart",data_show_cart[0]);
         data_show_cart= engine.browse_table("cart");
-        res.status(200).render('../views/productCart', { data_show_cart: data_show_cart });
+        res.status(200).render('../views/productCart', { data_show_cart: data_show_cart ,});
     },
 
 

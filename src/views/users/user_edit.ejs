@@ -3,8 +3,9 @@
 <%- include('../partials/head') %>
 <body class="body_users">
 
-    <% if(user) { %>
+   
         <h3>Formulario para modificar un Usuario</h3>
+         <% if(user) { %>
     <form action="/admin/user/edit?_method=PUT" method="POST" class="create_form" id= 'form_edit' enctype="multipart/form-data">
         <div class="user_edit">
             <label>Editar usuario  <%= user.id%></label>
