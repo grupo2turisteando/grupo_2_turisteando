@@ -8,6 +8,13 @@ const {validationResult}= require("express-validator");
 const cart_controller = {
     show_cart :  (req, res) => {
             let data_show_cart= engine.browse_table("cart");
+            
+               // para sumar los paquetes
+               
+               data_show_cart.package_price= parseFloat(data_show_cart.package_price); // convierto el dato que vienen como string a un float para la DB
+               data_show_cart.package_discount= parseFloat(data_show_cart.package_discount); // convierto el dato que vienen como string a un float para la DB
+               /* guardo el nombre de la imagen que subieron para el paquete, si no subieron queda como null */
+               
             res.status(200).render('../views/productCart', {data_show_cart:data_show_cart});
             },
       
@@ -34,12 +41,13 @@ const cart_controller = {
 
     process_cart_form: (req,res)=>{
        const result_validation_cart = validationResult(req);
- 
-       
-       if (result_validation_cart.errors.length > 0){
-           res.render("cartForm", {  errors : result_validation_cart.mapped(), oldData: req.body}
-           )
-       }
+            if (result_validation_cart.errors.length > 0){
+
+        res.render("cartForm", {  errors : result_validation_cart.mapped(), oldData: req.body})
+            } else{
+          //guardar en archivo JSON antes de mandar la vista      
+            res.status(200).render("../views/cartFinal");
+          }
        
     },
     

@@ -14,7 +14,7 @@
             
                     <article <%= paquete.package_id %> class="porComprar">
                         <p class="descripcionCart"><%= paquete.package_name %> 
-                            <form action="/cart/delete/<%= paquete.package_id %>" method= "post">
+                            <form action="/cart/delete/<%= paquete.package_id %>?_method=DELETE"" method="post" >
                                 <button  class="remove" type="submit" name="button_reset" ><i class="fa-solid fa-trash-can"></i></button></a>
                             </form>  
                         </p>

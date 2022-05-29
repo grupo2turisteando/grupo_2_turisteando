@@ -32,8 +32,8 @@ const validator_cart_form =[
                 .isLength({min: 6 ,max:10}).withMessage("Debes ingresar un número válido de la menos 6 caracteres"),
   
     //radio
-    body("payment_method").notEmpty().withMessage("Indica como quieres pagar"),
-    body("payment_method").notEmpty().withMessage("Indica como quieres pagar"),
+    /*body("payment_method").notEmpty().withMessage("Indica como quieres pagar"),
+    body("payment_method").notEmpty().withMessage("Indica como quieres pagar"),*/
     body("card_number")
                 .notEmpty().withMessage("Ingresa los 16 dígitos ubicados en el frente de la tarjeta").bail()
                 .isLength({min:16, max:16}).withMessage("Ingresa los 16 dígitos ubicados en el frente de la tarjeta"),
@@ -61,7 +61,7 @@ router.get("/add/:id", cart_controller.add_item);
 
 
 //eliminar un paquete/
-router.post("/delete/:id", cart_controller.delete_item);
+router.delete("/delete/:id", cart_controller.delete_item);
 
 //comprar//
 router.get("/purchase", cart_controller.purchase);
