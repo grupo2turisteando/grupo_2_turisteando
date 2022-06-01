@@ -2,6 +2,7 @@
 
 const path = require('path');
 const express= require('express');
+const login_middleware = require("../middlewaresUsers/login_middleware")
 const router= express.Router(); /* Router permiete crear rutas montables y desmontables */
 /* el metodo HTTP es llamado desde Router */
 // validar formulario
@@ -70,7 +71,7 @@ router.get("/purchase", cart_controller.purchase);
 router.get("/purchaseDetail", cart_controller.purchase_detail );
 
 //formulario de compra/
-router.get("/cartForm", cart_controller.cart_form );
+router.get("/cartForm",/*login_middleware,*/ cart_controller.cart_form );
 
 //procesar formulario compra
 router.post("/cartForm",validator_cart_form, cart_controller.process_cart_form );

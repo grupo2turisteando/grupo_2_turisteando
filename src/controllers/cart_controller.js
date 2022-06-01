@@ -1,7 +1,6 @@
 const access_database= require('../model/access_database.js');
 const { browse_table, write_json } = require('../model/engine.js');
 const engine= require('../model/engine.js'); // con este modulo operamos la base de datos
-
 const {validationResult}= require("express-validator");
 
 
@@ -9,12 +8,12 @@ const cart_controller = {
     show_cart :  (req, res) => {
             let data_show_cart= engine.browse_table("cart");
             
-               // Funcion nativa Number para pasar a tipo number el "string" package.price
+               // Funcion nativa  para pasar a tipo  el "string" package.price
        
-            let precio_number = Number(data_show_cart.package_price);
+            let precio = (data_show_cart.package_price);
             
             
-               var total_cart = data_show_cart.reduce((sum, value) => (typeof precio_number == "number" ? sum + precio_number : sum), 0);
+               var total_cart = data_show_cart.reduce((sum, value) => (typeof precio == "" ? sum + precio_ : sum), 0);
                
             console.log(total_cart);
 

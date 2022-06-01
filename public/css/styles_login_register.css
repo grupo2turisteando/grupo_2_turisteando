@@ -92,6 +92,7 @@ div p {
     border-radius: 25px;
     padding: 10px 0px;
     transition: 200ms;
+    font-weight: bold;
 }
 
 .button_login span {
@@ -99,6 +100,7 @@ div p {
 }
 
 .button_login:hover {
+    font-weight: normal;
     background-color: #464d99;
     color: #fff;
 }
@@ -170,9 +172,11 @@ input[type=file]::file-selector-button:hover {
     padding: 10px 0px;
     font-size: 15px;
     transition: 200ms;
+    font-weight: bold;
 }
 
 .button_signup:hover {
+    font-weight: normal;
     background-color: #464d99;
     color: #fff;
 }

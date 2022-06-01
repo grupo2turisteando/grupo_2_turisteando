@@ -24,6 +24,7 @@ const users_admin_controller = {
         let user= engine.read_columm('users-prueba', user_id); 
         res.status(200).render("../views/users/user_edit", {user: user[0]}); //como envio un objeto literal uso el indice cero del array
     },
+    
      /*Muestra el Usuario a Eliminar */
     delete_user_get: (req, res)=>{
         let user_id= req.params.id

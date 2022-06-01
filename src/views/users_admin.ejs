@@ -11,7 +11,7 @@
             <%for (let user of users_table) {%>
                 <div  class="users_list">
                   <a  id="<%= user.id %>" href="/admin/userDetail/<%= user.id %>">
-                    <legend>Nombre: <%= user.nombre %></legend>
+                    <legend>Nombre: <%= user.user %></legend>
                       <p  class="user_avatar">Avatar: <%=user.avatar !==undefined ? user.avatar :"No hay imagen para mostrar"%></p>
                   </a>
                   <hr>
