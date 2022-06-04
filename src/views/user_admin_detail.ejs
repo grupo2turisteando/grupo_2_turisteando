@@ -1,8 +1,13 @@
 <%- include('./partials/head') %>
 
 <body>
-  <header>
-  <h1>Administracion de Usuarios</h1>
+
+  <%- include('./partials/nav_admin') %>
+
+
+  <%- include('./partials/header_admin') %>
+  <div class="main_users">
+    <h1 class="main_title">Administracion de Usuarios</h1>
   <p >Listado de Usuarios Registrados</p>
   <% if(user) {%>
       <div class="users_list">
@@ -11,7 +16,7 @@
       
         <p id="<%=user.id%> class="user_id">ID: <%= user.id %> </p>
       
-        <p class="user_name">Nombre: <%= user.nombre %></p>
+        <p class="user_name">Nombre: <%= user.user %></p>
     
         <p class="user_email">Email: <%= user.email %></p>
         
