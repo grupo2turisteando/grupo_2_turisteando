@@ -1,12 +1,21 @@
 const path = require('path');
-const { validationResult, body } = require('express-validator');
+const { body } = require('express-validator');
+const User = require('../model/Users.js');
 
 // Validaciones
 const validations = [
-    body('user').notEmpty().withMessage('Tienes que escribir un nombre'),
+    body('user').notEmpty().withMessage('Tienes que escribir un nombre').bail()
+        .isLength( {min: 4} ).withMessage('El nombre debe tener como mínimo 4 caracteres'),
     body('email')
         .notEmpty().withMessage('Tienes que escribir un email').bail()
-        .isEmail().withMessage('Debes escribir un formato de correo válido'),
+        .isEmail().withMessage('Debes escribir un formato de correo válido')
+        .custom((value, { req }) => {
+            let user_in_db = User.find_by_field('email', req.body.email);
+            if (user_in_db) {
+                throw new Error('Este email ya está registrado')
+            }
+            return true;
+        }),
     body('password')
         .notEmpty().withMessage('Tienes que escribir una contraseña').bail()
         .isLength( {min: 8} ).withMessage('La contraseña debe tener como mínimo 8 caracteres'),
@@ -18,7 +27,7 @@ const validations = [
             }
 
             return true;
-          }),
+        }),
     body('avatar').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.jpeg'];
