@@ -3,8 +3,10 @@ const path = require('path');
 const methodOverride= require('method-override')
 const app = express();
 const publicPath = path.join(__dirname, '../public');
-/** Session */
 const session = require('express-session');
+const cookies = require('cookie-parser');
+
+
 
 /* rutas */
 const rutasMain = require('./routes/main.js');
@@ -22,6 +24,8 @@ app.set('view engine', 'ejs');
 /* seteo donde esta el directorio "views" */
 app.set('views', __dirname + '/views');
 
+// Middlewares
+const user_logged_middleware = require('./middlewares/user_logged_middleware')
 
 app.use(express.static(publicPath));
 /* configuracion para poder capturar la informacion de los formularios */
@@ -33,6 +37,11 @@ app.use(session({
     resave: 'false',
     saveUninitialized: 'false'
 }));
+
+app.use(cookies());
+
+//Middleware
+app.use(user_logged_middleware);
 
 /* puntos de entrada */
 app.use('/', rutasMain);

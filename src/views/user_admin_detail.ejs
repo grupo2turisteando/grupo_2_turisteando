@@ -1,0 +1,35 @@
+<%- include('./partials/head') %>
+
+<body>
+
+  <%- include('./partials/nav_admin') %>
+
+
+  <%- include('./partials/header_admin') %>
+  <div class="main_users">
+    <h1 class="main_title">Administracion de Usuarios</h1>
+  <p >Listado de Usuarios Registrados</p>
+  <% if(user) {%>
+      <div class="users_list">
+
+        <p class="user_avatar">Avatar: <%=user.avatar !==undefined ? user.avatar :"No hay imagen para mostrar"%></p>
+      
+        <p id="<%=user.id%> class="user_id">ID: <%= user.id %> </p>
+      
+        <p class="user_name">Nombre: <%= user.user %></p>
+    
+        <p class="user_email">Email: <%= user.email %></p>
+        
+     
+      <nav class="nav_menu_admin">
+        <ul class="ul_2_admin">
+            <li><a href="/admin/user/<%= user.id %>""><img src="/images/pencil-solid.svg" ></a></li>
+            <li><a href="/admin/user/<%= user.id %>/delete"><img src="/images/trash-can-solid.svg"  ></a></li>
+        </ul>
+    </nav>
+
+</div>
+   <% } %> 
+  </header>
+</body>
+</html>

@@ -2,6 +2,7 @@
 
 const path = require('path');
 const express= require('express');
+const login_middleware = require("../middlewaresUsers/login_middleware")
 const router= express.Router(); /* Router permiete crear rutas montables y desmontables */
 /* el metodo HTTP es llamado desde Router */
 // validar formulario
@@ -32,8 +33,8 @@ const validator_cart_form =[
                 .isLength({min: 6 ,max:10}).withMessage("Debes ingresar un número válido de la menos 6 caracteres"),
   
     //radio
-    body("payment_method").notEmpty().withMessage("Indica como quieres pagar"),
-    body("payment_method").notEmpty().withMessage("Indica como quieres pagar"),
+    /*body("payment_method").notEmpty().withMessage("Indica como quieres pagar"),
+    body("payment_method").notEmpty().withMessage("Indica como quieres pagar"),*/
     body("card_number")
                 .notEmpty().withMessage("Ingresa los 16 dígitos ubicados en el frente de la tarjeta").bail()
                 .isLength({min:16, max:16}).withMessage("Ingresa los 16 dígitos ubicados en el frente de la tarjeta"),
@@ -61,7 +62,7 @@ router.get("/add/:id", cart_controller.add_item);
 
 
 //eliminar un paquete/
-router.post("/delete/:id", cart_controller.delete_item);
+router.delete("/delete/:id", cart_controller.delete_item);
 
 //comprar//
 router.get("/purchase", cart_controller.purchase);
@@ -70,7 +71,7 @@ router.get("/purchase", cart_controller.purchase);
 router.get("/purchaseDetail", cart_controller.purchase_detail );
 
 //formulario de compra/
-router.get("/cartForm", cart_controller.cart_form );
+router.get("/cartForm",/*login_middleware,*/ cart_controller.cart_form );
 
 //procesar formulario compra
 router.post("/cartForm",validator_cart_form, cart_controller.process_cart_form );
