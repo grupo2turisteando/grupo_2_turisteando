@@ -1,6 +1,7 @@
 const { users_list } = require("./users_controller");
 const engine= require('../model/engine.js');
 const { find_columm } = require("../model/engine.js");
+const req = require("express/lib/request");
 
 const users_admin_controller = {
 
@@ -9,6 +10,7 @@ const users_admin_controller = {
        
         let users_table= engine.browse_table('users-prueba');
         res.status(200).render('../views/users_admin', {users_table: users_table});
+      
     },
     /*Mostrar detalle del Usuario*/
     show_user :  (req, res) => {
@@ -24,6 +26,17 @@ const users_admin_controller = {
         let user= engine.read_columm('users-prueba', user_id); 
         res.status(200).render("../views/users/user_edit", {user: user[0]}); //como envio un objeto literal uso el indice cero del array
     },
+    edit_user_put: (req, res)=>{
+        data_user = req.body
+    
+        /* update los datos */
+        let old_users= engine.read_columm('users-prueba', data_user.id)
+ 
+        /* actualizo la base de datos */
+        engine.edit_columm('users-prueba', data_user);
+
+        res.redirect('/admin');
+    },
     
      /*Muestra el Usuario a Eliminar */
     delete_user_get: (req, res)=>{
@@ -31,6 +44,7 @@ const users_admin_controller = {
         let user= engine.read_columm("users-prueba", user_id);
         res.status(200).render("../views/users/user_delete", {user : user[0]});    
     },
+   
      /* Elimina un usuario*/
     delete_user_delete: (req, res)=>{
         let user_id = req.params.id

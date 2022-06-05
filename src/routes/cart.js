@@ -64,11 +64,11 @@ router.get("/add/:id", cart_controller.add_item);
 //eliminar un paquete/
 router.delete("/delete/:id", cart_controller.delete_item);
 
-//comprar//
+/*//comprar//
 router.get("/purchase", cart_controller.purchase);
 
 //detalle de compra//
-router.get("/purchaseDetail", cart_controller.purchase_detail );
+router.get("/purchaseDetail", cart_controller.purchase_detail );*/
 
 //formulario de compra/
 router.get("/cartForm",/*login_middleware,*/ cart_controller.cart_form );

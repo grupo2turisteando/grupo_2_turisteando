@@ -54,14 +54,7 @@ const cart_controller = {
        
     },
     
-    purchase : (req, res) => {
-        res.send("Comprar");
-            },
-
-    purchase_detail: (req, res) => {
-        res.send("Ver detalle de Compra");
-            },
-            
+ 
    
     cart_final :  (req, res) => {
                     res.render("../views/cartFinal");

@@ -1,6 +1,7 @@
 <%- include('./partials/head') %>
 
   <body>
+  
 
     <%- include('./partials/nav_admin') %>
     <%- include('./partials/header_admin') %>
@@ -12,7 +13,7 @@
                 <div  class="users_list">
                   <a  id="<%= user.id %>" href="/admin/userDetail/<%= user.id %>">
                     <legend>Nombre: <%= user.user %></legend>
-                      <p  class="user_avatar">Avatar: <%=user.avatar !==undefined ? user.avatar :"No hay imagen para mostrar"%></p>
+                    <img  class="user_avatar" src="/images/users/avatars/<%= user.avatar ? user.avatar : "user_avatar_default.png" %>">
                   </a>
                   <hr>
                 </div>  
