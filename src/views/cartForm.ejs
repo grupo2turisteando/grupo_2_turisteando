@@ -5,7 +5,7 @@
     <%- include('./partials/header') %>
 
 
-    <form action="/cart/cartForm" method="POST">
+    <form action="/cart/cartForm" method="POST" >
         <main class="cartMain">
         
             <section class="pasajeros">
@@ -174,7 +174,7 @@
                         </div>
                         <div>
                             <label for="expiration">Vencimiento</label>
-                                <input type="number" name="expiration" id="txexpiration" placeholder="10/24" 
+                                <input type="number" name="expiration"  id="txexpiration" placeholder="10/24" 
                                     class=" <%= locals.errors && errors.expiration ? 'this_is_invalid' : null %>" 
                                     value="<%= locals.oldData ? oldData.expiration : null %>">
                                 <% if(locals.errors && errors.expiration){ %> 

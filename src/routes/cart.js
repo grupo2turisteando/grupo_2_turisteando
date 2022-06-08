@@ -2,7 +2,8 @@
 
 const path = require('path');
 const express= require('express');
-const login_middleware = require("../middlewaresUsers/login_middleware")
+const auth_middleware = require("../middlewares/auth_middleware");
+
 const router= express.Router(); /* Router permiete crear rutas montables y desmontables */
 /* el metodo HTTP es llamado desde Router */
 // validar formulario
@@ -58,11 +59,11 @@ const { default: isMobilePhone } = require('validator/lib/isMobilePhone');
 router.get("/", cart_controller.show_cart);
 
 //agregar un paquete desde el detalle
-router.get("/add/:id", cart_controller.add_item);
+router.post("/add/:id",auth_middleware, cart_controller.add_item);
 
 
 //eliminar un paquete/
-router.delete("/delete/:id", cart_controller.delete_item);
+router.delete("/delete/:id",  cart_controller.delete_item);
 
 /*//comprar//
 router.get("/purchase", cart_controller.purchase);
@@ -71,18 +72,15 @@ router.get("/purchase", cart_controller.purchase);
 router.get("/purchaseDetail", cart_controller.purchase_detail );*/
 
 //formulario de compra/
-router.get("/cartForm",/*login_middleware,*/ cart_controller.cart_form );
+router.get("/cartForm",auth_middleware, cart_controller.cart_form );
 
 //procesar formulario compra
-router.post("/cartForm",validator_cart_form, cart_controller.process_cart_form );
+router.post("/cartForm",/*validator_cart_form*/ cart_controller.process_cart_form );
 
 //formulario de compra/
 router.get("/add/:id/cartForm", cart_controller.cart_form );
+router.post("/add/:id/cartForm",/*validator_cart_form*/ cart_controller.process_cart_form );
 
-
-
-//detalle de compra//
-router.get("/cartFinal", cart_controller.cart_final );
 
 
 
