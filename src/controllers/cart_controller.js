@@ -74,10 +74,8 @@ var total_cart = data_show_cart.reduce((sum, value) => (typeof precio == "" ? su
              
             engine.add_columm("user", data_purchese);   
 
-            engine.browse_table("cart");
-            let file_string= engine.read_json("cart");
-            let file_new= file_string.filter( element => file_string[0] == undefined);
-            engine.write_json("cart", file_new);
+            engine.delete_all_columm("cart");
+        
      
             res.status(200).render("../views/cartFinal");
           }

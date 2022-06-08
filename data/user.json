@@ -47,5 +47,21 @@
         "name_card_holder": "Benja Titular",
         "expiration": "1010",
         "security_code": 400
+    }, {
+        "first_name": "Nachito",
+        "last_name": "Acotto",
+        "birth_date": "2010-10-10",
+        "age": 28,
+        "identity_document": 45698532,
+        "home": "calle 654",
+        "postal_code": 2000,
+        "province": "San Luis",
+        "email": "nacho@gmail.com",
+        "phone_number": 789654125,
+        "payment_method": "debito",
+        "card_number": 7777888899994444,
+        "name_card_holder": "Titulat Nachito",
+        "expiration": "2020",
+        "security_code": 300
     }
 ]

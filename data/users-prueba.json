@@ -30,5 +30,13 @@
   "password": "$2a$10$yXJ4AKZki9TLzPnf8FpLMeifEHeoBMTWYP/WZ7D53ztE4yq1odv2m",
   "password_valid": "$2a$10$AKvVDQZckBhhoQ78tfMkSuE51wB38u/ZBYjt/9GsP6HPfKy5kiWki",
   "avatar": "1654655568095_img.jpg"
+ },
+ {
+  "id": 5,
+  "user": "Nachito",
+  "email": "nacho@gmail.com",
+  "password": "$2a$10$f6f4EjhIQOvp7WB3EKtcEOMmgx6V5W6UVGtw8huIdceHI9GLMUiTW",
+  "password_valid": "$2a$10$wj/ln8wrHwQXauhC2Oo0Ru8biGvHrhBE2v9ANaaSeZV43S2NmBsgS",
+  "avatar": "1654656427432_img.png"
  }
 ]
