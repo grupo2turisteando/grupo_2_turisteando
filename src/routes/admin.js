@@ -93,6 +93,10 @@ router.put('/user/edit',uploadFile.single('avatar'), users_admin_controllers.edi
 router.get('/user/:id/delete', users_admin_controllers.delete_user_get);
 router.delete("/user/delete/:id", users_admin_controllers.delete_user_delete);
 
+//===================================================================================
+// creo una ruta para testear sequelizer y la DB 
+router.get('/productos/test', admin_controllers.test);
+
 
 
 module.exports= router;
