@@ -81,7 +81,8 @@ const admin_controllers = {
             db.Producto.findAll()
             .then((productos) => {
                 res.send(productos);
-            });
+            })
+            .catch(error => console.log(error)); 
         }
 
 };
