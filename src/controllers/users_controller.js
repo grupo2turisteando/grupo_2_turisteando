@@ -21,7 +21,7 @@ const users_controller = {
                 req.session.user_logged = user_to_login;
 
                 if (req.body.remember_user) {
-                    res.cookie('user_email', req.body.email, { maxAge: (1000 * 60 ) * 2 });
+                    res.cookie('user_email', req.body.email, { maxAge: (1000 * 60 ) * 10 });
                 }
 
                 return res.redirect('../users/profile');

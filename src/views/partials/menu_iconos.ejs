@@ -1,12 +1,12 @@
 <nav class="nav_menu2">
     <% if (locals.is_logged) { %>
-        <div>
-            <a href="/users/profile">
-                <img src="/images/users/avatars/<%= locals.user_logged.avatar %>" width="40" style="border-radius: 100%">
+        <div class="nav_menu_log">
+            <a href="/users/profile" class="nav_profile">
+                <img src="/images/users/avatars/<%= locals.user_logged.avatar %>">
                 <%= locals.user_logged.user %>
             </a>
-                |
-            <a href="/users/logout"> Logout </a>
+            <a href="/users/logout" class="nav_logout">| Logout</a>    
+            <a href="/cart" class="nav_cart"><img src="/images/cart-shopping-solid.svg" alt="carrito"></a>  
         </div>
     <% } else { %>
         <ul class="ul_2">
