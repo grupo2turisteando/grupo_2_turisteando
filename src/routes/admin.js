@@ -8,6 +8,7 @@ const { body } = require('express-validator'); // la funcion body es igual a la 
 
 const admin_controllers = require('../controllers/admin_controllers.js');
 const users_admin_controllers = require('../controllers/users_admin_controllers.js');
+const uploadFile = require('../middlewares/multer_middleware'); 
 
 // configuro Multer para poder subir al servidor los archivos de las imagenes de paisajes
 const storage= multer.diskStorage({
@@ -79,6 +80,7 @@ router.get('/producto/:id/delete', admin_controllers.delete_package_get);
 // En la ruta del delete para crear un paquete va como middleware del Multar
 router.delete('/producto/delete/:id', admin_controllers.delete_package_delete);
 
+
 /** Muestro los usuarios Registrados */
 router.get('/users', users_admin_controllers.users_list);
 /** Muestro detalle de un usuario */
@@ -86,10 +88,14 @@ router.get('/userDetail/:id', users_admin_controllers.show_user);
 /* Editar usurios GET y POST */
 router.get('/user/:id', users_admin_controllers.edit_user_get);
 // En la ruta del put para crear un paquete va como middleware del Multar
-//router.put('/user/edit',upload.single("user_avatar"), users_admin_controllers.edit_user_put);
+router.put('/user/edit',uploadFile.single('avatar'), users_admin_controllers.edit_user_put);
 /* rutas para borrar usuarios GET y DELETE */
 router.get('/user/:id/delete', users_admin_controllers.delete_user_get);
 router.delete("/user/delete/:id", users_admin_controllers.delete_user_delete);
+
+//===================================================================================
+// creo una ruta para testear sequelizer y la DB 
+router.get('/productos/test', admin_controllers.test);
 
 
 

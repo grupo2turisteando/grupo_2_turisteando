@@ -6,27 +6,25 @@
 
 
   <%- include('./partials/header_admin') %>
-  <div class="main_users">
+  <div class="main_users_detail">
     <h1 class="main_title">Administracion de Usuarios</h1>
-  <p >Listado de Usuarios Registrados</p>
+  <p class="title_users">Detalle de Usuario</p>
+  <a class="crear_text_admin" href="/admin/users"><img class= "volver_admin" src="/images/arrow-left-solid.svg" alt="Crear" ></a>
+       
   <% if(user) {%>
       <div class="users_list">
-
-        <p class="user_avatar">Avatar: <%=user.avatar !==undefined ? user.avatar :"No hay imagen para mostrar"%></p>
-      
-        <p id="<%=user.id%> class="user_id">ID: <%= user.id %> </p>
-      
+       
+        <img  class="user_avatar" src="/images/users/avatars/<%= user.avatar ? user.avatar : "user_avatar_default.png" %>">
+        <p class="user_id" id="<%=user.id%> class="user_id">ID: <%= user.id %> </p>
         <p class="user_name">Nombre: <%= user.user %></p>
-    
         <p class="user_email">Email: <%= user.email %></p>
-        
-     
-      <nav class="nav_menu_admin">
-        <ul class="ul_2_admin">
-            <li><a href="/admin/user/<%= user.id %>""><img src="/images/pencil-solid.svg" ></a></li>
-            <li><a href="/admin/user/<%= user.id %>/delete"><img src="/images/trash-can-solid.svg"  ></a></li>
-        </ul>
-    </nav>
+    
+          <nav class= "iconos">
+            <ul class="ul_2_admin">
+                <li><a href="/admin/user/<%= user.id %>""><img src="/images/pencil-solid.svg" ></a></li>
+                <li><a href="/admin/user/<%= user.id %>/delete"><img src="/images/trash-can-solid.svg"  ></a></li>
+           </ul>
+           </nav>
 
 </div>
    <% } %> 
