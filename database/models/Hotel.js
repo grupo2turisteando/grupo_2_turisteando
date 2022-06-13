@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
         allowNull: false
        },
 
-       name: {
+       nombre: {
         type: dataTypes.STRING(100),
         allowNull: false
        },
@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
         allowNull: true
        },
 
-       addess: {
+       address: {
         type: dataTypes.STRING(150),
         allowNull: false,
        },

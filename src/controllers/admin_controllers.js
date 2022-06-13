@@ -78,7 +78,9 @@ const admin_controllers = {
         },
         // creo un metodo para testear sequelizer y la DB 
         test: (req, res) => {
-            db.Producto.findAll()
+            db.Producto.findAll({
+                include: ["hotel", "tour"]
+            })
             .then((productos) => {
                 res.send(productos);
             })
