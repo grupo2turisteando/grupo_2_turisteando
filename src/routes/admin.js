@@ -80,6 +80,7 @@ router.get('/producto/:id/delete', admin_controllers.delete_package_get);
 // En la ruta del delete para crear un paquete va como middleware del Multar
 router.delete('/producto/delete/:id', admin_controllers.delete_package_delete);
 
+
 /** Muestro los usuarios Registrados */
 router.get('/users', users_admin_controllers.users_list);
 /** Muestro detalle de un usuario */

@@ -35,6 +35,10 @@ body{
     padding: 5px;
     align-items: flex-start;
 }
+.user_avatar{
+    width: 300px;
+    height: 300px;
+}
 /*.user_avatar:hover{
     background-color: rgb(110, 160, 131);
     opacity:0.7;
