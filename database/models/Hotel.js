@@ -54,16 +54,16 @@ module.exports = (sequelize, dataTypes) => {
     const Hotel = sequelize.define(alias, cols, config);
 
     Hotel.associate = function(models){
-        Hotel.hasMay(models.Producto, {
+        Hotel.hasMany(models.Producto, {
             as: "productos",
             foreignKey: "hotel_id"
         });
         
-        Hotel.belondsToMay(models.Province, {
+        Hotel.belongsTo(models.Province, {
             as: "province",
             foreignKey: "province_id"
         });
-    
+ 
     }
 
     return Hotel; 

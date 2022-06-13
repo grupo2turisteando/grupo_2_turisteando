@@ -89,12 +89,12 @@ module.exports = (sequelize, dataTypes) => {
     const Producto = sequelize.define(alias, cols, config);
 
     Producto.associate = function(models){
-        Producto.belondsToMay(models.Hotel, {
+        Producto.belongsTo(models.Hotel, {
             as: "hotel",
             foreignKey: "hotel_id"
         });
         
-        Producto.belondsToMay(models.Tour, {
+        Producto.belongsTo(models.Tour, {
             as: "tour",
             foreignKey: "excursions_id"
         });

@@ -32,6 +32,14 @@ module.exports = (sequelize, dataTypes) => {
 
     const Tour = sequelize.define(alias, cols, config);
 
+    Tour.associate = function(models){
+                
+        Tour.hasMany(models.Tour, {
+            as: "productos",
+            foreignKey: "excursions_id"
+        });
+    }
+
     return Tour; 
 
 }

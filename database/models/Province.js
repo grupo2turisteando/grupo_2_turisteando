@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
     const Province = sequelize.define(alias, cols, config);
 
     Province.associate = function(models){
-        Province.hasMay(models.Hotel, {
+        Province.hasMany(models.Hotel, {
             as: "hoteles",
             foreignKey: "province_id"
         });

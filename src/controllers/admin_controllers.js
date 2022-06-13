@@ -1,6 +1,8 @@
 /* Este controlador "admin_controllers" implementa todos los metodos para
 administrar el sitio web */
 const { validationResult } = require('express-validator');
+const db = require('../../database/models');
+const Op = db.Sequelize.Op;
 
 const engine= require('../model/engine.js'); // con este modulo operamos la base de datos
 
@@ -73,6 +75,13 @@ const admin_controllers = {
         lista_packages: (req, res) => {
             let package_table= engine.browse_table('productos');
             res.status(200).render('../views/productos_admin', {package_table: package_table});
+        },
+        // creo un metodo para testear sequelizer y la DB 
+        test: (req, res) => {
+            db.Producto.findAll()
+            .then((productos) => {
+                res.send(productos);
+            });
         }
 
 };
