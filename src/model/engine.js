@@ -48,7 +48,12 @@ const engine= {
         this.write_json(name_table, file_new);
     }, 
 
-
+    delete_all_columm: function (name_table){
+           
+            let file_string= engine.read_json(name_table);
+            let file_new= file_string.filter( element => file_string[0] == undefined);
+            engine.write_json(name_table, file_new);
+    },
     /* Funciones utilizadas por los metodos */
 
     read_json: function (name_table) {
