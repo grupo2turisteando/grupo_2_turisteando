@@ -79,10 +79,11 @@ const admin_controllers = {
         // creo un metodo para testear sequelizer y la DB 
         test: (req, res) => {
             db.Producto.findAll({
-                include: ["hotel", "tour"]
+                include: [{association:"hotel", include: [{association:"province"}]}, {association:"tour"}]
             })
             .then((productos) => {
                 res.send(productos);
+                console.log(productos[0].hotel.province_id)
             })
             .catch(error => console.log(error)); 
         }
