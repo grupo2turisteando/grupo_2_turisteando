@@ -86,6 +86,15 @@ body{
     margin: 10px;
     
 }
+.table_edit
+{
+    border: #39b54a solid 1px;
+    display: flex;
+    flex-direction: column;
+}
+.table_edit_columm{
+    display: flex;
+}
 /*Media queris*/
 
 @media (min-width: 770px) {
@@ -123,5 +132,6 @@ body{
    
 
 }
+
 
 }

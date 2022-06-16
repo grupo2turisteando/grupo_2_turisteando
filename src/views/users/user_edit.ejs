@@ -98,6 +98,30 @@
             <input type="number" name="security_code"  value="<%= user2.security_code%>" class="control"   size="10">
         </div>
         <% } %>
+        <h1>Compras <%= user.user%> </h1>  
+        <% if(user3) { %>
+    
+        <% for (let i = 0; i < user3.length; i++) { %> 
+            
+            <div class="table_edit">
+                <p class="table_edit_columm"><strong>Orden Compra Nro:          <%= user3[i].order%></strong></p>   
+                <p class="table_edit_columm"><strong>Id Paquete:                <%= user3[i].purchase[i].package_id   %></strong></p>    
+                <p class="table_edit_columm"><strong>Nombre:</strong>           <%= user3[i].purchase[i].package_name %></p>
+                <p class="table_edit_columm"><strong>Precio:</strong>           <%= user3[i].purchase[i].package_price%></p>
+                <p class="table_edit_columm"><strong>Titulo:</strong>           <%= user3[i].purchase[i].package_title%></p>                   
+                <p class="table_edit_columm"><strong>Cantidad de días:</strong> <%= user3[i].purchase[i].package_q_days%></p>
+                <p class="table_edit_columm"><strong>Hotel: </strong>           <%= user3[i].purchase[i].package_hotel %></p>
+                <p class="table_edit_columm"><strong>Estrellas del Hotel:</strong><%= user3[i].purchase[i].package_stars_hotel%></p>
+                <p class="table_edit_columm"><strong>Fecha de admisión:</strong> <%= user3[i].purchase[i].package_date_admission%></p>
+                <p class="table_edit_columm"><strong>Vidriera del Home:</strong> <%= user3[i].purchase[i].package_index== "true"? "SI" : "NO"%></p>
+               
+                <p class="table_edit_columm"><strong> Excursiones:</strong>      <%= user3[i].purchase[i].package_excursions_id%></p>
+                <p class="table_edit_columm"><strong> Descuento: </strong>       <%= user3[i].purchase[i].package_discount%>%</p>
+            </div>
+            <% } %> 
+          
+        <% } %> 
+ 
             <div class="button_users">                              
                 <button type= "submit" class="button_edit_users">Guardar</button>
                 <button type="reset" class="button_edit_users"><a href="/admin/users">Cancelar</a></button>
