@@ -56,7 +56,7 @@ module.exports = (sequelize, dataTypes) => {
     Hotel.associate = function(models){
         Hotel.hasMany(models.Producto, {
             as: "productos",
-            foreignKey: "hotel_id"
+            foreignKey: "package_hotel"
         });
         
         Hotel.belongsTo(models.Province, {

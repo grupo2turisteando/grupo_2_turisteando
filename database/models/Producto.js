@@ -3,79 +3,79 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "Producto";
     let cols = {
 
-       id: {
+        package_id: {
         type: dataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
        },
 
-       name: {
+       package_name: {
         type: dataTypes.STRING(100),
         allowNull: false
        },
 
-       image: {
+       package_image: {
         type: dataTypes.STRING(150),
         allowNull: true
        },
 
-       alt_image: {
+       package_alt_image: {
         type: dataTypes.STRING(100),
         allowNull: false,
        },
 
-       price: {
+       package_price: {
         type: dataTypes.DOUBLE,
         allowNull: false,
        },
 
-       title: {
+       package_title: {
         type: dataTypes.STRING(150),
         allowNull: false,
        },
 
-       q_days: {
+       package_q_days: {
         type: dataTypes.INTEGER,
         allowNull: false,
        },
 
-       hotel_id: {
+       package_hotel: {
         type: dataTypes.INTEGER,
         allowNull: false,    
        },
 
-       description: {
+       package_description: {
         type: dataTypes.STRING(500),
         allowNull: false,
        }, 
 
-       date_admission: {
+       package_date_admission: {
         type: dataTypes.DATE,
         allowNull: true,
        }, 
 
-       index: {
+       package_index: {
         type: dataTypes.INTEGER,
         allowNull: false,
        }, 
        
-       category: {
+       package_category: {
         type: dataTypes.INTEGER,
         allowNull: false,
        }, 
        
-       excursions_id: {
+       package_excursions_id: {
         type: dataTypes.INTEGER,
         allowNull: true,
        }, 
        
-       discount: {
+       package_discount: {
         type: dataTypes.DECIMAL(5, 2),
         allowNull: false,
        }, 
        
-       transportation: {
+       package_transportation: {
         type: dataTypes.INTEGER,
         allowNull: false,
        } 
@@ -91,12 +91,12 @@ module.exports = (sequelize, dataTypes) => {
     Producto.associate = function(models){
         Producto.belongsTo(models.Hotel, {
             as: "hotel",
-            foreignKey: "hotel_id"
+            foreignKey: "package_hotel"
         });
         
         Producto.belongsTo(models.Tour, {
             as: "tour",
-            foreignKey: "excursions_id"
+            foreignKey: "package_excursions_id"
         });
     }
 

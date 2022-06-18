@@ -36,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
                 
         Tour.hasMany(models.Producto, {
             as: "productos",
-            foreignKey: "excursions_id"
+            foreignKey: "package_excursions_id"
         });
     }
 
