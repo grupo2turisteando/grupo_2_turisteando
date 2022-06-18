@@ -54,19 +54,18 @@ const { default: isMobilePhone } = require('validator/lib/isMobilePhone');
 
 
 
-//mostrar Carrito//
+//Listar  Carrito//
 router.get("/", cart_controller.show_cart);
 
-//agregar un paquete desde el detalle
+//Agregar Item al Carrito
 router.post("/add/:id",auth_middleware, cart_controller.add_item);
 
-//eliminar un paquete/
+//Eliminar 
 router.delete("/delete/:id",  cart_controller.delete_item);
 
-//formulario de compra/
+//Comprar
 router.get("/purchase",auth_middleware, cart_controller.purchase );
 
-//procesar formulario compra
 router.post("/purchase",/*validator_cart_form*/ cart_controller.process_purchase);
 
 //formulario de compra/
