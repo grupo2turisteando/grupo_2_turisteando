@@ -1,5 +1,5 @@
 function login_middleware (req, res, next) {
-	if (req.session.login_user !== undefined) {
+	if (req.session.user_logged !== undefined) {
 	next();
 	}else{
 	 res.redirect("/users/login");
