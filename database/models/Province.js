@@ -27,8 +27,14 @@ module.exports = (sequelize, dataTypes) => {
             as: "hoteles",
             foreignKey: "province_id"
         });
-           
+        
+    Province.associate = function(models){
+         Province.hasMany(models.User, {
+                as: "users",
+                foreignKey: "province_id"
+            });
     }
+}
 
     return Province; 
 
