@@ -55,7 +55,7 @@ const admin_controllers = {
         edit_package_put: async (req, res) => {
             let data_package= req.body;
             /* update los datos */
-            let old_package= engine.read_columm_db('Producto', data_package.package_id);
+            let old_package= await engine.read_columm_db('Producto', data_package.package_id);
             data_package.package_price= parseFloat(data_package.package_price); // convierto el dato que vienen como string a un float para la DB
             data_package.package_discount= parseFloat(data_package.package_discount); // convierto el dato que vienen como string a un float para la DB
             /* guardo el nombre de la imagen que subieron para el paquete, si no subieron queda como null */
