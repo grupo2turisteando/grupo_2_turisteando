@@ -73,15 +73,13 @@
                 <% } %>
         </div>
         <div class="control_formulario">
-            <label>package_hotel: </label>
-            <input type="text" name="package_hotel" class="control <%= locals.errors && errors.package_hotel ? 'is_invalid' : null %>"
-                    value="<%= locals.old_data ? old_data.package_hotel : null %>" 
-                    placeholder="nombre del hotel" size="32">
-                <% if (locals.errors && errors.package_hotel) { %>
-                    <div class="text_error">
-                        <%= errors.package_hotel.msg %> 
-                    </div> 
+            <label for='hoteles'>package_hotel: </label>
+            <select name="package_hotel" id="hoteles">
+                <% for (let hotel of lista_hoteles) {%>
+                    <option value="<%= hotel.id %>"
+                            <%= locals.old_data && old_data.package_hotel == hotel.id ? 'selected' : null %>><%= hotel.nombre %></option>
                 <% } %>
+            </select>
         </div>
         
         <div class="control_formulario">
@@ -129,16 +127,13 @@
                 <%= locals.old_data && old_data.package_transportation === "3" ? 'checked' : null %>></label>
         </div>
         <div class="control_formulario">
-            <label>package_excursions_id: </label>
-            <input type="number" name="package_excursions_id"
-                    class="control <%= locals.errors && errors.package_excursions_id ? 'is_invalid' : null %>" 
-                    value="<%= locals.old_data ? old_data.package_excursions_id : null %>" 
-                    placeholder="codigo excursiones" minlength="1" size="18">
-                <% if (locals.errors && errors.package_excursions_id) { %>
-                    <div class="text_error">
-                        <%= errors.package_excursions_id.msg %> 
-                    </div> 
+            <label for='excurciones'>package_excursions_id: </label>
+            <select name="package_excursions_id" id="excursiones">
+                <% for (let excursion of lista_excursiones) {%>
+                    <option value="<%= excursion.id %>"
+                        <%= locals.old_data && old_data.package_excursions_id == excursion.id ? 'selected' : null %>><%= excursion.name %></option>
                 <% } %>
+            </select>
         </div>
         <div class="control_formulario">
             <label>package_discount: </label>
