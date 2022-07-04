@@ -4,11 +4,15 @@
     <%- include('../partials/header_admin') %>
 
     <!-- Formulario -->
-    <form action="/admin/crear" method="POST" class="create_form" enctype="multipart/form-data" id="form_crear">
-        <h3>Formulario para crear un paquete turistico</h3>     
+    
+    <form action="/admin/crear" method="POST" class="producto_v create_form" enctype="multipart/form-data" id="form_crear">
+        <h3>Formulario para crear un paquete turistico</h3> 
+        <div class="errores">
+            <ul class="errores_formulario_v"></ul>
+        </div>    
         <div class="control_formulario">
             <label>package_name: </label>
-            <input type="text" name="package_name" class="control <%= locals.errors && errors.package_name ? 'is_invalid' : null %>"
+            <input type="text" name="package_name" class="name_v control <%= locals.errors && errors.package_name ? 'is_invalid' : null %>"
                 value="<%= locals.old_data ? old_data.package_name : null %>"
                 placeholder="nombre del paquete" maxlength="32" size="32">
                 <% if (locals.errors && errors.package_name) { %>
@@ -18,9 +22,9 @@
                 <% } %>
             </div>
         <div class="control_formulario">
-            <label>package_image: </label>
+            <label class="imagen_v">package_image: </label>
             <input type="file" name="turisteando_image" id="turisteando_image" accept= ".jpeg, .png, .webp" 
-                    class="control" value="<%= locals.old_data ? old_data.turisteando_image : null %>">
+                    class="image_v control" value="<%= locals.old_data ? old_data.turisteando_image : null %>">
                 <% if (locals.errors && errors.turisteando_image) { %>
                     <div class="text_error">
                         <%= errors.turisteando_image.msg %> 
@@ -30,7 +34,7 @@
         </div>
         <div class="control_formulario">
             <label>package_alt_image: </label>
-            <input type="text" name="package_alt_image" class="control <%= locals.errors && errors.package_alt_image ? 'is_invalid' : null %>"
+            <input type="text" name="package_alt_image" class="alt_image_v control <%= locals.errors && errors.package_alt_image ? 'is_invalid' : null %>"
                     value="<%= locals.old_data ? old_data.package_alt_image : null %>" 
                     placeholder="descrpción alternativa de la imagen" size="32">
                 <% if (locals.errors && errors.package_alt_image) { %>
@@ -41,7 +45,7 @@
         </div>
         <div class="control_formulario">
             <label>package_price: </label>
-            <input type="number" name="package_price" class="control <%= locals.errors && errors.package_price ? 'is_invalid' : null %>"
+            <input type="number" name="package_price" class="price_v control <%= locals.errors && errors.package_price ? 'is_invalid' : null %>"
                     value="<%= locals.old_data ? old_data.package_price : null %>" 
                     placeholder="precio" maxlength="10" size="10">
                 <% if (locals.errors && errors.package_price) { %>
@@ -52,9 +56,9 @@
         </div>
         <div class="control_formulario">
             <label>package_title: </label>
-            <input type="text" name="package_title" class="control <%= locals.errors && errors.package_title ? 'is_invalid' : null %>"
+            <input type="text" name="package_title" class="title_v control <%= locals.errors && errors.package_title ? 'is_invalid' : null %>"
                     value="<%= locals.old_data ? old_data.package_title : null %>" 
-                    placeholder="titulo para la agencia" size="32">
+                    placeholder="descrpción alternativa de la imagen" size="32">
                 <% if (locals.errors && errors.package_title) { %>
                     <div class="text_error">
                         <%= errors.package_title.msg %> 
@@ -63,7 +67,7 @@
         </div>
         <div class="control_formulario">
             <label>package_q_days: </label>
-            <input type="number" name="package_q_days" class="control <%= locals.errors && errors.package_q_days ? 'is_invalid' : null %>" 
+            <input type="number" name="package_q_days" class="q_days_v control <%= locals.errors && errors.package_q_days ? 'is_invalid' : null %>" 
                     value="<%= locals.old_data ? old_data.package_q_days : null %>" 
                     placeholder="cantidad de días" minlength="1" size="17">
                 <% if (locals.errors && errors.package_q_days) { %>
@@ -84,7 +88,7 @@
         
         <div class="control_formulario">
             <label>package_description: </label>
-            <textarea name="package_description" class="control <%= locals.errors && errors.package_description ? 'is_invalid' : null %>"
+            <textarea name="package_description" class="description_v control <%= locals.errors && errors.package_description ? 'is_invalid' : null %>"
                     ><%= locals.old_data ? old_data.package_description : null %></textarea>
                 <% if (locals.errors && errors.package_description) { %>
                     <div class="text_error">
@@ -95,7 +99,7 @@
         <div class="control_formulario">
             <label>package_date_admission: </label>
             <input type="date" name="package_date_admission" 
-                    class="control <%= locals.errors && errors.package_date_admission ? 'is_invalid' : null %>"
+                    class="date_admission_v control <%= locals.errors && errors.package_date_admission ? 'is_invalid' : null %>"
                     value="<%= locals.old_data ? old_data.package_date_admission : null %>" >
                 <% if (locals.errors && errors.package_date_admission) { %>
                     <div class="text_error">
@@ -138,7 +142,7 @@
         <div class="control_formulario">
             <label>package_discount: </label>
             <input type="number" name="package_discount" 
-                    class="control <%= locals.errors && errors.package_discount ? 'is_invalid' : null %>"
+                    class="discount_v control <%= locals.errors && errors.package_discount ? 'is_invalid' : null %>"
                     value="<%= locals.old_data ? old_data.package_discount : null %>" 
                     placeholder="descuento" maxlength="10" size="10">
                 <% if (locals.errors && errors.package_discount) { %>
