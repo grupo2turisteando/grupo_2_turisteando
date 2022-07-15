@@ -16,7 +16,7 @@
           <br>
             <%for (let user of users_table) {%>
                 <div  class="users_list">
-                  <a  id="<%= user.id %>" href="/admin/userDetail/<%= user.id %>">
+                  <a  id="<%= user.user_id %>" href="/admin/userDetail/<%= user.user_id %>">
                     <legend>Nombre: <%= user.user %></legend>
                     <img  class="user_avatar" src="/images/users/avatars/<%= user.avatar ? user.avatar : "user_avatar_default.png" %>">
                   </a>

@@ -4,9 +4,9 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
 
        transaction_id: {
-        type: dataTypes.INTEGER,
+        type: dataTypes.STRING(50),
         primaryKey: true,
-        autoIncrement: true,
+        autoIncrement: false,
         allowNull: false,
        },
 
@@ -25,22 +25,22 @@ module.exports = (sequelize, dataTypes) => {
         allowNull: false,
        },
 
-       payment_method_id: {
-        type: dataTypes.INTEGER,
+        payment_method:{
+        type: dataTypes.STRING(45),
         allowNull: false,
        },
-
-       card_number: {
+       
+       payment_detail_id: {
         type: dataTypes.STRING(50),
         allowNull: false,
        },
-
-       expiration: {
-        type: dataTypes.DATE,
+       
+       payment_detail_id: {
+        type: dataTypes.INTEGER,
         allowNull: false,
        },
-
-       security_code: {
+      
+       customer_id: {
         type: dataTypes.INTEGER,
         allowNull: false,
        },
@@ -48,14 +48,14 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tableName: "transactions",
+        tableName: "transaction",
         timestamps: false
         }
 
     const Transaction = sequelize.define(alias, cols, config);
             
         Transaction.associate = function(models){
-        Transaction.belongsTo(models.User, {
+        Transaction.belongsTo(models.UserRegister, {
                 as: "user",
                 foreignKey: "user_id"
         });
@@ -64,9 +64,15 @@ module.exports = (sequelize, dataTypes) => {
             as: "detailtransactions",
             foreignKey:"transaction_id"
         });
-        Transaction.hasMany(models.PaymentMethod, {
-            as: "paymentMethod",
-            foreignKey:"payment_method_id"
+
+       
+        Transaction.belongsTo(models.Cart, {
+            as: "cart",
+            foreignKey:"cart_id"
+        });
+        Transaction.belongsTo(models.Customers, {
+            as: "customer",
+            foreignKey:"customer_id"
         });
 
         }

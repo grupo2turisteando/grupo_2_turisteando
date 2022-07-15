@@ -103,22 +103,48 @@
                                     <div class="errors_form"> <%= errors.postal_code.msg %> </div>
                                 <% } %> 
                         </div>
-                        <div>
+                        <div> 
                             <label for="province">Provincia:</label>
-                                <input type="text" name="province" id="txprovince" placeholder="Tucumán" 
+                                <select class="province" name="province" id="province">
+                                    <option value="1">Buenos Aires</option>
+                                    <option value="2">Catamarca</option>
+                                    <option value="3">Chaco</option>
+                                    <option value="4">Chubut</option>
+                                    <option value="5">Ciudad Autónoma de Buenos Aires</option>
+                                    <option value="6">Córdoba</option>
+                                    <option value="7">Corrientes</option>
+                                    <option value="8">Entre Ríos</option>
+                                    <option value="9">Formosa </option>
+                                    <option value="10">Jujuy </option>
+                                    <option value="11">La Pampa </option>
+                                    <option value="12">La Rioja </option>
+                                    <option value="13">Mendoza </option>
+                                    <option value="14">Misiones </option>
+                                    <option value="15">Neuquén </option>
+                                    <option value="16">Río Negro </option>
+                                    <option value="17">Salta </option>
+                                    <option value="18">San Juan </option>
+                                    <option value="19">San Luis </option>
+                                    <option value="20">Santa Cruz </option>
+                                    <option value="21">Santa Fe </option>
+                                    <option value="22">Santiago del Estero </option>
+                                    <option value="23">Tierra del Fuego, Antártida e Islas del Atlántico Sur </option>
+                                    <option value="24">Tucumán </option>
+                            </select>
+                                <!-- <input type="text" name="province" id="txprovince" placeholder="Tucumán" 
                                     class=" <%= locals.errors && errors.province ? 'this_is_invalid' : null %>"    
                                     value="<%= locals.oldData ? oldData.province : null %>">
                                 <% if(locals.errors && errors.province){ %> 
                                     <div class="errors_form"> <%= errors.province.msg %> </div>
-                                <% } %> 
+                                <% } %>  -->
                         </div>
                         <div>
-                            <label for="email">Email:</label>
-                                <input type="email" name="email" id="txemail" placeholder="soledad@gmail.com"
-                                class=" <%= locals.errors && errors.email ? 'this_is_invalid' : null %>" 
-                                value="<%= locals.oldData ? oldData.email : null %>">
-                                <% if(locals.errors && errors.email){ %> 
-                                    <div class="errors_form"> <%= errors.email.msg %> </div>
+                            <label for="email_alternative">Email:</label>
+                                <input type="email" name="email_alternative" id="txemail" placeholder="soledad@gmail.com"
+                                class=" <%= locals.errors && errors.email_alternative ? 'this_is_invalid' : null %>" 
+                                value="<%= locals.oldData ? oldData.email_alternative : null %>">
+                                <% if(locals.errors && errors.email_alternative){ %> 
+                                    <div class="errors_form"> <%= errors.email_alternative.msg %> </div>
                                 <% } %> 
                         </div>
                         <div>
@@ -135,7 +161,7 @@
            
                 
             </section>
-
+            <div class="datosPasajeros">
             <section class="pago">
                 <h4>¿Cómo querés pagar?</h4>
                 <div >
@@ -144,6 +170,9 @@
                             <label for="payment_method">Tarjeta débito</label>
                                 <input type="radio" name="payment_method" value="debito" 
                                 <%= locals.oldData &&  oldData.payment_method === "debito" ? "checked" : null %>>
+
+                        </div>
+                        <div class="datosPago">
                             <label for="payment_method">Tarjeta crédito</label>     
                                 <input type="radio" name="payment_method" value="tarjeta"
                                 <%= locals.oldData &&  oldData.payment_method === "tarjeta credito" ? "checked" : null %>>
@@ -174,7 +203,7 @@
                         </div>
                         <div>
                             <label for="expiration">Vencimiento</label>
-                                <input type="number" name="expiration"  id="txexpiration" placeholder="10/24" 
+                                <input type="date" name="expiration"  id="txexpiration" placeholder="10/24" 
                                     class=" <%= locals.errors && errors.expiration ? 'this_is_invalid' : null %>" 
                                     value="<%= locals.oldData ? oldData.expiration : null %>">
                                 <% if(locals.errors && errors.expiration){ %> 
@@ -192,7 +221,7 @@
                         </div>
                     </article>
                 </div>
-        
+            </div>
                 <div class="div_boton_form">
                
                         <button class= "botonForm" type="submit" value="pago" >Pagar</button>

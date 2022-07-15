@@ -3,74 +3,71 @@ const engine= require('../model/engine.js');
 const Users= require('../model/Users.js');
 const { find_columm } = require("../model/engine.js");
 const req = require("express/lib/request");
+const engineUser = require("../model/engineUser");
 
 const users_admin_controller = {
 
    
 
     /*Mostrar todos usuarios*/
-    users_list: (req, res) => {
-       
-        let users_table= engine.browse_table('users-prueba');
-  
-        res.status(200).render('../views/users_admin', {users_table: users_table, });
-      
+    users_list_db: async (req, res) => {
+       let users_table= await engineUser.read_table_db('UserRegister');
+        res.status(200).render('../views/users_admin', {users_table: users_table });
     },
+
     /*Mostrar detalle del Usuario*/
-    show_user :  (req, res) => {
+    detail_user_db : async (req, res) => {
         let user_id= req.params.id;
-        let user= engine.read_columm('users-prueba', user_id); 
-        let user2= engine.read_columm('data_user_form', user_id); 
-        let user3= engine.read_columm('transaction', user_id); 
-        let user4= engine.read_columm('pending_purchase', user_id); 
-        res.status(200).render("../views/user_admin_detail", {user: user[0], user2: user2[0], user3: user3[0],  user4: user4[0]}); 
-           
+        let user= await engineUser.read_FindByPK_db("UserRegister", user_id)
+        res.status(200).render("../views/user_admin_detail", {user: user}); 
         },
-    /*Editar los campos de un Usuario*/
-    edit_user_get: (req, res) => {
+    
+        /*Editar los campos de un Usuario*/
+    edit_user_get_db: async (req, res) => {
         let user_id= req.params.id;
 
-        let user= engine.read_columm('users-prueba', user_id); 
-        let user2= engine.read_columm('data_user_form', user_id); 
-       
-        //let user3= engine.browse_table('transaction'); 
-   
-        let user3= engine.read_columm("transaction", user_id);
-    
-      
-     
-        let user4= engine.read_columm('pending_purchase', user_id); 
-     
-        res.status(200).render("../views/users/user_edit", {user: user[0], user2:user2[0], user3: user3,  user4: user4[0]}); //como envio un objeto literal uso el indice cero del array
+        let user= await engineUser.read_FindByPK_db("UserRegister", user_id)
+        let user2= await engineUser.read_FindByPK_include("Customers", user_id)
+        res.status(200).render("../views/users/user_edit_admin", {user: user, user2:user2}); //como envio un objeto literal uso el indice cero del array
     },
-    edit_user_put: (req, res)=>{
-        data_user = req.body
- 
-        data_user.id = Number(data_user.id)
-    
-        /* update los datos */
-        let old_users= engine.read_columm('users-prueba', data_user.id);
    
+    edit_user_put_db: async (req, res)=>{
+       let data_user = req.body;
     
+        let actualizar = {
+            customer_id: data_user.user_id,
+            user_id : data_user.user_id,
+            first_name: data_user.first_name,
+            last_name: data_user.last_name,
+            birth_date:data_user.birth_date,
+            age: data_user.age,
+            identity_document: data_user.identity_document,
+            home:data_user.home,
+            postal_code:data_user.postal_code,
+            province_id:data_user.province,
+            email_alternative: data_user.email_alternative,
+            phone_number:data_user.phone_number,
+ 
+         }
+
    
         /* actualizo la base de datos */
-        engine.edit_columm('data_user_form', data_user);
-
+         let actualizado = await engineUser.edit_columm_db_user("Customers", actualizar);
+        
         res.redirect('/admin');
     },
-    
-     /*Muestra el Usuario a Eliminar */
-    delete_user_get: (req, res)=>{
+
+    /*Muestra el Usuario a Eliminar */
+    delete_user_get_db: async (req, res)=>{
         let user_id= req.params.id
-        let user= engine.read_columm("users-prueba", user_id);
-        res.status(200).render("../views/users/user_delete", {user : user[0]});    
+        let user= await engineUser.read_FindByPK_db("UserRegister", user_id);
+        res.status(200).render("../views/users/user_delete", {user : user});    
     },
    
      /* Elimina un usuario*/
-    delete_user_delete: (req, res)=>{
-        let user_id = req.params.id
-        engine.delete_columm("users-prueba", user_id);
-       
+    delete_user_db: async (req, res)=>{
+        let user_id = req.params.id;
+        await engineUser.delete_columm_db_user("UserRegister", user_id);
         res.redirect("/admin/users");
         }
     }

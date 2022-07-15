@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         autoIncrement: true,
         allowNull: false
        },
-
+       
        package_name: {
         type: dataTypes.STRING(100),
         allowNull: false
@@ -78,7 +78,9 @@ module.exports = (sequelize, dataTypes) => {
        package_transportation: {
         type: dataTypes.INTEGER,
         allowNull: false,
-       } 
+       } ,
+           
+    
   
     };
     let config = {
@@ -98,6 +100,24 @@ module.exports = (sequelize, dataTypes) => {
             as: "tour",
             foreignKey: "package_excursions_id"
         });
+    
+    Producto.hasMany(models.DetailTransaction, {
+        as: "detailTransactions",
+        foreignKey:"package_id"
+        });
+
+    Producto.belongsTo(models.Cart, {
+        as: "cart",
+        foreignKey:"package_id"
+        });
+    
+    Producto.belongsTo(models.CartPending, {
+        as: "cartPending",
+        foreignKey:"package_id"
+            });
+    
+  
+    
     }
 
     return Producto; 

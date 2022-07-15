@@ -11,12 +11,9 @@ footer {
     margin-bottom: 0;
     }
 
-.cartMain{
-    margin: 0;
-    min-height: 450px;
-}
+
 body{   
-    
+   
     font-size: medium;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -26,7 +23,10 @@ body{
     margin: 0;
    
     }  
- 
+.cart_main
+{
+   background-color: #f0f9e8 ; 
+}
 .headerCart{
     
      background-color: beige;
@@ -81,92 +81,103 @@ body{
 }
 
 
-main section .h2Cart{
 
-   display: flex;
-    margin: 10px;
-    padding: 3px;
-    font-weight: 400;
-    /*border: solid blue 4px;*/
-    font-size: 20px;
-    margin: 0;
-    background-color:  #ebebeb;
+
+.section_cart
+{   
+     display: block;
+    padding: 30px 30px 0 30px;
 }
-
-.porComprar{
-    position: relative;
+.acciones
+{
     display: flex;
     flex-direction: column;
-    /* border: solid yellow 5px*/
-    padding: 8x;
-    margin: 0px;
-    background-color:  #ebebeb;
-    
-        }
-
-.porComprar i{
-    color:rgb(132 7 7);
-
+    justify-content: center;
+    align-items: center;
   
-
-
+    
 }
-.porComprar img{
-    display: flex;
-    width: 15vh;
-    align-self:flex-start;
-    margin:3px;
-    padding: 2px;
-    box-shadow: 5px 5px 5px black;
-   
- 
-    }
+.title_cart
+{ 
+    width: 100%;
+    height: 10%;
+    background-color:rgb(132 7 7);
+    color: white;
+    opacity: 0.9;
+    font-size: 18px;
+    text-align: center;
+}
 
-.porComprar img:hover {
-    box-shadow: 10px 10px 10px black;
+
+.articule_cart img
+{  
+    justify-content: center;
+    display: flex;
+    width: 35vh;
+    filter: brightness(100%);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.409);
+    
+}
+
+.articule_cart img:hover
+{  display: flex;
+    width: 35vh;
+    filter: brightness(120%);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.409);
+}
+.cart_figure
+{   display: flex;
+    justify-content: center;
+}
+.description_cart
+{
+    padding: 5px;
+    text-align: center;
+    color:rgba(45, 45, 46, 0.693);
+    opacity: 1; 
+  
+}
+.title_description
+{
+
+ top:80px;
+ font-size: 24px;
+}
+.total{
+  font-weight: bold;
+  font-size: 18px;
+}
+.contenedor_pago
+{
+    display: block;
+    justify-content:center;
+    margin: 0;
+}
+
+.title_description
+{
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+.package_price
+{
+    margin: 0;
+    text-decoration: line-through;
+}
+.package_discount
+{
+    margin: 0;
+    font-style: italic;
+    font-size: 12px;
 }
 .hr{
     margin: 5px 0px 0px 0px;
     width: 100%;
     border-color: rgb(11, 11, 11) ;
 
-   
-}
-.texto{
-    position: absolute;
-    right: 20px;
-    top: 50px;
-    display: block;
-    flex-direction: column;
-align-content: flex-end;
     
 }
-.texto p{
-    margin: 3px;
-    font-size: 16px;
-
-
-}
-.descuentoCart{
-    
-    font-style: oblique;
-    font-size: 5px;
-    align-self: flex-end;
-}
-.descripcionCart{
-  
-     background-color: beige;
-    text-align: center;
-    margin: 3px;
-    font-weight: 300;
-    font-size: 12px;
-    padding: 2px;
-    color: rgb(8, 8, 8);
-    border: solid 1px  rgb(132 7 7);
-
-	}
-
-
 
 .pagoTotal{
    
@@ -181,7 +192,6 @@ align-content: flex-end;
 
 .textTotal{
     display: flex;
-   
     padding: 0;
     margin: 1px;
     font-weight:400;
@@ -191,50 +201,44 @@ align-content: flex-end;
     }
 .montoTotal{
     margin: 0px;
+    font-size: 18px;
 }
-.start_buy{
-    position: relative;
+
+.keep_buy
+{
+    margin-top: 10px;
 }
-.action_cart{
-    
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    position: absolute;
-    top: 0px;
-    right: 10px;
-   }
-a{
+
+.keep_buy a
+{
     text-decoration: none;
-}
-.keep_buy{
-    font-size: 12px;
-    color:rgb(132 7 7);
-    font-weight: 400px;
     text-decoration: none;
+    color:rgb(132 7 7) ;
+    font-weight: bold;
+    margin-top: 10px;
 }
+
+
 .remove{
     display:inline-flex;
     font-size: 12px;
     color:rgb(132 7 7);
- 
+    text-decoration: none;
     align-self: center;
     }
 
-
-
 .botonPago{
-    background-color:#39b54a;
+    background-color:rgb(132 7 7);
+    opacity: 0.9;
     border: none;
      font-size: 14px;
     color: #ffffff;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
-    transition: background-color 450ms;
     display: flex;
-    justify-content: flex-end;
-    
     margin: 3px 0px 0px ;
+    justify-content: center;
+   
     }
 
 /****** cartForm**********/
@@ -251,8 +255,7 @@ a{
     flex-direction: column;
     background-color: #ebebeb;
    padding: 15px 20px;
-    
-}
+   }
 
 h4{
     display: flex;
@@ -263,6 +266,9 @@ h4{
      /* border: solid rgb(238, 186, 130) 3px;*/
     
 }
+
+
+
 .cantidadPasajeros{
      /* border: solid violet 3px;*/
     display: flex;
@@ -281,11 +287,13 @@ h4{
     width: 30px;
     height: 20px;
 }
+
 .datosPasajeros{
     font-size: 8;
     display: flex;
     flex-direction: column;
     max-width:100%;
+  
      /* border: solid red 3px;*/
     }
 .datosPasajeros div{
@@ -296,6 +304,7 @@ h4{
     font-size: 12px;
     margin: 5px;
      width: 100%;
+     
     }
 
 .pasajeros input{
@@ -306,6 +315,18 @@ h4{
     font-size: 16px;
     font-style: italic;
     width: 90%;
+    
+    
+}
+.province
+{   background-color:white;
+    display: flex;
+   height: 40px;
+    font-size: 16px;
+    font-style: italic;
+    color: grey;
+    width: 90%;
+  
 }
 .pasajeros label{
     font-size: 16px;
@@ -548,54 +569,16 @@ h4{
     .navCenter li:hover {
         background-color:rgb(195, 236, 158);      
     }
-    .descripcionCart{
-        padding: 8px;
-        font-size: 20px;
-    }
- 
-    .porComprar img{
-        display: flex;
-        width: 30vh;
-        margin: 2px 10px 
-        
-        }
-    .remove{
-        font-size: 18px;
-    }
-     main section .h2Cart{
-         position: relative;
 
-     }
-     .cartMain{
-       flex-direction: column  ;
-       min-height: 800px;
-     }
-    .sectionCart{
-        width: 100%;
-    }
-    .texto{
-        top: 100px;
-        right: 40px;
-        font-weight: 600px;
-        
-       }
 
-       .texto p {
-           font-size: 20px;
-       }
-    .keep_buy{
-        font-size: 16px;
-        margin-bottom: 5px;
-    }
- 
-    .botonPago{
+    /* .botonPago{
         display: inline-block;
         right: 50px;
         bottom: 5px;
        padding: 5px 20px;
        margin: 0px;
        font-size: 20px;
-    }
+    } */
     .div_boton_form{
         display: flex;
         flex-direction: column;
@@ -666,6 +649,15 @@ h4{
             justify-content: center;
             
             }
+.articule_cart
+{
+    width: 80vh;
+}
+
+.contenedor_acciones
+{
+ width: 90vh;
+}
  /* CART FINAL */
 
     .cartMain{
@@ -677,41 +669,19 @@ h4{
         margin: 10px;
         padding: 20px;
         }
-    /*.logoFinal img{
-       
-            display: flex;
-            width: 100px;
-            justify-items: center;
-            align-items: center;
-            align-self: center;
-            margin-top: 10px;
-           }
-    .logoFinal img {
-            animation-duration: 5s;
-            animation-name: logo;
-            animation-timing-function:linear;
-            animation-iteration-count: infinite;
-            }
-             @keyframes logo {
-            0% {width: 75px;}  50% {width: 100px;}  100% {width: 200px;} 
-            0% {width: 200px;}  50% {width: 10px;}  100% {width: 50px;} 100% {width: 250px;} 
-                }*/
+.keep_buy a:hover   
+{
+    color: #800000;
+}
+
 }
  
 @media (min-width: 1200px) {
     .navCart{
         max-width: 1200px;
     }
-  
-     .descripcionCart{
-         font-size: 24px;
-         font-weight: 600;
-     }
-
-    .texto p{
-        font-size: 24px;
-        font-weight: 500;
-    }
+   
+   
     .remove{
         font-size: 
         20px;
@@ -722,11 +692,8 @@ h4{
          justify-content:center;
          margin: 0;
        }
-    .start_buy{
-        display:flex;
-       margin-top: 10px;
-      justify-content: center;
-    }
+
+    
 
     .montoTotal{
         margin-top: 5px;
@@ -742,19 +709,20 @@ h4{
         margin-right:5px;
     }
     .keep_buy{
-        margin-right: 40px ;
+       
         color: black;
         font-size: 20px;
+        text-decoration: none;
+        margin-top: 10px;
     }
+ 
     .pasajeros{
-      
+  
     min-width: none;
     max-width: none;
-    border: solid yellow 3px;
     display: flex;
     padding: 0;
     margin-top: 10px;
- 
     border:none;
     margin: 0px;
     font-size: 15px;
@@ -765,14 +733,17 @@ h4{
     .datosPasajeros div{
         font-size: 16px;
     } 
-    .datosPasajeros input{
+    .datosPasajeros input  {
     /* border: solid brown 3px;*/
     display: flex;
-    margin-right: 20px;
+    margin-right: 10px;
     font-size: 18px;
     font-style: italic;
-    width: 90%;
-   
+    width: 80%;
+    }
+    .datosPasajeros
+    {
+        margin-left: 40px;
     }
   .pago{
     min-width: none;
@@ -785,55 +756,80 @@ h4{
     margin: 0px;
     font-size: 15px;
    }
-   .medioPago div{
+   /* .medioPago div{
   
    display: flex;
    max-width: max-content;
    flex-direction: row;    
    margin: 5px;
-}
-.medioPago label{
-   font-size: 16px;
- 
-}
-.medioPago{
+} */
+.medioPago
+{
     
-    justify-content:flex-start;
-  
+    justify-content: space-around;
+    width: 50%;
+    margin-left: -40px
 }
+.medioPago input
+{
+width: 20px;
+margin-left: 5px;
 
-.pagoTarjeta div{
-font-size: 16px;
-
-  }
-  .pagoTarjeta input{
-        /* border: solid brown 3px;*/
+}
+.province
+{   background-color:white;
     display: flex;
-    margin-right: 20px;
+    margin-right: 10px;
     font-size: 18px;
     font-style: italic;
-    width: 90%;
-   
-      }
- .botonPago{
-     padding: 10px 40px;
-    
-    
- }
+    color: grey;
+    width: 80%;  
+    height: 40px;
+}
+
+.div_boton_form
+{
+    position: relative;;
+    display: flex;
+left: 200px;
+    font-size: 18px;
+    font-style: italic;
+    width: 50%;
+    opacity: 0.9;
+ 
+}
   
- .botonForm{
-     justify-content: flex-start;
-     padding: 10px 60px;
-     justify-content: space-around;
-   }  
+ 
 .textFinalCart{
     font-size: 24px;
 }
     .cartMain{
         min-height: 800px;
     }
-.sectionCart{
-    margin-top: 0px;
+.articule_cart{
+    width: 80vh;
+    
+}
+.section_cart
+{
+    
+    padding: 40px;
+}
+.contenedor_acciones
+{
+    font-family: "Roboto";
+    position: fixed;
+    top: 210px;
+    right: 300px;
+    width: 35vh;
+    height: 20%;
+text-decoration: none;
+  border: solid 3px rgba(132, 7, 7, 0.234);
+border-radius: 10px;
+}
+.keep_buy a:hover {
+ text-decoration: none;
+ color: #800000;
 }
   }
   
