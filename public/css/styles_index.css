@@ -218,7 +218,17 @@ body {
     padding: 2px;
     
 }
+
+.product_image .llenar {
+    /* border: dotted 2px red;*/
+    width: 310;
+    height: 200;
+    object-fit: fill;
+    
+} 
+
 .productos {
+    /*border: dotted 2px red;*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -232,8 +242,8 @@ body {
     justify-content: center;
     align-items: flex-start;
     background-color: rgb(240,249,232);
-    max-width: 338px;
-    max-height: 327.6px;
+    width: 338px;
+    height: 327.6px;
 }
 .product_image:hover {
     box-shadow: 10px 5px 5px black;
@@ -259,6 +269,7 @@ body {
     flex-wrap: wrap;
 }
 .prod_ofertas article {
+    margin: 3px;
     padding: 3px;
     border: solid 8px beige;
     display: flex;
@@ -266,8 +277,8 @@ body {
     justify-content: center;
     align-items: flex-start;
     background-color: rgb(240,249,232);
-    max-width: 338px;
-    max-height: 327.6px;
+    width: 338px;
+    height: 327.6px;
 }
 .prod_ofertas article figure {
     align-self: center;
