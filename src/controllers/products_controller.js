@@ -16,16 +16,17 @@ const products_controller = {
     // },
     productDetail: async (req, res) => {
         let package = await engine.browse_table_db();
-        res.status(200).render('../views/productDetail', { package: package });
+        res.status(200).render('../views/productDetail', { package });
     },
     show_product: async (req, res) => {
         let package_id = req.params.id;
         let package = await engine.read_columm_db('Producto', package_id); 
-        res.status(200).render('../views/productDetail', { package: package[0] });
+        
+        res.status(200).render('../views/productDetail', { package });
     },
-    post_product: (req, res) => {
+    post_product: async (req, res) => {
         let data_package = req.body.id;
-        engine.add_columm_db('Producto', data_package);
+        await engine.add_columm_db('Producto', data_package);
         res.status(200).redirect('../views/productCart');
     }
 };

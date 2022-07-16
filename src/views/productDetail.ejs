@@ -6,6 +6,9 @@
 
         <main>
             <section >
+ 
+            <% if ( package ) { %>
+
                 <h2 class="title"><%= package.package_name %></h2>
                 <article >
                     <figure class="detailPic">
@@ -56,6 +59,9 @@
                         </ul></p>
                     </div>
                 </article>
+
+            <% } %>
+
             </section>
         </main>
 

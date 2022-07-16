@@ -4,20 +4,26 @@ const { validationResult } = require('express-validator');
 const db = require('../../database/models');
 const Op = db.Sequelize.Op;
 
-// requiero el paquete "date-and-time" para manejar el formato de fecha que vienen de la base de datos.
-// ejemplo como vienen de la base de datos: "Mon Aug 15 2022 21:00:00 GMT-0300 (Argentina Standard Time)"."
-const date = require('date-and-time');
-
 /* cargo el manejador de los paquetes del modelo */
 const engine = require('../model/engine.js');
 
 const newsletter_controller = {
-    new_register: (req, res) => {
+    new_register: async (req, res) => {
         let register = req.body
-
-        engine.add_columm_db("newsletter", register);
-
-        res.status(200).redirect('/');
+        const resalt_validation = validationResult(req);
+        if(resalt_validation.errors.length > 0) {
+            res.status(200).render('..views/newsletter', {
+                errors: resalt_validation.mapped(),
+                old_data: req.body
+            });
+        } else {
+            let estado = await engine.add_columm_db("Newsletter", register);
+            if(estado != 201) {
+                console.log('Error al registrarse!')
+            } else {
+                res.redirect('/')
+            }
+        };
     }
 };
 
