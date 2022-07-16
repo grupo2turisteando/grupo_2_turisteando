@@ -4,52 +4,50 @@
 
     <%- include('./partials/header') %>
     
-        <main class="cartMain" >
-            <section class="sectionCart">
+        <main class=cart_main >
+            <section class="section_cart" >
  
-                <h2 class="h2Cart">Carrito</h2>
-                
+                <h2  >Carrito</h2>
+            
                 <% for (let paquete of data_show_cart) {%>
                     
-            
-                    <article <%= paquete.package_id %> class="porComprar">
-                        <p class="descripcionCart"><%= paquete.package_name %> 
+                    <article class="articule_cart" <%= paquete.package_id %>>
+                        <p class="title_cart"><%= paquete.package.package_name %> 
                             <form action="/cart/delete/<%= paquete.package_id %>?_method=DELETE"" method="post" >
                                 <button  class="remove" type="submit" name="button_reset" ><i class="fa-solid fa-trash-can"></i></button></a>
                             </form>  
                         </p>
-                        
-                        <figure class="img_cart"><img src="/images/<%= paquete.package_image %>" alt="<%= paquete.package_alt_image %>"></figure>
-                        <div class="texto">
-                            <p class="desc"> <%= paquete.package_title %> </p>
-                            <p class="precioCart">$ <%= paquete.package_price %></p>
-                            <p class="descuentoCart"> <%= paquete.package_discount %> off </p>  
+                        <div class="cart_figure">
+                            
+                            <figure class=""><img src="/images/<%= paquete.package.package_image %>" alt="<%= paquete.package.package_alt_image %>">
+                            </figure>
                         </div>
-                        <% } %>
-                        <br>
                         
+                        <p class="description_cart"> <%= paquete.package.package_description %> </p>
+                        <div class="contenedor_pago">
+                        <p class="title_description" > <%= paquete.package.package_title %> </p>
+                        <p class="package_discount" > <%= paquete.package_discount %> % off </p> 
+                        <p class="package_price" >$ <%= paquete.package_price %></p>
+                        <p class="total">$<%= paquete.total %></p>
+                        </div>
+                           
+                        <% } %> 
+                        <br>
                     </article>
-                            
-                        <hr class="hr">
+                    <hr class="hr">
             </section>   
-            
             <section>
-
                     <article>  
-                       
-                        <div class="start_buy" >
-                            <p class="textTotal"><strong>Total:</strong></p>
-                      
-                            <p class="montoTotal"><strong>  </strong></p>
-         |               
-               
-                            <div class="action_cart">
-                            
+                        <div class="contenedor_acciones">
+                            <p class="textTotal"><strong>Total</strong></p>
+                                <% if (total){ %> 
+                            <p class="montoTotal"><strong><%= total %>  </strong></p>
+                                <% } %> 
+                                
+                            <div class="acciones">
                                 <form action="/cart/purchase" method="get">
-                                   
-                                    <button class="botonPago" type="submit" value="iniciar_compra" name="start_buy" id="start_buy">Iniciar compra</button></a>
+                                   <button class="botonPago" type="submit" value="iniciar_compra" name="start_buy" id="start_buy">Iniciar compra</button></a>
                                 </form>
-                            
                                 <label class="keep_buy">
                                     <a href="./index">Seguir comprando<i class="fa-solid fa-cart-shopping"></i></a>
                                 </label>
@@ -57,6 +55,7 @@
                         </div>
                     </article> 
             </section>
+            
         </main>
         
     <%- include('./partials/footer') %>

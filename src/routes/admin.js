@@ -48,20 +48,22 @@ router.get('/producto/:id/delete', admin_controllers.delete_package_get);
 router.delete('/producto/delete/:id', admin_controllers.delete_package_delete);
 
 
+
 //listar Ususarios
-router.get('/users', users_admin_controllers.users_list);
+router.get('/users', users_admin_controllers.users_list_db);
+
 // Detalle Usuario
-router.get('/userDetail/:id', users_admin_controllers.show_user);
+router.get('/userDetail/:id', users_admin_controllers.detail_user_db);
 
 //Buscar Usuario
 
 //Editar Usuario
-router.get('/user/:id', users_admin_controllers.edit_user_get);
-
-router.put('/user/edit',uploadFile.single('avatar'), users_admin_controllers.edit_user_put);
+router.get('/user/:id', users_admin_controllers.edit_user_get_db);
+router.put('/user/edit',uploadFile.single('avatar'), users_admin_controllers.edit_user_put_db);
 
 //Borrar Usuario
-router.get('/user/:id/delete', users_admin_controllers.delete_user_get);
-router.delete("/user/delete/:id", users_admin_controllers.delete_user_delete);
+
+router.get('/user/:id/delete', users_admin_controllers.delete_user_get_db);
+router.delete("/user/delete/:id", users_admin_controllers.delete_user_db);
 
 module.exports= router;

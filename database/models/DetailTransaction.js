@@ -1,24 +1,33 @@
+const { STRING } = require("sequelize");
+
 module.exports = (sequelize, dataTypes) => {
 
     let alias = "DetailTransaction";
     let cols = {
 
-       detailTransaction_id: {
+        detailtransactions_id: {
         type: dataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
        },
-
        transaction_id: {
         type: dataTypes.INTEGER,
         allowNull: false,
        },
-
-       package_id: {
+       
+       user_id: {
         type: dataTypes.INTEGER,
         allowNull: false,
        },
+      
+
+       package_id: {
+        type: dataTypes.INTEGER,
+       allowNull: false,
+       },
+
+       
 
        package_price: {
         type: dataTypes.DOUBLE,
@@ -30,10 +39,7 @@ module.exports = (sequelize, dataTypes) => {
         allowNull: false,
        },
 
-       package_date_admission: {
-        type: dataTypes.DATE,
-        allowNull: false,
-       },
+     
 
        number_passengers: {
         type: dataTypes.INTEGER,
@@ -54,9 +60,14 @@ module.exports = (sequelize, dataTypes) => {
                 as: "transaction",
                 foreignKey: "transaction_id"
         });
+
+        DetailTransaction.belongsTo(models.UserRegister, {
+            as: "user",
+            foreignKey: "user_id"
+        });
         
-        DetailTransaction.hasMany(models.Producto, {
-            as: "productos",
+        DetailTransaction.belongsTo(models.Producto, {
+            as: "package",
             foreignKey:"package_id"
         });
 
