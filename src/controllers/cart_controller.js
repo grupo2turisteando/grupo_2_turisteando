@@ -19,7 +19,7 @@ const cart_controller = {
         let data_show_cart = await engineCart.read_columm_db_cart("Cart", usuario.user_id);
             if (data_show_cart[0] === undefined){
                 let total = "El carrito esta vacío"
-                res.status(200).render('../views/productCart', {data_show_cart : data_show_cart, total:total});
+                res.status(200).render('../views/empty_cart');
             }else{
                 let precio =[]  
                 // sumo el total del carrito
