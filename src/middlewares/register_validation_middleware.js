@@ -1,20 +1,23 @@
 const path = require('path');
 const { body } = require('express-validator');
-const User = require('../model/Users.js');
+const db = require('../../database/models');
 
-// Validaciones
-const validations = [
+// Validaciones Registro
+const register_validations = [
     body('user').notEmpty().withMessage('Tienes que escribir un nombre').bail()
-        .isLength( {min: 4} ).withMessage('El nombre debe tener como mínimo 4 caracteres'),
+        .isLength( {min: 2} ).withMessage('El nombre debe tener como mínimo 2 caracteres'),
     body('email')
         .notEmpty().withMessage('Tienes que escribir un email').bail()
         .isEmail().withMessage('Debes escribir un formato de correo válido')
         .custom((value, { req }) => {
-            let user_in_db = User.find_by_field('email', req.body.email);
-            if (user_in_db) {
-                throw new Error('Este email ya está registrado')
-            }
-            return true;
+            return db.UserRegister.findOne({
+                where: {email: req.body.email}
+            }).then(user_in_db => {
+                if (user_in_db) {
+                    throw new Error('Este email ya está registrado')
+                }
+                return true;
+            })
         }),
     body('password')
         .notEmpty().withMessage('Tienes que escribir una contraseña').bail()
@@ -30,7 +33,7 @@ const validations = [
         }),
     body('avatar').custom((value, { req }) => {
         let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.jpeg'];
+        let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
         
         if (!file) {
             throw new Error('Tienes que subir una imagen');
@@ -45,4 +48,4 @@ const validations = [
     })
 ];
 
-module.exports = validations;
+module.exports = register_validations;
