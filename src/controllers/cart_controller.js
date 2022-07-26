@@ -99,6 +99,7 @@ const cart_controller = {
                     errors : result_validation_cart.mapped(),
                     oldData: req.body
                 })
+                return
             }else{
             let data_show_cart = await engineCart.read_columm_db_cart("Cart", usuario.user_id);
    
