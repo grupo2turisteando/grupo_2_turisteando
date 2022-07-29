@@ -7,7 +7,7 @@ const router= express.Router(); /* Router permiete crear rutas montables y desmo
 const apiProductsControllers = require('../../controllers/apiControllers/apiProductsControllers');
 
 
-router.get('/', apiProductsControllers.list);
-router.get('/products/:id', apiProductsControllers.detail);
+router.get('/', apiProductsControllers.list);//Facundo
+router.get('/products/:id', apiProductsControllers.detail);//Walter
 
 module.exports = router;
