@@ -62,8 +62,8 @@ app.use('/newsletter', rutasNewsletter);
 app.use('/productSelect', rutasSelect);
 
 /* puntos de entrada Api */
-app.use('/api/productos', apiRoutesProducts);// Walter Y Facundo
-app.use('/api/usuarios', apiRoutesUsers); //Ignacio y Silvana
+app.use('/api/products', apiRoutesProducts);// Walter Y Facundo
+app.use('/api/users', apiRoutesUsers); //Ignacio y Silvana
 
 /* Error 404 */
 app.use((req, res, next) => {

@@ -8,6 +8,6 @@ const apiProductsControllers = require('../../controllers/apiControllers/apiProd
 
 
 router.get('/', apiProductsControllers.list);//Facundo
-router.get('/products/:id', apiProductsControllers.detail);//Walter
+router.get('/:id', apiProductsControllers.detail);//Walter
 
 module.exports = router;

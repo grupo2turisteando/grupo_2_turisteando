@@ -8,6 +8,6 @@ const apiUsersControllers = require('../../controllers/apiControllers/apiUsersCo
 
 
 router.get('/', apiUsersControllers.list);//Silvana
-router.get('/products/:id', apiUsersControllers.detail); //Ignacio
+router.get('/:id', apiUsersControllers.detail); //Ignacio
 
 module.exports = router;
