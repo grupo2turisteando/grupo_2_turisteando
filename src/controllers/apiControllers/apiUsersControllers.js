@@ -4,7 +4,7 @@ const sequelize = db.sequelize;
 
 const apiUsersControllers = {
 
-list: (req,res)=>{
+list_register: (req,res)=>{
     db.UserRegister.findAll()
         .then(userregister=>{
             return res.status(200).json({

@@ -7,7 +7,10 @@ const router= express.Router(); /* Router permiete crear rutas montables y desmo
 const apiUsersControllers = require('../../controllers/apiControllers/apiUsersControllers');
 
 
-router.get('/', apiUsersControllers.list);//Silvana
-router.get('/:id', apiUsersControllers.detail); //Ignacio
+router.get('/register', apiUsersControllers.list_register);//Silvana
+router.get('/register:id', apiUsersControllers.detail_register); //Ignacio
+
+router.get('/customers', apiUsersControllers.customers);//Silvana
+router.get('/customers:id', apiUsersControllers.detail_customers); //Ignacio
 
 module.exports = router;
