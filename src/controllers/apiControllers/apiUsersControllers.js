@@ -11,11 +11,14 @@ list: (req,res)=>{
                 meta:{
                     total: userregister.length,
                     status: 200,
-                    url:req.url
+                    url: "http://localhost:5020/api/users"
                 },
                 data: userregister,
+               
             })
+        
         })
+        
 
 },
 detail: (req,res)=>{

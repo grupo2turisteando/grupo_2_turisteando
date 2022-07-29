@@ -10,4 +10,6 @@ const apiProductsControllers = require('../../controllers/apiControllers/apiProd
 router.get('/', apiProductsControllers.list);//Facundo
 router.get('/:id', apiProductsControllers.detail);//Walter
 
+
+
 module.exports = router;

@@ -23,7 +23,7 @@ const rutasSelect = require('./routes/select.js');
 /* rutas Apis */
 const apiRoutesProducts = require('./routes/routesApi/apiProducts.js')
 const apiRoutesUsers = require('./routes/routesApi/apiUsers');
-
+const apiRoutesTransaction= require('./routes/routesApi/apiTransactions');
 
 app.set('view engine', 'ejs');
 /* seteo donde esta el directorio "views" */
@@ -64,6 +64,8 @@ app.use('/productSelect', rutasSelect);
 /* puntos de entrada Api */
 app.use('/api/products', apiRoutesProducts);// Walter Y Facundo
 app.use('/api/users', apiRoutesUsers); //Ignacio y Silvana
+app.use('/api/transactions', apiRoutesTransaction); //Ignacio y Silvana
+
 
 /* Error 404 */
 app.use((req, res, next) => {

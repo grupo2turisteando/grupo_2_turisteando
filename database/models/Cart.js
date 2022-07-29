@@ -70,10 +70,10 @@ module.exports = (sequelize, dataTypes) => {
         });
 
           
-        Cart.hasMany(models.Transaction, {
-            as: "tansactions",
-            foreignKey:"cart_id"
-        });
+        // Cart.hasMany(models.Transaction, {
+        //     as: "tansactions",
+        //     foreignKey:"cart_id"
+        // });
 
        
 
