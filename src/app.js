@@ -20,6 +20,11 @@ const rutasUsers = require('./routes/users.js');
 const rutasNewsletter = require('./routes/newsletter.js')
 const rutasSelect = require('./routes/select.js');
 
+/* rutas Apis */
+const apiRoutesProducts = require('./routes/routesApi/apiProducts.js')
+const apiRoutesUsers = require('./routes/routesApi/apiUsers');
+
+
 app.set('view engine', 'ejs');
 /* seteo donde esta el directorio "views" */
 app.set('views', __dirname + '/views');
@@ -55,6 +60,10 @@ app.use('/contact', rutasContact);
 app.use('/users', rutasUsers);
 app.use('/newsletter', rutasNewsletter);
 app.use('/productSelect', rutasSelect);
+
+/* puntos de entrada Api */
+app.use('/api/productos', apiRoutesProducts);
+app.use('/api/usuarios', apiRoutesUsers);
 
 /* Error 404 */
 app.use((req, res, next) => {

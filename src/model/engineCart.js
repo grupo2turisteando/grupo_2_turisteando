@@ -83,6 +83,10 @@ const engineCart = {
     return precio - (precio * porcentaje / nro)
     },
     
+    subtotal: function(cantidad,precio){
+        return cantidad * precio
+    },
+    
     validar_campo : function (expresion, input, campo){
         if(expresion.test(input.value)){
                

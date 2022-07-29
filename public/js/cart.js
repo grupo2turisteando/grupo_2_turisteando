@@ -1,11 +1,7 @@
     window.addEventListener("load", function(){
 
         let formulario = document.getElementById("formCart");
-        // formulario.addEventListener("submit",(e)=>{
-          
-        //         e.preventDefault()
-          
-        // })
+     
   
         let expresiones = {
             nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
@@ -121,8 +117,8 @@
                         validar_campo(expresiones.codigo_seguridad, e.target, "codigo_seguridad");
                 break;
             
-            }
                 }
+        }
 
          function validar_campo (expresion, input, campo){
                 if(expresion.test(input.value)){
@@ -142,15 +138,15 @@
                     
             }
          }
-         let inputs = document.querySelectorAll("input");
+        let inputs = document.querySelectorAll("input");
         inputs.forEach((input)=>{
             input.addEventListener("keyup",(validar_formulario));
             input.addEventListener("blur",(validar_formulario));
               
                
                
-            })
         })
+})
        
    
 

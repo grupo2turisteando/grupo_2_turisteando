@@ -16,20 +16,26 @@ const cart_controller = {
     
     show_cart : async (req, res) => {
         let usuario =req.session.user_logged
+   
         let data_show_cart = await engineCart.read_columm_db_cart("Cart", usuario.user_id);
             if (data_show_cart[0] === undefined){
             let lista_paquetes= await engine.browse_table_db('Producto'); 
                 res.status(200).render('../views/empty_cart', {selector_paquetes : lista_paquetes});
             }else{
+
                 let precio =[]  
                 // sumo el total del carrito
                     for (let i = 0; i < data_show_cart.length; i++) {
                          precio.push((data_show_cart[i].total));
                     };
-                    
+            
                 let total = precio.reduce((acum, price)=>{ return acum + price });
+               
+                
+                // console.log(passenger_total)
                 res.status(200).render('../views/productCart', {data_show_cart : data_show_cart, total:total});
             }
+            
         },
         
     add_item : async  (req, res) => {
@@ -37,8 +43,17 @@ const cart_controller = {
         const list_package = await engine.browse_table_db("Producto");
         let data_add_cart =req.params.id
         let usuario =req.session.user_logged
+        let passengers=(req.body.cantidad)
+
         let data_show_cart = list_package.filter(elemento=>elemento.package_id == data_add_cart);
-        let porcentaje =engineCart.porcentaje(data_show_cart[0].package_price,data_show_cart[0].package_discount, 100 )
+      
+        let amount_passengers = Number(passengers)
+      
+        let passenger_total =engineCart.porcentaje(data_show_cart[0].package_price,data_show_cart[0].package_discount, 100 )
+        
+        let subtotal=engineCart.subtotal(amount_passengers,passenger_total)
+  
+        
       
         //agrego items al carrito
         let cart =  {
@@ -46,7 +61,9 @@ const cart_controller = {
             package_id: data_add_cart,
             package_price: data_show_cart[0].package_price,
             package_discount:data_show_cart[0].package_discount,
-            total: porcentaje
+            passengers:amount_passengers,
+            sub_total:passenger_total,
+            total: subtotal
           };
 
         let grabar =  engineCart.add_columm_db_cart("Cart", cart);
@@ -83,7 +100,7 @@ const cart_controller = {
               
                 let guardar = await engineCart.add_columm_db_cart("CartPending", cart_pending);
                     if (guardar != 201){
-                    console.log('error al agregar paquete al carrito')
+                    console.log('error')
                     }else{
                     res.render("../views/cartForm");
                 }}
@@ -143,10 +160,20 @@ const cart_controller = {
                 }else{
                     let actualizar =  await engineCart.edit_columm_db_cart("Customers", customers);
                 }
-            let transaction = {
+
+                Date.prototype.yyyymmdd = function() {
+                    var yyyy = this.getFullYear().toString();
+                    var mm = (this.getMonth()+1).toString(); // 
+                    var dd  = this.getDate().toString();
+                    return yyyy + "/" + (mm[1]?mm:"0"+mm[0]) + "/" + (dd[1]?dd:"0"+dd[0]); //
+                  };
+                  
+                  var date = new Date();
+                  console.log( date.yyyymmdd() ); 
+                let transaction = {
                     transaction_id: order,
                     user_id: usuario.user_id,
-                    sale_date : 10-01-1111, 
+                    sale_date : date.yyyymmdd(),
                     total: total,
                     payment_method:data_purchese.payment_method,
                     payment_detail_id: order,
@@ -163,7 +190,7 @@ const cart_controller = {
                         package_id:data_show_cart[i].package_id ,
                         package_price: data_show_cart[i].package_price,
                         package_discount: data_show_cart[i].package_discount,
-                        number_passengers:1,
+                        number_passengers:data_show_cart[i].passengers
                     };
                
                     let grabar_detail_transaction = await engineCart.add_columm_db_cart("DetailTransaction", detailTransaction);   
