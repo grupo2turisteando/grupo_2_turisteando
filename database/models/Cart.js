@@ -31,6 +31,15 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.DECIMAL(5,2),
         allowNull: false,
        },
+       
+       passengers: {
+        type: dataTypes.INTEGER,
+        allowNull: false,
+       },
+       sub_total: {
+        type: dataTypes.DOUBLE,
+        allowNull: false,
+       },
 
        total: {
         type: dataTypes.DOUBLE,
@@ -61,10 +70,10 @@ module.exports = (sequelize, dataTypes) => {
         });
 
           
-        Cart.hasMany(models.Transaction, {
-            as: "tansactions",
-            foreignKey:"cart_id"
-        });
+        // Cart.hasMany(models.Transaction, {
+        //     as: "tansactions",
+        //     foreignKey:"cart_id"
+        // });
 
        
 

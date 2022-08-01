@@ -29,6 +29,8 @@
                             <button type="submit" class="buy_button" value="Submit"><a class="buy_button" href="/cart">Agregar al carrito</a></button>
                         </div>-->
                         <form action="/cart/add/<%= package.package_id%>" method="post" class="subtitle_button">
+                            <label class="cantidad_item" for="cantidad">Cantidad</label>
+                            <input type="number" id="<%= package.package_id%>" value="1" name="cantidad" placeholder="1" class="contador" min="1" step="1">
                             <button type="submit" class="buy_button">Agregar al carrito</button>
                         </form>
                         </div>

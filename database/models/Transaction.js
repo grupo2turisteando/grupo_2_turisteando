@@ -66,10 +66,10 @@ module.exports = (sequelize, dataTypes) => {
         });
 
        
-        Transaction.belongsTo(models.Cart, {
-            as: "cart",
-            foreignKey:"cart_id"
-        });
+        // Transaction.belongsTo(models.Cart, {
+        //     as: "cart",
+        //     foreignKey:"cart_id"
+        // });
         Transaction.belongsTo(models.Customers, {
             as: "customer",
             foreignKey:"customer_id"
