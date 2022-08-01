@@ -14,7 +14,7 @@ const apiTransactionsControllers = {
                     {
                         total: transaction.length,
                         status: 200,
-                        url: "http://localhost:5020/api/products"
+                        url: "http://localhost:5020/api/transactions"
                     },
                     data:transaction,
                 })
