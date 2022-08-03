@@ -27,13 +27,16 @@ const apiTransactionsControllers = {
                 
             })
        
-    
+           
     },
     total_transactions: (req,res)=>{
         db.Transaction.findAll({
             attributes: [
                             [sequelize.fn('COUNT', sequelize.col('total')),"operaciones"], 
-                            [sequelize.fn('SUM', sequelize.col('total')),"facturacion"]
+                            [sequelize.fn('SUM', sequelize.col('total')),"facturacion"],
+                            [sequelize.fn('MAX', sequelize.col('user_id')),"Ultimo_usuario_en_comprar"],
+                           
+
                         ]
             })
             .then(transaction=>{
