@@ -82,6 +82,32 @@ const engineCart = {
     porcentaje: function (precio, porcentaje,nro){
     return precio - (precio * porcentaje / nro)
     },
+    
+    subtotal: function(cantidad,precio){
+        return cantidad * precio
+    },
+    
+    validar_campo : function (expresion, input, campo){
+        if(expresion.test(input.value)){
+               
+            document.getElementById(`${campo}`).classList.remove("validacion_incorrecta");
+            document.getElementById(`${campo}`).classList.add("validacion_correcta");
+            document.querySelector(`#${campo} i`).classList.remove("fa-circle-xmark");
+            document.querySelector(`#${campo} i`).classList.add("fa-circle-check");
+            document.querySelector(`#${campo} .mensaje_error`).classList.remove("mensaje_error-activo");
+            
+    }else{
+            document.getElementById(`${campo}`).classList.add("validacion_incorrecta");
+            document.getElementById(`${campo}`).classList.remove("validacion_correcta"); 
+            document.querySelector(`#${campo} i`).classList.add("fa-circle-xmark");
+            document.querySelector(`#${campo} i`).classList.remove("fa-circle-check");
+            document.querySelector(`#${campo} .mensaje_error`).classList.add("mensaje_error-activo");
+            
+    }
+  
+
+}
+
   
 } 
 module.exports = engineCart;
