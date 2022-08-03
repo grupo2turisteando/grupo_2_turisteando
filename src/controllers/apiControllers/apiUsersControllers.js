@@ -47,19 +47,6 @@ detail_register: (req,res)=>{
 
 },
 detail_customers: (req,res)=>{
-    // let params = req.params.id
-    // db.Customers.findByPk()
-    //     .then(customer=>{
-    //         return res.status(200).json({
-    //             meta:
-    //             {
-                   
-    //                 url: "http://localhost:5020/api/users/customers/:id"
-    //             },
-    //             data:customer
-    //         });
-    //     })
 }
-};
-
+}
 module.exports = apiUsersControllers;
