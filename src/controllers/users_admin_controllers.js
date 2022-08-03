@@ -4,10 +4,34 @@ const Users= require('../model/Users.js');
 const { find_columm } = require("../model/engine.js");
 const req = require("express/lib/request");
 const engineUser = require("../model/engineUser");
+// const { validationResult } = require('express-validator');
 
 const users_admin_controller = {
 
-   
+    // /*Registro usuario*/
+    // register_user_db: async (req, res) => {
+    //     res.status(200).render('../views/register_user_admin')
+    // },
+
+    // create_user_db: async (req, res) => {
+    //     //validaciones formulario registro
+    //     const result_validation = validationResult(req);
+    //     if (result_validation.errors.length > 0) {
+    //         return res.status(200).render('../views/register_user_admin', {
+    //             errors: result_validation.mapped(),
+    //             oldData: req.body
+    //         });
+    //     } else {
+    //     //metodo create para registrar user en db
+    //         db.AdminUserRegister.create({
+    //             user: req.body.user,
+    //             email: req.body.email,
+    //             password: bcryptjs.hashSync(req.body.password, 10),
+    //             password_valid: bcryptjs.hashSync(req.body.password_valid, 10),
+    //         });
+    //         res.status(200).redirect('/users_admin');
+    //     };
+    // },
 
     /*Mostrar todos usuarios*/
     users_list_db: async (req, res) => {
