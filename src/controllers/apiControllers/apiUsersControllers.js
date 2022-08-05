@@ -53,7 +53,7 @@ detail_customers: (req,res)=>{
                 meta:
                     {   
                     status: 200,
-                    url: "http://localhost:5020/api/users/customers/`${user_id}`"
+                    url: "http://localhost:5020/api/users/customers/:id"
                     },
                 data: customer,
             })
@@ -92,11 +92,11 @@ last_customer: (req,res)=>{
                     method: "get",
                     status: 200,
                     url: "http://localhost:5020/api/users/ultimo/customer",
-                    url_avatar: "http://localhost:5020/images/users/avatars/"
+                   
     
                 },
                 data:customer,
-               
+                url_avatar: "http://localhost:5020/images/users/avatars/"
             
             })
         })
