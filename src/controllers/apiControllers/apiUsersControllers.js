@@ -1,4 +1,3 @@
-
 const db = require('../../../database/models');
 const { get } = require('../../routes/routesApi/apiUsers');
 const sequelize = db.sequelize;
@@ -14,14 +13,11 @@ list_register: (req,res)=>{
                     status: 200,
                     url: "http://localhost:5020/api/users/register"
                 },
-                data: userregister,
-               
+                data: userregister
             })
-        
         })
-        
-
 },
+
 list_customers: (req,res)=>{
     db.Customers.findAll({
        include:[{association:"province"}/*,{association:"userRegister"}*/],
@@ -35,7 +31,6 @@ list_customers: (req,res)=>{
                     url: "http://localhost:5020/api/users/customers"
                 },
                 data: customers,
-               
             })
         })
 },
@@ -44,10 +39,15 @@ detail_register: (req,res)=>{
     db.UserRegister.findByPk(req.params.id)
         .then(user => {
             return res.status(200).json({
+                meta: {
+                    status: 200,
+                    url: "http://localhost:5020/api/users/register/:id"
+                },
                 data: user
             })
         })
 },
+
 detail_customers: (req,res)=>{
     let user_id = req.params.id
         db.Customers.findByPk(user_id, {

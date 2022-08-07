@@ -18,7 +18,7 @@ const apiProductsControllers = {
                     status: 200,
                     url: "http://localhost:5020/api/packages"
                 },
-                data: product,              
+                data: product,
             })
         })
     },
