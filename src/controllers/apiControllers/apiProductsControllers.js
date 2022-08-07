@@ -8,7 +8,7 @@ const apiProductsControllers = {
     list: (req,res) => {
         db.Producto.findAll({
             attributes: [
-                [sequelize.fn('COUNT', sequelize.col('package_id')),"packages"]
+                [sequelize.fn('COUNT', sequelize.col('package_id')),"products"]
             ]
         })
         .then(product => {
@@ -16,7 +16,7 @@ const apiProductsControllers = {
                 meta: {
                     method: "get",
                     status: 200,
-                    url: "http://localhost:5020/api/packages"
+                    url: "http://localhost:5020/api/products"
                 },
                 data: product,
             })
