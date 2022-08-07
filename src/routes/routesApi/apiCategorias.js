@@ -6,12 +6,13 @@ const router= express.Router(); /* Router permiete crear rutas montables y desmo
 
 const apiCategoriasControllers = require('../../controllers/apiControllers/apiCategoriasControllers');
 
-const corsOptions = {
-    origin: 'http://localhost:3000/',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
 
 
 router.get('/ofertas', cors(), apiCategoriasControllers.ofertas); // Walter
+router.get('/regulares', cors(), apiCategoriasControllers.regulares); // Walter
+router.get('/aereos', cors(), apiCategoriasControllers.aereos); // Walter
+router.get('/micros', cors(), apiCategoriasControllers.micros); // Walter
+router.get('/autos', cors(), apiCategoriasControllers.autos); // Walter
+router.get('/hoteles', cors(), apiCategoriasControllers.hoteles); // Walter
 
 module.exports = router;

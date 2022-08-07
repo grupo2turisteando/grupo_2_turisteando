@@ -11,6 +11,7 @@ const users_admin_controllers = require('../controllers/users_admin_controllers.
 const uploadFile = require('../middlewares/multer_middleware'); 
 const validations_package = require('../middlewares/validations_packge'); 
 const validations_package_edit = require('../middlewares/validations_packge_edit'); 
+// const validations_users_admin = require('../middlewares/validations_users_admin.js');
 
 // configuro Multer para poder subir al servidor los archivos de las imagenes de paisajes
 const storage= multer.diskStorage({
@@ -48,6 +49,10 @@ router.get('/producto/:id/delete', admin_controllers.delete_package_get);
 router.delete('/producto/delete/:id', admin_controllers.delete_package_delete);
 
 
+
+// //Registrar Usuario
+// router.get('/users/register', users_admin_controllers.register_user_db);
+// router.post('/users', validations_users_admin, users_admin_controllers.create_user_db);
 
 //listar Ususarios
 router.get('/users', users_admin_controllers.users_list_db);
