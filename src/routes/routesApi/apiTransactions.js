@@ -15,7 +15,6 @@ const corsOptions = {
 
 router.get('/', apiTransactionsControllers.list);//Sil
 router.get('/total', cors(), apiTransactionsControllers.total_transactions);//
-// router.get('/operaciones', cors(), apiTransactionsControllers.total_operaciones);//
 
 
 

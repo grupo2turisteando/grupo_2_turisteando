@@ -62,20 +62,6 @@ detail_customers: (req,res)=>{
 },
 
 
-// SOLO TRAE EL NUMERO DE CLIENTE
-// last_customer: (req,res)=>{
-//     db.Customers.findAll({
-       
-        
-//         attributes:{
-//            include:[
-//             [sequelize.fn('MAX', sequelize.col('customer_id')),"ultimo_cliente_registrado"]
-        
-//            ]
-//         } 
-        
-                       
-//         })
 
 last_customer: (req,res)=>{
     db.Customers.findAll({
