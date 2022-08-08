@@ -9,7 +9,7 @@ const apiProductsControllers = require('../../controllers/apiControllers/apiProd
 
 
 router.get('/', cors(), apiProductsControllers.list);//Facundo
-router.get('/:id', apiProductsControllers.detail);//Walter
+router.get('/:id', cors(), apiProductsControllers.detail);//Walter
 
 
 
