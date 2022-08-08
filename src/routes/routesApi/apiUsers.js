@@ -14,7 +14,7 @@ const corsOptions = {
   }
 
 router.get('/register',cors(), apiUsersControllers.list_register);//Silvana
-router.get('/register:id',cors(), apiUsersControllers.detail_register); //Ignacio
+router.get('/register/:id',cors(), apiUsersControllers.detail_register); //Ignacio
 
 router.get('/customers',cors(), apiUsersControllers.list_customers);//Silvana
 router.get('/customers/:id',cors(), apiUsersControllers.detail_customers); //Silvana
