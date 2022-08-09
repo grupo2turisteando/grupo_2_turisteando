@@ -49,12 +49,14 @@ detail_register: (req,res)=>{
                     status: 200,
                     url: "http://localhost:5020/api/users/register/:id"
                 },
-                data: {
-                    id: user_id,
-                    name: user.user,
+                data:{
+                    id: user.user_id,
+                    name:user.user,
                     email: user.email,
-                    url_avatar: "http://localhost:5020/images/users/avatars/" + user.avatar
+                    url_avatar:"http://localhost:5020/images/users/avatars/"+user.avatar
                 }
+             
+
             })
         })
         .catch( error => console.error(error));
@@ -63,7 +65,7 @@ detail_register: (req,res)=>{
 detail_customers: (req,res)=>{
     let user_id = req.params.id
         db.Customers.findByPk(user_id, {
-            include:[{association:"province"}/*,{association:"userRegister"}*/],
+            include:[{association:"province"}],
         })
         .then(customer=>{
             res.status(200).json({
@@ -95,9 +97,7 @@ last_customer: (req,res)=>{
                     method: "get",
                     status: 200,
                     url: "http://localhost:5020/api/users/ultimo/customer",
-                   
-    
-                },
+                   },
                 data:customer,
                 url_avatar: "http://localhost:5020/images/users/avatars/"
             

@@ -8,7 +8,7 @@ const apiProductsControllers = {
 
 
     
-    list: (req,res) => {
+    total: (req,res) => {
         db.Producto.findAll({
             attributes: [
                 [sequelize.fn('COUNT', sequelize.col('package_id')),"products"]
@@ -19,7 +19,7 @@ const apiProductsControllers = {
                 meta: {
                     method: "get",
                     status: 200,
-                    url: "http://localhost:5020/api/products"
+                    url: "http://localhost:5020/api/products/total"
                 },
                 data: product,
             })
@@ -63,8 +63,31 @@ const apiProductsControllers = {
                 data: product,              
             })
         })
+        
     },
+
+    last_package: (req,res)=>{
+        db.Producto.findAll({
+
+            limit:1,
+            order: [
+                ['package_id', 'DESC'],
+            ]
+       
+        })
+            .then(producto=>{
+                return res.json({
+                    meta:{
+                        method: "get",
+                        status: 200,
+                        url: "http://localhost:5020/api/products/ultimo/producto"
+                       },
+                    data:producto,
+                    url: "http://localhost:5020/images/"
+                })
+            })
    
-    };
-    
+    }
+
+} 
     module.exports = apiProductsControllers
