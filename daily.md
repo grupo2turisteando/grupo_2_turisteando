@@ -95,6 +95,54 @@ sprint 4
 	CRUD Usuarios Admin
 	Revision Crud Carrito
 
+	sprint 7
+
+Reunion 19/07 
+
+Tareas
+Walter Leskovar:
+Validacion Creación y modificación de productos(Lista)
+Facundo Minuto:
+Actualizar el tablero de Trello
+Validaciones Back y Front Usuarios Admin
+Ignacio Parisi: Retro
+Validaciones Front Registro de usuarios
+Silvana Acotto:
+Daily
+Validaciones Front carrito
+
+Sprint 8
+
+Version React 5.3
+
+Tareas:
+Facundo Minuto:
+Actualizar Tablero Trello 
+Dashboard: panel total paquetes en base de datos
+Endpoints: Listados de Productos
+
+Ignacio Parisi:
+Retro
+Dashboard: panel total usuarios registrados  en base de datos
+Endpoints: Detalle de usuarios
+
+Silvana Acotto:
+Crear en el directorio carpetas Api_controllers y Api_Routes
+Dashboard: panel suma total de operaciones, catidad operaciones, ultimio Cliente Registrado concretadas en base de datos
+Endpoints: Listado de usuarios
+
+Walter:
+Dashboard: Panel de categorías con el total de productos por provincia en base de datos.
+Endpoints: Detale Producto
+
+Resuelto entre todo el grupo en clase 08 agosto
+Panel con el listado de productos.
+
+Todos los integrantes deben recorer todo el sitio, tanto del lado del cliente como del administrador, verificando que todas las fucionalidades esten correctas. 
+En caso de encontrar alguna falla, debe reportar por slack la misma para poder resolverla.
+Controlar que todos los requisitos para la entrega del proyecto esten cumplidos
+
+
 
 
 
