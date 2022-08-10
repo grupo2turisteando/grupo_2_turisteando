@@ -66,7 +66,7 @@ const cart_controller = {
             total: subtotal
           };
 
-        let grabar =  engineCart.add_columm_db_cart("Cart", cart);
+        let grabar = await engineCart.add_columm_db_cart("Cart", cart);
             if (grabar != 201) {
                 console.log('error al agregar paquete al carrito')
             }else{
